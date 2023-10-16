@@ -9,6 +9,7 @@ import { ContabilidadComponent } from './Components/contabilidad/contabilidad.co
 import { TicketPasajeComponent } from './Components/ticket-pasaje/ticket-pasaje.component';
 import { PagosComponent } from './Components/pagos/pagos.component';
 import { ContactosComponent } from './Components/contactos/contactos.component';
+import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ContactosComponent } from './Components/contactos/contactos.component';
     ContabilidadComponent,
     TicketPasajeComponent,
     PagosComponent,
-    ContactosComponent
+    ContactosComponent,
+    CabeceraComponent
   ],
   imports: [
     BrowserModule,
