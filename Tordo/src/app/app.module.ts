@@ -10,6 +10,7 @@ import { TicketPasajeComponent } from './Components/ticket-pasaje/ticket-pasaje.
 import { PagosComponent } from './Components/pagos/pagos.component';
 import { ContactosComponent } from './Components/contactos/contactos.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
+import { FormbusComponent } from './Components/principal/formbus/formbus.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CabeceraComponent } from './Components/cabecera/cabecera.component';
     TicketPasajeComponent,
     PagosComponent,
     ContactosComponent,
-    CabeceraComponent
+    CabeceraComponent,
+    FormbusComponent
   ],
   imports: [
     BrowserModule,
