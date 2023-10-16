@@ -11,6 +11,7 @@ import { PagosComponent } from './Components/pagos/pagos.component';
 import { ContactosComponent } from './Components/contactos/contactos.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { FormbusComponent } from './Components/principal/formbus/formbus.component';
+import { SlideComponent } from './Components/principal/slide/slide.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FormbusComponent } from './Components/principal/formbus/formbus.compone
     PagosComponent,
     ContactosComponent,
     CabeceraComponent,
-    FormbusComponent
+    FormbusComponent,
+    SlideComponent
   ],
   imports: [
     BrowserModule,
