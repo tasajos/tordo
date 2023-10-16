@@ -12,6 +12,7 @@ import { ContactosComponent } from './Components/contactos/contactos.component';
 import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { FormbusComponent } from './Components/principal/formbus/formbus.component';
 import { SlideComponent } from './Components/principal/slide/slide.component';
+import { MenuComponent } from './Components/principal/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SlideComponent } from './Components/principal/slide/slide.component';
     ContactosComponent,
     CabeceraComponent,
     FormbusComponent,
-    SlideComponent
+    SlideComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
