@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PrincipalComponent } from './Components/principal/principal.component';
 import { PagosComponent } from './Components/pagos/pagos.component';
 
+
 const routes: Routes = [
 
 {path: '', redirectTo:'principal', pathMatch:'full'},

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,7 @@ import { MenuComponent } from './Components/principal/menu/menu.component';
 import { FooterComponent } from './Components/principal/footer/footer.component';
 import { ResulbusquedaComponent } from './Components/principal/resulbusqueda/resulbusqueda.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,11 +35,13 @@ import { ResulbusquedaComponent } from './Components/principal/resulbusqueda/res
     MenuComponent,
     FooterComponent,
     ResulbusquedaComponent
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BsDatepickerModule.forRoot()
   ],
   providers: [],
