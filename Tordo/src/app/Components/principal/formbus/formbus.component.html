@@ -36,15 +36,16 @@
                             <label for="autoSizingDate" class="form-label">Fecha</label>
                             <input type="date" class="form-control" id="autoSizingDate">
                         </div>
-                        <button type="submit" class="btn btn-primary">Buscar</button>
+                        <button type="button" class="btn btn-primary" (click)="mostrarResultado()">Buscar</button>
+
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-md-6"> <!-- Columna derecha para la tabla con un margen -->
             <div class="cards rounded-lg" style="margin-top: 2px;">
-                <div class="card-body">
-                    <table class="table">
+                <div class="card-body" *ngIf="mostrarTabla">
+                  <table class="table">
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
@@ -53,6 +54,7 @@
                                 <th scope="col">Origen</th>
                                 <th scope="col">Destino</th>
                                 <th scope="col">Precio</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody class="table-group-divider">
@@ -63,6 +65,7 @@
                                 <td>Santa Cruz</td>
                                 <td>Cochabamba</td>
                                 <td>80 Bs</td>
+                                <td><img src="../../../../assets/img/carrito.png"></td>
                             </tr>
                             <tr>
                                 <th scope="row">2</th>
@@ -71,6 +74,7 @@
                                 <td>Santa Cruz</td>
                                 <td>Cochabamba</td>
                                 <td>100 Bs</td>
+                                <td><img src="../../../../assets/img/carrito.png"></td>
                             </tr>
                             <tr>
                                 <th scope="row">3</th>
@@ -79,6 +83,7 @@
                                 <td>Santa Cruz</td>
                                 <td>Cochabamba</td>
                                 <td>110 Bs</td>
+                                <td><img src="../../../../assets/img/carrito.png"></td>
                             </tr>
                         </tbody>
                     </table>

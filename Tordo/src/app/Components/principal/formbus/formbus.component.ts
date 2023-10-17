@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./formbus.component.css']
 })
 export class FormbusComponent {
+  mostrarTabla: boolean = false;
+
+
+  mostrarResultado() {
+    this.mostrarTabla = true;
+  }
 
 }
