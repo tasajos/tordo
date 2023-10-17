@@ -21,6 +21,10 @@ import { AdministradorComponent } from './Components/usuarios/administrador/admi
 import { SuperusuarioComponent } from './Components/usuarios/superusuario/superusuario.component';
 import { ContadorComponent } from './Components/usuarios/contador/contador.component';
 import { SocioComponent } from './Components/usuarios/socio/socio.component';
+import { FlotaComponent } from './Components/flota/flota.component';
+import { RegistrarflotaComponent } from './Components/flota/registrarflota/registrarflota.component';
+import { BuscarflotaComponent } from './Components/flota/buscarflota/buscarflota.component';
+import { VerflotaComponent } from './Components/flota/verflota/verflota.component';
 
 
 @NgModule({
@@ -42,7 +46,11 @@ import { SocioComponent } from './Components/usuarios/socio/socio.component';
     AdministradorComponent,
     SuperusuarioComponent,
     ContadorComponent,
-    SocioComponent
+    SocioComponent,
+    FlotaComponent,
+    RegistrarflotaComponent,
+    BuscarflotaComponent,
+    VerflotaComponent
     
   ],
   imports: [
