@@ -1,56 +1,89 @@
-<div class="container">
-    <p></p>
-    <br>
-    <form class="row gy-2 gx-2 align-items-center">
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInput">Nombre</label>
-            <input type="text" class="form-control" id="autoSizingInput" placeholder="Carlos Andres">
-        </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingInputGroup">Usuario</label>
-            <div class="input-group">
-                <div class="input-group-text"></div>
-                <input type="text" class="form-control" id="autoSizingInputGroup" placeholder="Usuario">
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6"> <!-- Columna izquierda para el formulario -->
+            <div class="card rounded-lg">
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="autoSizingInput" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="autoSizingInput" placeholder="Nombre">
+                        </div>
+                        <div class="mb-3">
+                            <label for="autoSizingInput" class="form-label">Cantidad Pasajeros</label>
+                            <input type="number" class="form-control" id="autoSizingInput" placeholder="Número">
+                        </div>
+                        <div class="mb-3">
+                            <label for="autoSizingSelectOrigen" class="form-label">Origen</label>
+                            <select class="form-select" id="autoSizingSelectOrigen">
+                                <option selected>Origen...</option>
+                                <option value="1">La Paz</option>
+                                <option value="2">Cbba</option>
+                                <option value="3">Sta Cruz</option>
+                                <option value="4">Beni</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="autoSizingSelectDestino" class="form-label">Destino</label>
+                            <select class="form-select" id="autoSizingSelectDestino">
+                                <option selected>Destino...</option>
+                                <option value="1">La Paz</option>
+                                <option value="2">Cbba</option>
+                                <option value="3">Sta Cruz</option>
+                                <option value="4">Beni</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="autoSizingDate" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="autoSizingDate">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingSelectOrigen">Origen</label>
-            <select class="form-select" id="autoSizingSelectOrigen">
-                <option selected>Origen...</option>
-                <option value="1">La Paz</option>
-                <option value="2">Cbba</option>
-                <option value="3">Sta Cruz</option>
-                <option value="4">Beni</option>
-            </select>
-        </div>
-        <div class="col-auto">
-            <label class="visually-hidden" for="autoSizingSelectDestino">Destino</label>
-            <select class="form-select" id="autoSizingSelectDestino">
-                <option selected>Destino...</option>
-                <option value="1">La Paz</option>
-                <option value="2">Cbba</option>
-                <option value="3">Sta Cruz</option>
-                <option value="4">Beni</option>
-            </select>
-        </div>
-        <div class="col-auto">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="autoSizingCheck">
-                <label class="form-check-label" for="autoSizingCheck">
-                    Recuerda mi elección
-                </label>
+        <div class="col-md-6"> <!-- Columna derecha para la tabla con un margen -->
+            <div class="cards rounded-lg" style="margin-top: 2px;">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Empresa</th>
+                                <th scope="col">Hora</th>
+                                <th scope="col">Origen</th>
+                                <th scope="col">Destino</th>
+                                <th scope="col">Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Trans Copabana</td>
+                                <td>20:00</td>
+                                <td>Santa Cruz</td>
+                                <td>Cochabamba</td>
+                                <td>80 Bs</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Trans Copabana MEM</td>
+                                <td>20:15</td>
+                                <td>Santa Cruz</td>
+                                <td>Cochabamba</td>
+                                <td>100 Bs</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>23 de Marzo</td>
+                                <td>20:30</td>
+                                <td>Santa Cruz</td>
+                                <td>Cochabamba</td>
+                                <td>110 Bs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-        <div class="col-auto">
-            <!-- Campo de fecha -->
-            <label class="visually-hidden" for="autoSizingDate">Fecha</label>
-            <input type="date" class="form-control" id="autoSizingDate">
-        </div>
-        <div class="col-auto">
-            <button type="submit" class="btn btn-primary">Buscar</button>
-        </div>
-    </form>
+    </div>
 </div>
-<p></p>
-<br>
-<p></p>

@@ -15,6 +15,8 @@ import { CabeceraComponent } from './Components/cabecera/cabecera.component';
 import { FormbusComponent } from './Components/principal/formbus/formbus.component';
 import { SlideComponent } from './Components/principal/slide/slide.component';
 import { MenuComponent } from './Components/principal/menu/menu.component';
+import { FooterComponent } from './Components/principal/footer/footer.component';
+import { ResulbusquedaComponent } from './Components/principal/resulbusqueda/resulbusqueda.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MenuComponent } from './Components/principal/menu/menu.component';
     CabeceraComponent,
     FormbusComponent,
     SlideComponent,
-    MenuComponent
+    MenuComponent,
+    FooterComponent,
+    ResulbusquedaComponent
   ],
   imports: [
     BrowserModule,

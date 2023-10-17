@@ -1,3 +1,7 @@
 .with-left-margin {
     margin-left: 20px;
 }
+.card {
+    background-color: #c3e6eb; /* Color azul celeste */
+    margin-left: 30px;
+}
