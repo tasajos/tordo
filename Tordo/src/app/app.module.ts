@@ -16,6 +16,11 @@ import { SlideComponent } from './Components/principal/slide/slide.component';
 import { MenuComponent } from './Components/principal/menu/menu.component';
 import { FooterComponent } from './Components/principal/footer/footer.component';
 import { ResulbusquedaComponent } from './Components/principal/resulbusqueda/resulbusqueda.component';
+import { VendedorComponent } from './Components/usuarios/vendedor/vendedor.component';
+import { AdministradorComponent } from './Components/usuarios/administrador/administrador.component';
+import { SuperusuarioComponent } from './Components/usuarios/superusuario/superusuario.component';
+import { ContadorComponent } from './Components/usuarios/contador/contador.component';
+import { SocioComponent } from './Components/usuarios/socio/socio.component';
 
 
 @NgModule({
@@ -32,7 +37,12 @@ import { ResulbusquedaComponent } from './Components/principal/resulbusqueda/res
     SlideComponent,
     MenuComponent,
     FooterComponent,
-    ResulbusquedaComponent
+    ResulbusquedaComponent,
+    VendedorComponent,
+    AdministradorComponent,
+    SuperusuarioComponent,
+    ContadorComponent,
+    SocioComponent
     
   ],
   imports: [
