@@ -7,6 +7,7 @@ import { VerflotaComponent } from './Components/flota/verflota/verflota.componen
 import { RegistrarflotaComponent } from './Components/flota/registrarflota/registrarflota.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
+import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
 {path: 'registrarflota',component:RegistrarflotaComponent},
 {path: 'login',component:LoginComponent},
 {path: 'recuperarlogin',component:RecuperarusuarioComponent},
+{path: 'manifesto',component:ManifestoComponent},
 {path: '**', redirectTo:'principal', pathMatch:'full'}
 
 

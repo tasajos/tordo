@@ -34,6 +34,8 @@ import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/r
 import {AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
 import { MvendedorComponent } from './Components/principal/menu/mvendedor/mvendedor.component';
+import { PasajerosComponent } from './Components/pasajeros/pasajeros.component';
+import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { MvendedorComponent } from './Components/principal/menu/mvendedor/mvende
     LoginComponent,
     SpinnerComponent,
     RecuperarusuarioComponent,
-    MvendedorComponent
+    MvendedorComponent,
+    PasajerosComponent,
+    ManifestoComponent
     
   ],
   imports: [
