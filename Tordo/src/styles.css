@@ -4,3 +4,7 @@
 
 /* Estilos adicionales para ngx-bootstrap */
 @import '~ngx-bootstrap/datepicker/bs-datepicker.css';
+
+html, body {
+    height: 100%;
+}

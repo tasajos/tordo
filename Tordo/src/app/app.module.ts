@@ -25,6 +25,8 @@ import { FlotaComponent } from './Components/flota/flota.component';
 import { RegistrarflotaComponent } from './Components/flota/registrarflota/registrarflota.component';
 import { BuscarflotaComponent } from './Components/flota/buscarflota/buscarflota.component';
 import { VerflotaComponent } from './Components/flota/verflota/verflota.component';
+import { LoginComponent } from './Components/login/login.component';
+import { SpinnerComponent } from './shared/spinner/spinner.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { VerflotaComponent } from './Components/flota/verflota/verflota.componen
     FlotaComponent,
     RegistrarflotaComponent,
     BuscarflotaComponent,
-    VerflotaComponent
+    VerflotaComponent,
+    LoginComponent,
+    SpinnerComponent
     
   ],
   imports: [
