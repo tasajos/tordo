@@ -27,7 +27,12 @@ import { BuscarflotaComponent } from './Components/flota/buscarflota/buscarflota
 import { VerflotaComponent } from './Components/flota/verflota/verflota.component';
 import { LoginComponent } from './Components/login/login.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
+import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
 
+
+//modulos
+import {AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -54,14 +59,16 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
     BuscarflotaComponent,
     VerflotaComponent,
     LoginComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    RecuperarusuarioComponent
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
    
   ],
   providers: [],
