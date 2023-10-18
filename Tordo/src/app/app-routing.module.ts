@@ -8,6 +8,7 @@ import { RegistrarflotaComponent } from './Components/flota/registrarflota/regis
 import { LoginComponent } from './Components/login/login.component';
 import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
 import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
+import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
 {path: 'login',component:LoginComponent},
 {path: 'recuperarlogin',component:RecuperarusuarioComponent},
 {path: 'manifesto',component:ManifestoComponent},
+{path: 'rrpasajero',component:RegistrarpasajeroComponent},
 {path: '**', redirectTo:'principal', pathMatch:'full'}
 
 

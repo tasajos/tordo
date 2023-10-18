@@ -36,6 +36,7 @@ import { environment } from 'src/environments/environment';
 import { MvendedorComponent } from './Components/principal/menu/mvendedor/mvendedor.component';
 import { PasajerosComponent } from './Components/pasajeros/pasajeros.component';
 import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
+import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.c
     RecuperarusuarioComponent,
     MvendedorComponent,
     PasajerosComponent,
-    ManifestoComponent
+    ManifestoComponent,
+    RegistrarpasajeroComponent
     
   ],
   imports: [
