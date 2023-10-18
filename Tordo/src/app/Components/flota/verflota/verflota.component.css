@@ -1,0 +1,5 @@
+.bus {
+    width: 60px;
+    display: block; /* Hacer que la imagen sea un bloque para centrarla */
+    margin: 20px auto 0; /* Centrar verticalmente con un margen superior de 20px */
+}

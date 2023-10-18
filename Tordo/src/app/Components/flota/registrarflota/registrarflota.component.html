@@ -1,1 +1,53 @@
-<p>registrarflota works!</p>
+<app-cabecera></app-cabecera>
+<p></p>
+<p></p>
+<p>
+
+</p>
+<br>
+<p>
+
+</p>
+<br>
+<p>
+<app-mvendedor></app-mvendedor>
+</p>
+<br>
+<div class="container mt-4 ml-2"> <!-- Contenedor con margen a la izquierda -->
+    <form>
+      <div class="row">
+        <div class="col-md-6"> <!-- Campo de Placa, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="placa">Placa:</label>
+            <input type="text" class="form-control" id="placa" name="placa">
+          </div>
+        </div>
+        <div class="col-md-6"> <!-- Campo de Conductor, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="conductor">Conductor:</label>
+            <input type="text" class="form-control" id="conductor" name="conductor">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="hora-salida">Hora de salida:</label>
+            <input type="time" class="form-control" id="hora-salida" name="hora-salida">
+          </div>
+        </div>
+        <div class="col-md-6"> <!-- Campo de Tipo, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo">
+              <option value="normal">Normal</option>
+              <option value="semicama">Semicama</option>
+              <option value="cama">Cama</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+    </form>
+  </div>
+  
