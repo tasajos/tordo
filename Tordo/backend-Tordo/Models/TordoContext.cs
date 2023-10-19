@@ -1,3 +1,4 @@
+using backend_Tordo.Models.Flota;
 using backend_Tordo.Models.Pasajeros;
 using Microsoft.EntityFrameworkCore;
 namespace backend_Tordo.Models
@@ -14,6 +15,10 @@ namespace backend_Tordo.Models
 
     public DbSet<pasajeros> PasajeCliente { get; set; } //<clase> Nombre de la tabla
 
+
+    //flota
+
+    public DbSet<RegistroFlota> Rflota { get; set; } //<clase> Nombre de la tabla
 
 
   }
