@@ -18,18 +18,18 @@
 
 <div class="container mt-4 ml-2"> <!-- Contenedor con margen a la izquierda -->
 <br>
-  <form>
+<form class="example-form" [formGroup]="formulario" (ngSubmit)="registrarflota()" >
       <div class="row">
         <div class="col-md-6"> <!-- Campo de Placa, mitad del tamaño en pantallas medianas -->
           <div class="form-group">
             <label for="placa">Placa:</label>
-            <input type="text" class="form-control" id="placa" name="placa">
+            <input type="text" class="form-control" id="placa" name="placa" formControlName="placa">
           </div>
         </div>
         <div class="col-md-6"> <!-- Campo de Conductor, mitad del tamaño en pantallas medianas -->
           <div class="form-group">
             <label for="conductor">Conductor:</label>
-            <input type="text" class="form-control" id="conductor" name="conductor">
+            <input type="text" class="form-control" id="conductor" name="conductor" formControlName="conductor">
           </div>
         </div>
       </div>
@@ -37,13 +37,13 @@
         <div class="col-md-6"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
           <div class="form-group">
             <label for="hora-salida">Hora de salida:</label>
-            <input type="time" class="form-control" id="hora-salida" name="hora-salida">
+            <input type="time" class="form-control" id="hora-salida" name="hora" formControlName="hora">
           </div>
         </div>
         <div class="col-md-6"> <!-- Campo de Tipo, mitad del tamaño en pantallas medianas -->
           <div class="form-group">
             <label for="tipo">Tipo:</label>
-            <select class="form-control" id="tipo" name="tipo">
+            <select class="form-control" id="tipo" name="tipo" formControlName="tipo">
               <option value="normal">Normal</option>
               <option value="semicama">Semicama</option>
               <option value="cama">Cama</option>
@@ -54,7 +54,7 @@
         <div class="row">
           <div class="col-md-6"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
             <div class="input-group mt-3">
-              <select class="form-select" id="inputGroupSelect02">
+              <select class="form-select" id="inputGroupSelect02" formControlName="cantidadpasajeros">
                 <option selected>Selecciona...</option>
                 <option value="1-10">1-10</option>
                 <option value="11-20">11-20</option>
@@ -68,6 +68,11 @@
           </div>
           
         </div>
+      </div>
+
+      <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+        ¡Registro exitoso! Mensaje de éxito.
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
       </div>
       <button type="submit" class="btn btn-primary mt-3">Enviar</button>
     </form>

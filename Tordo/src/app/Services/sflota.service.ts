@@ -18,7 +18,7 @@ export class SflotaService {
   //entorno para llamar
 
   private Myappurl: string = environment.endpoint;
-  private Myapiurl: string = 'api/Pasj';
+  private Myapiurl: string = 'api/Flta';
 
   //constructor
   constructor(private http: HttpClient) { }

@@ -12,7 +12,7 @@ namespace backend_Tordo.Models.Flota
     public string hora { get; set; }
     public string tipo { get; set; }
 
-    public int cantidadpasajeros { get; set; }
+    public string cantidadpasajeros { get; set; }
 
     public DateTime FechaCreacion { get; set; }
   }

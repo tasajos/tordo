@@ -8,51 +8,21 @@
 <p>
   <app-mvendedor></app-mvendedor>
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col mx-4"> <!-- Agrega clases de margen aquí -->
+    <div class="col mx-4" *ngFor="let registro of registrosFlota">
       <div class="card h-100">
         <img src="../../../../assets/img/parada-de-autobus.png" class="bus" alt="..." style="width: 80px; cursor: pointer;" routerLink="/rrpasajero">
-         <div class="card-body">
-          <h5 class="card-title">Hora:</h5>
-          <p class="card-text">Conductor:</p>
-          <p class="card-text">Tipo:</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Ultima Actualizacion 3 mins</small>
-        </div>
-      </div>
-    </div>
-    <div class="col mx-4"> <!-- Agrega clases de margen aquí -->
-      <div class="card h-100">
-        <img src="../../../../assets/img/parada-de-autobus.png" class="bus" alt="..." style="width: 80px;">
         <div class="card-body">
-          <h5 class="card-title">Hora:</h5>
-          <p class="card-text">Conductor:</p>
-          <p class="card-text">Tipo:</p>
+          <h5 class="card-title">Hora: {{ registro.hora }}</h5>
+          <p class="card-text">Conductor: {{ registro.conductor }}</p>
+          <p class="card-text">Tipo: {{ registro.tipo }}</p>
         </div>
         <div class="card-footer">
-          <small class="text-body-secondary">Ultima Actualizacion 3 mins</small>
-        </div>
-      </div>
-    </div>
-    <div class="col mx-4"> <!-- Agrega clases de margen aquí -->
-      <div class="card h-100">
-        <img src="../../../../assets/img/parada-de-autobus.png" class="bus" alt="..." style="width: 80px;">
-        <div class="card-body">
-          <h5 class="card-title">Hora:</h5>
-          <p class="card-text">Conductor:</p>
-          <p class="card-text">Tipo:</p>
-        </div>
-        <div class="card-footer">
-          <small class="text-body-secondary">Ultima Actualizacion 3 mins</small>
+          <small class="text-body-secondary">Ultima Actualizacion {{ registro.hora }} mins</small>
         </div>
       </div>
     </div>
   </div>
-<p>
 
-</p>
 <br>
-<p>
-
-</p>
+<p></p>
 <br>

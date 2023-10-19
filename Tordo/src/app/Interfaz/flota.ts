@@ -4,6 +4,7 @@ export interface registrarflotaInter {
 
     id?: number,
     placa: string,
+    conductor: string,
     hora:string,
     tipo:string,
     cantidadpasajeros:string,

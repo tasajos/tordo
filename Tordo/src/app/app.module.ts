@@ -28,6 +28,7 @@ import { VerflotaComponent } from './Components/flota/verflota/verflota.componen
 import { LoginComponent } from './Components/login/login.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 //modulos
@@ -76,6 +77,7 @@ import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasa
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
   ],

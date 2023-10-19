@@ -16,7 +16,7 @@ namespace backend_Tordo.Controllers
     public PasjController(TordoContext context)
     {
 
-      //RegistrosPasajeros
+      //Registrosflota
       _context = context;
     }
 
@@ -25,8 +25,8 @@ namespace backend_Tordo.Controllers
     {
       try
       {
-        var listapasajeros = await _context.PasajeCliente.ToListAsync();
-        return Ok(listapasajeros);
+        var listaflota = await _context.Rflota.ToListAsync();
+        return Ok(listaflota);
       }
       catch (Exception ex)
       {
