@@ -9,12 +9,16 @@
 
 </p>
 <br>
-<p>
+
 <app-mvendedor></app-mvendedor>
-</p>
-<br>
+<div class="basic">
+  <!--<img class="imgfor" src="../../../../assets/img/logo 1.png" alt="Chakuy logo">-->
+  <h3> Registrar Flota</h3>   
+</div>
+
 <div class="container mt-4 ml-2"> <!-- Contenedor con margen a la izquierda -->
-    <form>
+<br>
+  <form>
       <div class="row">
         <div class="col-md-6"> <!-- Campo de Placa, mitad del tamaño en pantallas medianas -->
           <div class="form-group">
@@ -49,9 +53,17 @@
 
         <div class="row">
           <div class="col-md-6"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
-            <div class="form-group">
-              <label for="cantidad de pasajeros">Cantidad de Pasajeros</label>
-              <input type="number" class="form-control" id="hora-salida" name="hora-salida">
+            <div class="input-group mt-3">
+              <select class="form-select" id="inputGroupSelect02">
+                <option selected>Selecciona...</option>
+                <option value="1-10">1-10</option>
+                <option value="11-20">11-20</option>
+                <option value="21-30">21-30</option>
+                <option value="31-40">31-40</option>
+                <option value="41-50">41-50</option>
+                <option value="51-60">51-60</option>
+                </select>
+              <label class="input-group-text" for="inputGroupSelect02"># Pasajeros</label>
             </div>
           </div>
           
