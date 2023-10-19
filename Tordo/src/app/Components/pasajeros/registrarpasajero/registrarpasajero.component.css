@@ -1,0 +1,13 @@
+.custom-card {
+    width: 210px; /* Ajusta el ancho según sea necesario */
+    height: auto; /* Opcional: ajusta la altura según sea necesario */
+    margin-top: 0; /* Elimina el margen superior */
+    margin-bottom: 5px; /* Ajusta el margen inferior según sea necesario */
+}
+.col-md-4.mb-4 {
+    margin-bottom: 10px; /* Ajusta el margen inferior según sea necesario */
+}
+
+.col-md-4 {
+    padding: 0; /* Elimina el espacio interno de las columnas */
+}
