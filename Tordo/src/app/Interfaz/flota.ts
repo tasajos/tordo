@@ -8,6 +8,9 @@ export interface registrarflotaInter {
     hora:string,
     tipo:string,
     cantidadpasajeros:string,
+    origen:string,
+    destino:string,
+    estado:string,
     
     }
 

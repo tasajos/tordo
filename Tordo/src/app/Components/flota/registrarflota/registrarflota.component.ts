@@ -34,6 +34,9 @@ export class RegistrarflotaComponent implements OnInit {
       tipo: ['', Validators.required],
       conductor: ['', Validators.required],
       cantidadpasajeros: ['', Validators.required],
+      origen: ['', Validators.required],
+      destino: ['', Validators.required],
+      estado: ['', Validators.required],
       
          });
   }
@@ -47,6 +50,9 @@ export class RegistrarflotaComponent implements OnInit {
         tipo: this.formulario.value.tipo,
         conductor: this.formulario.value.conductor,
         cantidadpasajeros: this.formulario.value.cantidadpasajeros,
+        origen: this.formulario.value.origen,
+        destino: this.formulario.value.destino,
+        estado: this.formulario.value.estado,
        
       };
   
