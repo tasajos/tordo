@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using backend_Tordo.Models;
+using backend_Tordo.Models.Flota;
 
 namespace backend_Tordo.Controllers
 {
@@ -35,6 +36,23 @@ namespace backend_Tordo.Controllers
 
       }
     }
+    [HttpPost]
+    public async Task<IActionResult> Post(RegistroFlota rflota)
+    {
+      try
+      {
+        rflota.FechaCreacion = DateTime.Now;
+        _context.Add(rflota);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction("Get", new { Id = rflota.id }, rflota);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+
 
   }
 }
