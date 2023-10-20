@@ -100,12 +100,17 @@
         <input class="form-check-input" type="radio" name="inlineRadioOptions" id="efectivo" value="efectivo" formControlName="metodopago">
         <label class="form-check-label" for="efectivo"> <img src="../../../assets/img/metodo-de-pago (2).png">Efectivo</label>
     </div>
+
+    <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+        ¡Registro exitoso! Mensaje de éxito.
+        <br>
+        </div>
     <div class="row mt-4">
         <div class="col">
             <button type="submit" class="btn btn-outline-primary btn-sm">REGISTRAR</button>
         </div>
     </div>
-</form>
+</form>    
 </div>
 
 <br>
