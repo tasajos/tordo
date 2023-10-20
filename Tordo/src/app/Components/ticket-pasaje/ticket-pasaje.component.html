@@ -12,20 +12,21 @@
 <br>
 
 <div class="container text-center mx-auto my-5 fondo mt-2">
+    <form class="example-form" [formGroup]="formulario" (ngSubmit)="registrarpasajero()" >
     <div class="row">
       <div class="col">
-            <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre" value="">
+            <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre" value="" formControlName="nombre">
             <label for="nombre" class="form-label form-label-sm"></label>
         </div>
       
       <div class="col">
-            <input type="text" class="form-control form-control-sm" id="apellidos" placeholder="Apellidos" value="">
+            <input type="text" formControlName="apellidos" class="form-control form-control-sm" id="apellidos" placeholder="Apellidos" value="">
             <label for="apellidos" class="form-label form-label-sm"></label>
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <select class="form-select form-select-sm" id="extension">
+            <select class="form-select form-select-sm" formControlName="ext" id="extension" placeholder="Extension">
                 <option selected>Extension</option>
                 <option value="LP">LP</option>
                 <option value="CBBA">CBBA</option>
@@ -35,7 +36,7 @@
         </div>
 
         <div class="col">
-            <input type="number" class="form-control form-control-sm" id="ci" placeholder="CI" value="">
+            <input type="number" formControlName="ci" class="form-control form-control-sm" id="ci" placeholder="CI" value="">
             <label for="ci" class="form-label form-label-sm"></label>
         </div>
     </div>
@@ -43,17 +44,17 @@
         <div class="col">
             <div class="mb-3">
                 <label for="autoSizingDate" class="form-label form-label-sm">Fecha de Nacimiento</label>
-                <input type="date" class="form-control" id="autoSizingDate">
+                <input type="date" formControlName="fechanacimiento" class="form-control" id="autoSizingDate">
             </div>
         </div>
     </div>
     <div class="row mt-2">
         <div class="col">
-            <input type="text" class="form-control form-control-sm" id="nit" placeholder="NIT" value="">
+            <input type="text" formControlName="nit" class="form-control form-control-sm" id="nit" placeholder="NIT" value="">
             <label for="nit" class="form-label form-label-sm"></label>
         </div>
         <div class="col">
-            <select class="form-select form-select-sm" id="origen">
+            <select class="form-select form-select-sm" id="origen" formControlName="origen" >
                 <option selected>Origen</option>
                 <option value="LA PAZ">LA PAZ</option>
                 <option value="COCHABAMBA">COCHABAMBA</option>
@@ -63,7 +64,7 @@
             <label for="origen" class="form-label form-label-sm"></label>
         </div>
         <div class="col">
-            <select class="form-select form-select-sm" id="destino">
+            <select class="form-select form-select-sm" id="destino" formControlName="destino">
                 <option selected>Destino</option>
                 <option value="LA PAZ">LA PAZ</option>
                 <option value="COCHABAMBA">COCHABAMBA</option>
@@ -72,22 +73,39 @@
             </select>
             <label for="destino" class="form-label form-label-sm"></label>
         </div>
+        <div class="col">
+            <select class="form-select form-select-sm" id="asiento" formControlName="asiento">
+                <option selected>Asiento</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <!-- Otras opciones aquí -->
+            </select>
+            <label for="destino" class="form-label form-label-sm"></label>
+        </div>
     </div>
 
     <br>
     <div class="form-check form-check-inline align-items-center">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="qr" value="qr">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="qr" value="qr" formControlName="metodopago">
         <label class="form-check-label" for="qr"><img src="../../../assets/img/codigo-qr.png"> QR</label>
     </div>
     <div class="form-check form-check-inline align-items-center">
-        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="efectivo" value="efectivo">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="efectivo" value="efectivo" formControlName="metodopago">
         <label class="form-check-label" for="efectivo"> <img src="../../../assets/img/metodo-de-pago (2).png">Efectivo</label>
     </div>
     <div class="row mt-4">
         <div class="col">
-            <button type="button" class="btn btn-outline-primary btn-sm">REGISTRAR</button>
+            <button type="submit" class="btn btn-outline-primary btn-sm">REGISTRAR</button>
         </div>
     </div>
+</form>
 </div>
 
 <br>

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using backend_Tordo.Models;
 using backend_Tordo.Models.Flota;
+using backend_Tordo.Models.Pasajeros;
 
 namespace backend_Tordo.Controllers
 {
@@ -16,7 +17,7 @@ namespace backend_Tordo.Controllers
     public PasjController(TordoContext context)
     {
 
-      //Registrosflota
+      //RegistrosTicketPersonal
       _context = context;
     }
 
@@ -25,8 +26,8 @@ namespace backend_Tordo.Controllers
     {
       try
       {
-        var listaflota = await _context.Rflota.ToListAsync();
-        return Ok(listaflota);
+        var listapasajero = await _context.PasajeCliente.ToListAsync();
+        return Ok(listapasajero);
       }
       catch (Exception ex)
       {
@@ -37,14 +38,14 @@ namespace backend_Tordo.Controllers
       }
     }
     [HttpPost]
-    public async Task<IActionResult> Post(RegistroFlota rflota)
+    public async Task<IActionResult> Post(pasajeros pasajecliente)
     {
       try
       {
-        rflota.FechaCreacion = DateTime.Now;
-        _context.Add(rflota);
+        pasajecliente.FechaCreacion = DateTime.Now;
+        _context.Add(pasajecliente);
         await _context.SaveChangesAsync();
-        return CreatedAtAction("Get", new { Id = rflota.id }, rflota);
+        return CreatedAtAction("Get", new { Id = pasajecliente.id }, pasajecliente);
       }
       catch (Exception ex)
       {
