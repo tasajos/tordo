@@ -20,6 +20,8 @@ namespace backend_Tordo.Models.Flota
 
     public string estado { get; set; }
 
+    public int precio { get; set; }
+
     public DateTime FechaCreacion { get; set; }
   }
 }

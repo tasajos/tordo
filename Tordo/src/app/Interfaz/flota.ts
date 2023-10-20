@@ -11,6 +11,7 @@ export interface registrarflotaInter {
     origen:string,
     destino:string,
     estado:string,
+    precio:number,
     
     }
 

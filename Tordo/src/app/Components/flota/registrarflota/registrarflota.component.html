@@ -54,7 +54,7 @@
         </div>
 
         <div class="row">
-          <div class="col-md-3"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+          <div class="col-md-2"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
             <div class="input-group mt-3">
               <select class="form-select" id="inputGroupSelect02" formControlName="cantidadpasajeros">
                 <option selected>Selecciona...</option>
@@ -65,13 +65,13 @@
                 <option value="41-50">41-50</option>
                 <option value="51-60">51-60</option>
                 </select>
-              <label class="input-group-text" for="inputGroupSelect02"># Pasajeros</label>
+              <label class="input-group-text" for="inputGroupSelect02">#Pasajeros</label>
             </div>
             
           </div>
           <div class="col-md-3"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
             <div class="input-group mt-3">
-              <select class="form-select" id="inputGroupSelect02" formControlName="Origen">
+              <select class="form-select" id="inputGroupSelect02" formControlName="origen">
                 <option selected>Selecciona Origen...</option>
                 <option value="La Paz">La Paz</option>
                 <option value="Cochabamba">Cochabamba</option>
@@ -83,7 +83,7 @@
           </div>
           <div class="col-md-3"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
             <div class="input-group mt-3">
-              <select class="form-select" id="inputGroupSelect02" formControlName="Destino">
+              <select class="form-select" id="inputGroupSelect02" formControlName="destino">
                 <option selected>Selecciona Destino...</option>
                 <option value="La Paz">La Paz</option>
                 <option value="Cochabamba">Cochabamba</option>
@@ -94,7 +94,7 @@
             
           </div>
 
-          <div class="col-md-3"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+          <div class="col-md-2"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
             <div class="input-group mt-3">
               <select class="form-select" id="inputGroupSelect02" formControlName="estado">
                 <option selected>Estado...</option>
@@ -105,9 +105,15 @@
                 </select>
               <label class="input-group-text" for="inputGroupSelect02">Estado</label>
             </div>
-            
+                      
           </div>
-          
+          <div class="col-md-2">
+          <div class="input-group mt-3">
+            <span class="input-group-text">Precio</span>
+            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" formControlName="precio">
+            <span class="input-group-text">Bs</span>
+          </div>
+        </div>
         </div>
       </div>
 
@@ -115,7 +121,8 @@
         ¡Registro exitoso! Mensaje de éxito.
         <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
       </div>
-      <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+      <br>
+      <button type="submit" class="btn btn-primary mt-3">REGISTRAR</button>
     </form>
   </div>
   

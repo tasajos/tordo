@@ -37,6 +37,7 @@ export class RegistrarflotaComponent implements OnInit {
       origen: ['', Validators.required],
       destino: ['', Validators.required],
       estado: ['', Validators.required],
+      precio: ['', Validators.required],
       
          });
   }
@@ -53,6 +54,7 @@ export class RegistrarflotaComponent implements OnInit {
         origen: this.formulario.value.origen,
         destino: this.formulario.value.destino,
         estado: this.formulario.value.estado,
+        precio: this.formulario.value.precio,
        
       };
   

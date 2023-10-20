@@ -7,7 +7,7 @@
 <br>
 <p>
   <app-mvendedor></app-mvendedor>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
     <div class="col mx-4" *ngFor="let registro of registrosFlota">
       <div class="card h-100">
         <img src="../../../../assets/img/parada-de-autobus.png" class="bus" alt="..." style="width: 80px; cursor: pointer;" routerLink="/rrpasajero">
@@ -15,9 +15,12 @@
           <h5 class="card-title">Hora: {{ registro.hora }}</h5>
           <p class="card-text">Conductor: {{ registro.conductor }}</p>
           <p class="card-text">Tipo: {{ registro.tipo }}</p>
+          <p class="card-text">Precio: {{ registro.precio }} Bs</p>
+          <p class="card-text">Origen: {{ registro.origen }}</p>
+          <p class="card-text">Destino: {{ registro.destino }}</p>
         </div>
         <div class="card-footer">
-          <small class="text-body-secondary">Ultima Actualizacion {{ registro.hora }} mins</small>
+          <small class="text-body-secondary">Estado: {{ registro.estado }} </small>
         </div>
       </div>
     </div>
