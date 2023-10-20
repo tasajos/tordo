@@ -14,6 +14,12 @@ namespace backend_Tordo.Models.Flota
 
     public string cantidadpasajeros { get; set; }
 
+    public string origen { get; set; }
+
+    public string destino { get; set; }
+
+    public string estado { get; set; }
+
     public DateTime FechaCreacion { get; set; }
   }
 }

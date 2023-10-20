@@ -1,0 +1,7 @@
+.fondo {
+    background-color: #83dcdf; /* Cambia el color de fondo según tus preferencias */
+    padding: 20px; /* Ajusta el espaciado interior del formulario */
+    border-radius: 20px; /* Añade bordes redondeados al formulario */
+    max-width: 700px; /* Establece el ancho máximo del formulario */
+    margin: 0 auto; /* Centra horizontalmente el formulario */
+}

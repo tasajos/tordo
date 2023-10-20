@@ -7,97 +7,90 @@
 <br>
 <p></p>
 <br>
-<h1>Venta de Pasajes</h1>
+<h1 class="text-center">Venta de Pasajes</h1>
 <br>
 <br>
 
-<div class="container text-center">
+<div class="container text-center mx-auto my-5 fondo mt-2">
     <div class="row">
       <div class="col">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputGrid" placeholder="nombre" value="">
-            <label for="floatingInputGrid">Nombre</label>
+            <input type="text" class="form-control form-control-sm" id="nombre" placeholder="Nombre" value="">
+            <label for="nombre" class="form-label form-label-sm"></label>
         </div>
-      </div>
+      
       <div class="col">
-        <div class="form-floating">
-            <input type="text" class="form-control" id="floatingInputGrid" placeholder="nombre" value="">
-            <label for="floatingInputGrid">Apellidos</label>
+            <input type="text" class="form-control form-control-sm" id="apellidos" placeholder="Apellidos" value="">
+            <label for="apellidos" class="form-label form-label-sm"></label>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-floating">
-            <input type="number" class="form-control" id="floatingInputGrid" placeholder="nombre" value="">
-            <label for="floatingInputGrid">CI</label>
+    </div>
+    <div class="row">
+        <div class="col">
+            <select class="form-select form-select-sm" id="extension">
+                <option selected>Extension</option>
+                <option value="LP">LP</option>
+                <option value="CBBA">CBBA</option>
+                <!-- Otras opciones aquí -->
+            </select>
+            <label for="extension" class="form-label form-label-sm"></label>
         </div>
-      </div>
-      <div class="col">
-        <div class="form-floating">
-    <select class="form-select" id="floatingSelectGrid">
-        <option selected>Selecciona</option>
-        <option value="LP">LP</option>
-        <option value="CBBA">CBBA</option>
-        <option value="SC">SC</option>
-        <option value="TJ">TJ</option>
-        <option value="PT">PT</option>
-        <option value="BN">BN</option>
-        <option value="PNDO">PNDO</option>
-        <option value="CHUQUISACA">CHUQUISACA</option>
-        <option value="ORURO">ORURO</option>
-    </select>
-    <label for="floatingSelectGrid">Extension</label>
-</div>
-      </div>
+
+        <div class="col">
+            <input type="number" class="form-control form-control-sm" id="ci" placeholder="CI" value="">
+            <label for="ci" class="form-label form-label-sm"></label>
+        </div>
     </div>
     <div class="row mt-2">
         <div class="col">
-          <div class="form-floating">
-              <input type="text" class="form-control" id="floatingInputGrid" placeholder="nit" value="">
-              <label for="floatingInputGrid">NIT</label>
-          </div>
+            <div class="mb-3">
+                <label for="autoSizingDate" class="form-label form-label-sm">Fecha de Nacimiento</label>
+                <input type="date" class="form-control" id="autoSizingDate">
+            </div>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col">
+            <input type="text" class="form-control form-control-sm" id="nit" placeholder="NIT" value="">
+            <label for="nit" class="form-label form-label-sm"></label>
         </div>
         <div class="col">
-         <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid">
-            <option selected>Selecciona</option>
-            <option value="LP">LP</option>
-            <option value="CBBA">CBBA</option>
-            <option value="SC">SC</option>
-            <option value="TJ">TJ</option>
-            <option value="PT">PT</option>
-            <option value="BN">BN</option>
-            <option value="PNDO">PNDO</option>
-            <option value="CHUQUISACA">CHUQUISACA</option>
-            <option value="ORURO">ORURO</option>
-        </select>
-        <label for="floatingSelectGrid">Origen</label>
-    </div>
-          </div>
-          <div class="col">
-            <div class="form-floating">
-        <select class="form-select" id="floatingSelectGrid">
-            <option selected>Selecciona</option>
-            <option value="LP">LP</option>
-            <option value="CBBA">CBBA</option>
-            <option value="SC">SC</option>
-            <option value="TJ">TJ</option>
-            <option value="PT">PT</option>
-            <option value="BN">BN</option>
-            <option value="PNDO">PNDO</option>
-            <option value="CHUQUISACA">CHUQUISACA</option>
-            <option value="ORURO">ORURO</option>
-        </select>
-        <label for="floatingSelectGrid">Destino</label>
-    </div>
-          </div>
-        <div class="col">
-            <div class="form-group">
-                <label for="hora-salida">Hora de salida:</label>
-                <input type="time" class="form-control" id="hora-salida" name="hora" formControlName="hora">
-              </div>
+            <select class="form-select form-select-sm" id="origen">
+                <option selected>Origen</option>
+                <option value="LA PAZ">LA PAZ</option>
+                <option value="COCHABAMBA">COCHABAMBA</option>
+                <option value="SANTA CRUZ">SANTA CRUZ</option>
+                <!-- Otras opciones aquí -->
+            </select>
+            <label for="origen" class="form-label form-label-sm"></label>
         </div>
-      </div>
-  </div>
+        <div class="col">
+            <select class="form-select form-select-sm" id="destino">
+                <option selected>Destino</option>
+                <option value="LA PAZ">LA PAZ</option>
+                <option value="COCHABAMBA">COCHABAMBA</option>
+                <option value="SANTA CRUZ">SANTA CRUZ</option>
+                <!-- Otras opciones aquí -->
+            </select>
+            <label for="destino" class="form-label form-label-sm"></label>
+        </div>
+    </div>
 
+    <br>
+    <div class="form-check form-check-inline align-items-center">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="qr" value="qr">
+        <label class="form-check-label" for="qr"><img src="../../../assets/img/codigo-qr.png"> QR</label>
+    </div>
+    <div class="form-check form-check-inline align-items-center">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="efectivo" value="efectivo">
+        <label class="form-check-label" for="efectivo"> <img src="../../../assets/img/metodo-de-pago (2).png">Efectivo</label>
+    </div>
+    <div class="row mt-4">
+        <div class="col">
+            <button type="button" class="btn btn-outline-primary btn-sm">REGISTRAR</button>
+        </div>
+    </div>
+</div>
 
-  
+<br>
+<p></p>
+<br>
+<p></p>
