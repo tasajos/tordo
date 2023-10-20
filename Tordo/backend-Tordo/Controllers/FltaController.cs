@@ -36,23 +36,27 @@ namespace backend_Tordo.Controllers
 
         }
       }
-      [HttpPost]
-      public async Task<IActionResult> Post(RegistroFlota rflota)
+
+    [HttpPost]
+    public async Task<IActionResult> Post(RegistroFlota rflota)
+    {
+      try
       {
-        try
-        {
-          rflota.FechaCreacion = DateTime.Now;
-          _context.Add(rflota);
-          await _context.SaveChangesAsync();
-          return CreatedAtAction("Get", new { Id = rflota.id }, rflota);
-        }
-        catch (Exception ex)
-        {
-          return BadRequest(ex.Message);
-        }
+        rflota.FechaCreacion = DateTime.Now;
+
+        // Calcular el precio calculado
+        rflota.precioCalculado = rflota.precio * 0.01m;
+
+        _context.Add(rflota);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction("Get", new { Id = rflota.id }, rflota);
       }
-
-
-
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
     }
+
+
+  }
   }

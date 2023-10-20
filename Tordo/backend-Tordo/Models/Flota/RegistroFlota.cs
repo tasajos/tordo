@@ -22,6 +22,9 @@ namespace backend_Tordo.Models.Flota
 
     public int precio { get; set; }
 
+    public decimal precioCalculado { get; set; }
+
+
     public DateTime FechaCreacion { get; set; }
   }
 }
