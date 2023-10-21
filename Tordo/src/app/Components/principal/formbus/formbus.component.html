@@ -1,3 +1,4 @@
+
 <div class="container mt-5">
     <div class="row">
         <div class="col-md-6"> <!-- Columna izquierda para el formulario -->
@@ -42,7 +43,48 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6"> <!-- Columna derecha para la tabla con un margen -->
+
+
+        <!--
+        <div class="col-md-6">
+            <div class="cards rounded-lg" style="margin-top: 2px;">
+                <div class="card-body" *ngIf="mostrarTabla">
+        <div class="card">
+            <h5 class="card-header">Featured</h5>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        -->
+        <div class="col-md-6 mt-2">
+            <div class="cards rounded-lg"  style="margin-top: 2px;">
+              <!-- Comienza el bucle *ngFor -->
+              <div *ngFor="let registro of registrosFlota" class="card mt-2">
+                <div class="row no-gutters">
+                  <div class="col-md-4 mt-5 text-center">
+                    <img src="../../../../assets/img/autobus.png" class="mx-auto custom-img" alt="Imagen">
+                  </div>
+                  <div class="col-md-8 mt-2">
+                    <div class="card-body">
+                      <h5 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h5>
+                      <h6 class="card-header">Hora: {{ registro.hora }} - {{ registro.destino }}</h6>
+                      <h6 class="card-title">Tipo: {{ registro.tipo }}</h6>
+                      <p><h6 class="card-title">Precio: {{ registro.precio }} Bs</h6>
+                     <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
+                      <a href="#" class="btn btn-primary">Comprar</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Fin del bucle *ngFor -->
+            </div>
+          </div>
+          
+          
+
+        <!--        <div class="col-md-6"> Columna derecha para la tabla con un margen 
             <div class="cards rounded-lg" style="margin-top: 2px;">
                 <div class="card-body" *ngIf="mostrarTabla">
                   <table class="table">
@@ -91,4 +133,4 @@
             </div>
         </div>
     </div>
-</div>
+</div>-->

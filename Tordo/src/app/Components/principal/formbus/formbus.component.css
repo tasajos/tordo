@@ -5,3 +5,12 @@
     background-color: #c3e6eb; /* Color azul celeste */
     margin-left: 30px;
 }
+.custom-img {
+    width: 80px; /* Cambia el valor según el tamaño deseado */
+    height: auto; /* Esto mantiene la proporción de aspecto original */
+  }
+ 
+  .cardb {
+    background-color: #f0ecec; /* Color azul celeste */
+    margin-left: 30px;
+}
