@@ -1,7 +1,6 @@
-
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-6"> <!-- Columna izquierda para el formulario -->
+        <div class="col-md-5"> <!-- Columna izquierda para el formulario -->
             <div class="card rounded-lg">
                 <div class="card-body">
                     <form>
@@ -38,99 +37,32 @@
                             <input type="date" class="form-control" id="autoSizingDate">
                         </div>
                         <button type="button" class="btn btn-primary" (click)="mostrarResultado()">Buscar</button>
-
                     </form>
                 </div>
             </div>
         </div>
 
-
-        <!--
-        <div class="col-md-6">
+        <div *ngIf="mostrarTabla" class="col-md-4 mt-2">
             <div class="cards rounded-lg" style="margin-top: 2px;">
-                <div class="card-body" *ngIf="mostrarTabla">
-        <div class="card">
-            <h5 class="card-header">Featured</h5>
-            <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        -->
-        <div class="col-md-6 mt-2">
-            <div class="cards rounded-lg"  style="margin-top: 2px;">
-              <!-- Comienza el bucle *ngFor -->
-              <div *ngFor="let registro of registrosFlota" class="card mt-2">
-                <div class="row no-gutters">
-                  <div class="col-md-4 mt-5 text-center">
-                    <img src="../../../../assets/img/autobus.png" class="mx-auto custom-img" alt="Imagen">
-                  </div>
-                  <div class="col-md-8 mt-2">
-                    <div class="card-body">
-                      <h5 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h5>
-                      <h6 class="card-header">Hora: {{ registro.hora }} - {{ registro.destino }}</h6>
-                      <h6 class="card-title">Tipo: {{ registro.tipo }}</h6>
-                      <p><h6 class="card-title">Precio: {{ registro.precio }} Bs</h6>
-                     <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-                      <a href="#" class="btn btn-primary">Comprar</a>
+                <!-- Comienza el bucle *ngFor -->
+                <div *ngFor="let registro of registrosFlota" class="card mt-2">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 mt-5 text-center">
+                            <img src="../../../../assets/img/autobus.png" class="mx-auto custom-img" alt="Imagen">
+                        </div>
+                        <div class="col-md-8 mt-2">
+                            <div class="card-body">
+                                <h5 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h5>
+                                <h6 class="card-header">Hora: {{ registro.hora }} - {{ registro.destino }}</h6>
+                                <h6 class="card-title">Tipo: {{ registro.tipo }}</h6>
+                                <p><h6 class="card-title">Precio: {{ registro.precio }} Bs</h6>
+                                <a href="#" class="btn btn-primary">Comprar</a>
+                            </div>
+                        </div>
                     </div>
-                  </div>
                 </div>
-              </div>
-              <!-- Fin del bucle *ngFor -->
-            </div>
-          </div>
-          
-          
-
-        <!--        <div class="col-md-6"> Columna derecha para la tabla con un margen 
-            <div class="cards rounded-lg" style="margin-top: 2px;">
-                <div class="card-body" *ngIf="mostrarTabla">
-                  <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Empresa</th>
-                                <th scope="col">Hora</th>
-                                <th scope="col">Origen</th>
-                                <th scope="col">Destino</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody class="table-group-divider">
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Trans Copabana</td>
-                                <td>20:00</td>
-                                <td>Santa Cruz</td>
-                                <td>Cochabamba</td>
-                                <td>80 Bs</td>
-                                <td><img src="../../../../assets/img/carrito.png"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Trans Copabana MEM</td>
-                                <td>20:15</td>
-                                <td>Santa Cruz</td>
-                                <td>Cochabamba</td>
-                                <td>100 Bs</td>
-                                <td><img src="../../../../assets/img/carrito.png"></td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>23 de Marzo</td>
-                                <td>20:30</td>
-                                <td>Santa Cruz</td>
-                                <td>Cochabamba</td>
-                                <td>110 Bs</td>
-                                <td><img src="../../../../assets/img/carrito.png"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                <!-- Fin del bucle *ngFor -->
             </div>
         </div>
     </div>
-</div>-->
+</div>
