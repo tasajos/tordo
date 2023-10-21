@@ -11,8 +11,12 @@ import { registrarflotaInter } from 'src/app/Interfaz/flota';
 export class FormbusComponent   implements OnInit {
   mostrarTabla: boolean = false;
   registrosFlota: registrarflotaInter[] = [];
+  origen: string = '';
+  destino: string = '';
 
-  constructor(private verFlota: SflotaService) {}
+  constructor(private verFlota: SflotaService,
+    private buscarFlotaService: SflotaService
+    ) {}
 
   ngOnInit(): void {
     this.verFlota.getflota().subscribe(data => {
@@ -23,4 +27,30 @@ export class FormbusComponent   implements OnInit {
     this.mostrarTabla = true;
   }
 
+  buscarPorOrigenYDestino() {
+    console.log('Origen:', this.origen);
+    console.log('Destino:', this.destino);
+  
+    if (this.origen && this.destino) {
+      this.buscarFlotaService.buscarFlotaPorOrigenYDestino(this.origen, this.destino)
+        .subscribe(
+          (data: registrarflotaInter[]) => {
+            this.registrosFlota = data;
+            this.mostrarTabla = true;
+            console.log('Datos recibidos:', data);
+          },
+          (error) => {
+            console.error('Error al buscar flota:', error);
+            // Manejar el error de manera adecuada, por ejemplo, mostrando un mensaje al usuario.
+          }
+        );
+    } else {
+      alert('Por favor, seleccione un origen y un destino.');
+    }
+  }
+  
+  
 }
+  
+
+

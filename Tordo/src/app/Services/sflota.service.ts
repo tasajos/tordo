@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams  } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { registrarflotaInter } from '../Interfaz/flota';
@@ -19,6 +19,7 @@ export class SflotaService {
 
   private Myappurl: string = environment.endpoint;
   private Myapiurl: string = 'api/Flta';
+  private Myapiurlb: string = 'api/Flta/buscar';
 
   //constructor
   constructor(private http: HttpClient) { }
@@ -36,4 +37,10 @@ addflota  (regd: registrarflotaInter): Observable<registrarflotaInter>{
 
 }
 
+buscarFlotaPorOrigenYDestino(origen: string, destino: string): Observable<registrarflotaInter[]> {
+  // Corrige la construcción de la URL, no es necesario usar this.origen y this.destino
+  const params = { origen, destino };
+  return this.http.get<registrarflotaInter[]>(`${this.Myappurl}${this.Myapiurlb}/${origen}/${destino}`);
 }
+}
+ 

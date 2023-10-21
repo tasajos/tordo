@@ -27,4 +27,6 @@ namespace backend_Tordo.Models.Flota
 
     public DateTime FechaCreacion { get; set; }
   }
+
+
 }

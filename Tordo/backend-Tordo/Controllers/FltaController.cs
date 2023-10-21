@@ -56,7 +56,29 @@ namespace backend_Tordo.Controllers
         return BadRequest(ex.Message);
       }
     }
+    [HttpGet("buscar/{origen}/{destino}")]
+    public ActionResult<IEnumerable<RegistroFlota>> BuscarPorOrigenYDestino(string origen, string destino)
+    {
+      try
+      {
+        // Realiza la búsqueda en la base de datos utilizando los parámetros origen y destino
+        var resultados = _context.Rflota
+          .Where(r => r.origen.ToLower() == origen.ToLower() && r.destino.ToLower() == destino.ToLower())
+          .ToList();
+
+        if (resultados.Count == 0)
+        {
+          return NotFound();
+        }
+
+        return Ok(resultados);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
 
 
   }
-  }
+}
