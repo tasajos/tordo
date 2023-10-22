@@ -18,6 +18,9 @@ export class FormbusComponent implements OnInit, AfterViewInit {
   @ViewChild('modalNoResultados') modalNoResultados!: ElementRef;
 
   private bsModal!: Modal; // Instancia del modal de Bootstrap
+  @ViewChild('modalOrigenDestino') modalOrigenDestino!: ElementRef;
+private modalOD!: Modal;  // Instancia del nuevo modal
+
   constructor(private verFlota: SflotaService, private buscarFlotaService: SflotaService) {}
 
 
@@ -31,25 +34,24 @@ export class FormbusComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void { // <-- Añade esta función
     this.bsModal = new Modal(this.modalNoResultados.nativeElement);
+    this.modalOD = new Modal(this.modalOrigenDestino.nativeElement);  // Inicialización del nuevo modal
   }
 
   buscarPorOrigenYDestino() {
     if (this.origen && this.destino) {
       this.buscarFlotaService.buscarFlota(this.origen, this.destino)
         .subscribe(data => {
-          // Verifica si la respuesta tiene la propiedad "mensaje"
           if (data.mensaje) {
-            // Muestra el modal de Bootstrap
             this.bsModal.show();
           } else {
             this.registrosFlota = data;
             this.mostrarTabla = data.length > 0;
           }
         }, error => {
-          alert('Error al realizar la búsqueda.');
+          alert('Error al realizar la búsqueda.');  // Podrías considerar convertir también este alert en un modal en el futuro.
         });
     } else {
-      alert('Por favor, seleccione un origen y un destino.');
+      this.modalOD.show();  // Mostrar el modal en lugar del alert
     }
-  }
+}
 }
