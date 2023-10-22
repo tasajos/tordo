@@ -1,15 +1,33 @@
-<table>
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>Passenger</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let i of [].constructor(passengerCount); let idx = index">
-        <td>{{ idx + 1 }}</td>
-        <td>Passenger {{ idx + 1 }}</td>
-      </tr>
-    </tbody>
-  </table>
-  
+<app-cabecera></app-cabecera>
+<p></p>
+<p></p>
+<p></p>
+<br>
+<p></p>
+<br>
+<p>
+    <app-mvendedor></app-mvendedor>
+</p>
+
+<div class="container mt-4">
+    <div class="row">
+        <ng-container *ngFor="let i of [].constructor(passengerCount); let idx = index">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="../../../../assets/img/asiento.png" class="img-fluid rounded-start centered-image" alt="Imagen de pasajero {{ idx + 1 }}">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Asiento {{ idx + 1 }}</h5>
+                                <p class="card-text">Descripción o detalles adicionales para el pasajero {{ idx + 1 }}.</p>
+                                <p class="card-text"><small class="text-body-secondary">Última actualización: hace 3 minutos</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>

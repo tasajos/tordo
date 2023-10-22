@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class LrpasajerosComponent implements OnInit {
 
   passengerCount: number = 0;
+  flota: any;
 
 
   constructor(private route: ActivatedRoute) {}
