@@ -45,7 +45,7 @@ namespace backend_Tordo.Controllers
         rflota.FechaCreacion = DateTime.Now;
 
         // Calcular el precio calculado
-        rflota.precioCalculado = rflota.precio * 0.01m;
+        rflota.precioCalculado = (rflota.precio + 0.14m) -rflota.precio;
 
         _context.Add(rflota);
         await _context.SaveChangesAsync();
