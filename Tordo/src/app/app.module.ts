@@ -29,7 +29,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importa BrowserAnimationsModule
 
 //modulos
 import {AngularFireModule } from '@angular/fire/compat'
@@ -38,6 +38,7 @@ import { MvendedorComponent } from './Components/principal/menu/mvendedor/mvende
 import { PasajerosComponent } from './Components/pasajeros/pasajeros.component';
 import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
 import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,8 @@ import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasa
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
   ],

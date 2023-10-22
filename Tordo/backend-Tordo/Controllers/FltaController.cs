@@ -63,12 +63,19 @@ namespace backend_Tordo.Controllers
       {
         // Realiza la búsqueda en la base de datos utilizando los parámetros origen y destino
         var resultados = _context.Rflota
-          .Where(r => r.origen.ToLower() == origen.ToLower() && r.destino.ToLower() == destino.ToLower())
-          .ToList();
+            .Where(r => r.origen.ToLower() == origen.ToLower() && r.destino.ToLower() == destino.ToLower())
+            .ToList();
 
         if (resultados.Count == 0)
         {
-          return NotFound();
+          // Si no se encontraron resultados, crea una respuesta personalizada
+          var respuestaNoEncontrada = new
+          {
+            Mensaje = "No se encontraron resultados"
+          };
+
+          // Devuelve la respuesta personalizada con un código de estado 200 (OK)
+          return Ok(respuestaNoEncontrada);
         }
 
         return Ok(resultados);

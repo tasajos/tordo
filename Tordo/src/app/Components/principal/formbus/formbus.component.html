@@ -1,72 +1,90 @@
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-5"> <!-- Columna izquierda para el formulario -->
-            <div class="card rounded-lg">
+      <div class="col-md-5">
+        <div class="card rounded-lg">
+          <div class="card-body">
+            <form (submit)="buscarPorOrigenYDestino()">
+              <div class="mb-3">
+                <label for="autoSizingInput" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="autoSizingInput" placeholder="Nombre">
+              </div>
+              <div class="mb-3">
+                <label for="autoSizingInput" class="form-label">Cantidad Pasajeros</label>
+                <input type="number" class="form-control" id="autoSizingInput" placeholder="Número">
+              </div>
+              <div class="mb-3">
+                <label for="autoSizingSelectOrigen" class="form-label">Origen</label>
+                <select class="form-select" id="autoSizingSelectOrigen" [(ngModel)]="origen" [ngModelOptions]="{ standalone: true }">
+                  <option selected>Origen...</option>
+                  <option value="La Paz">La Paz</option>
+                  <option value="Cochabamba">Cochabamba</option>
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Beni">Beni</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="autoSizingSelectDestino" class="form-label">Destino</label>
+                <select class="form-select" id="autoSizingSelectDestino" [(ngModel)]="destino" [ngModelOptions]="{ standalone: true }">
+                  <option selected>Destino...</option>
+                  <option value="La Paz">La Paz</option>
+                  <option value="Cochabamba">Cochabamba</option>
+                  <option value="Santa Cruz">Santa Cruz</option>
+                  <option value="Beni">Beni</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="autoSizingDate" class="form-label">Fecha</label>
+                <input type="date" class="form-control" id="autoSizingDate">
+              </div>
+              <button type="button" class="btn btn-primary" (click)="buscarPorOrigenYDestino()">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  
+      <div *ngIf="mostrarTabla" class="col-md-4 mt-2">
+        <div class="cards rounded-lg" style="margin-top: 2px;">
+          <div *ngFor="let registro of registrosFlota" class="card mt-2">
+            <div class="row no-gutters">
+              <div class="col-md-4 mt-5 text-center">
+                <img src="../../../../assets/img/autobus.png" class="mx-auto custom-img" alt="Imagen">
+              </div>
+              <div class="col-md-8 mt-2">
                 <div class="card-body">
-                    <form (submit)="buscarPorOrigenYDestino()">
-                        <div class="mb-3">
-                            <label for="autoSizingInput" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="autoSizingInput" placeholder="Nombre">
-                        </div>
-                        <div class="mb-3">
-                            <label for="autoSizingInput" class="form-label">Cantidad Pasajeros</label>
-                            <input type="number" class="form-control" id="autoSizingInput" placeholder="Número">
-                        </div>
-                        <div class="mb-3">
-                            <label for="autoSizingSelectOrigen" class="form-label">Origen</label>
-                            <select class="form-select" id="autoSizingSelectOrigen" [(ngModel)]="origen" [ngModelOptions]="{ standalone: true }">
-                                <option selected>Origen...</option>
-                                <option value="La Paz">La Paz</option>
-                                <option value="Cochabamba">Cochabamba</option>
-                                <option value="Santa Cruz">Santa Cruz</option>
-                                <option value="Beni">Beni</option>
-                            </select>
-                            
-                        </div>
-                        <div class="mb-3">
-                            <label for="autoSizingSelectDestino" class="form-label">Destino</label>
-                            <select class="form-select" id="autoSizingSelectDestino" [(ngModel)]="destino"  [ngModelOptions]="{ standalone: true }">
-                                <option selected>Destino...</option>
-                                <option value="La Paz">La Paz</option>
-                                <option value="Cochabamba">Cochabamba</option>
-                                <option value="Santa Cruz">Santa Cruz</option>
-                                <option value="Beni">Beni</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="autoSizingDate" class="form-label">Fecha</label>
-                            <input type="date" class="form-control" id="autoSizingDate">
-                        </div>
-                        <!--<button type="button" class="btn btn-primary" (click)="mostrarResultado()">Buscar</button>-->
-                        <button type="button" class="btn btn-primary" (click)="buscarPorOrigenYDestino()">Buscar</button>
-                    </form>
+                  <h5 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h5>
+                  <h6 class="card-header">Hora: {{ registro.hora }} - {{ registro.destino }}</h6>
+                  <h6 class="card-title">Tipo: {{ registro.tipo }}</h6>
+                  <p><h6 class="card-title">Precio: {{ registro.precio }} Bs</h6>
+                  <a href="#" class="btn btn-primary">Comprar</a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-
-          
-
-        <div *ngIf="mostrarTabla" class="col-md-4 mt-2">
-            <div class="cards rounded-lg" style="margin-top: 2px;">
-                <!-- Comienza el bucle *ngFor -->
-                <div *ngFor="let registro of registrosFlota" class="card mt-2">
-                    <div class="row no-gutters">
-                        <div class="col-md-4 mt-5 text-center">
-                            <img src="../../../../assets/img/autobus.png" class="mx-auto custom-img" alt="Imagen">
-                        </div>
-                        <div class="col-md-8 mt-2">
-                            <div class="card-body">
-                                <h5 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h5>
-                                <h6 class="card-header">Hora: {{ registro.hora }} - {{ registro.destino }}</h6>
-                                <h6 class="card-title">Tipo: {{ registro.tipo }}</h6>
-                                <p><h6 class="card-title">Precio: {{ registro.precio }} Bs</h6>
-                                <a href="#" class="btn btn-primary">Comprar</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Fin del bucle *ngFor -->
-            </div>
-        </div>
+      </div>
     </div>
-</div>
+  </div>
+  
+  <!-- Botón para abrir el modal de "Sin resultados" -->
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalNoResultados" *ngIf="mostrarModal">
+    Mostrar Modal
+  </button>
+  
+  <!-- Modal para mostrar "Sin resultados" -->
+  <div class="modal fade" id="modalNoResultados" tabindex="-1" aria-labelledby="modalNoResultadosLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalNoResultadosLabel">Sin resultados</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          No se encontraron resultados para la búsqueda.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

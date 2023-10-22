@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { registrarflotaInter } from '../Interfaz/flota';
 import { catchError, map } from 'rxjs/operators';
 import { throwError } from 'rxjs';
+import { ToastrService } from 'ngx-toastr'; // Asegúrate de importar ToastrService desde tu librería de notificaciones
 
 
 //SERVICIO ES EL QUE INTERACTUA CON EL BACKEND
@@ -22,7 +23,7 @@ export class SflotaService {
   private Myapiurlb: string = 'api/Flta/buscar';
 
   //constructor
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
 //funcion obtejer flota
 
@@ -38,9 +39,31 @@ addflota  (regd: registrarflotaInter): Observable<registrarflotaInter>{
 }
 
 buscarFlotaPorOrigenYDestino(origen: string, destino: string): Observable<registrarflotaInter[]> {
-  // Corrige la construcción de la URL, no es necesario usar this.origen y this.destino
-  const params = { origen, destino };
-  return this.http.get<registrarflotaInter[]>(`${this.Myappurl}${this.Myapiurlb}/${origen}/${destino}`);
+  const url = `${this.Myappurl}${this.Myapiurlb}/${origen}/${destino}`;
+  
+  return this.http.get<registrarflotaInter[]>(url).pipe(
+    catchError((error) => {
+      console.error('Error al buscar flota:', error);
+      // Muestra una alerta con el mensaje deseado cuando no se encuentran resultados
+      alert('No se encontraron resultados');
+      // Lanza el error para que se maneje en el componente, si es necesario
+      return throwError(error);
+    })
+  );
 }
+
+
+buscarFlota(origen: string, destino: string): Observable<any> {
+  const url = `${this.Myappurl}${this.Myapiurlb}/${origen}/${destino}`;
+  
+  return this.http.get<any>(url).pipe(
+    catchError((error) => {
+      console.error('Error al buscar flota:', error);
+      return throwError(error);
+    })
+  );
+}
+
+
 }
  

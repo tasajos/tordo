@@ -2,48 +2,43 @@ import { Component, OnInit } from '@angular/core';
 import { SflotaService } from 'src/app/Services/sflota.service';
 import { registrarflotaInter } from 'src/app/Interfaz/flota';
 
-
 @Component({
   selector: 'app-formbus',
   templateUrl: './formbus.component.html',
   styleUrls: ['./formbus.component.css']
 })
-export class FormbusComponent   implements OnInit {
+export class FormbusComponent implements OnInit {
   mostrarTabla: boolean = false;
   registrosFlota: registrarflotaInter[] = [];
   origen: string = '';
   destino: string = '';
+  mostrarModal: boolean = false;
 
-  constructor(private verFlota: SflotaService,
-    private buscarFlotaService: SflotaService
-    ) {}
+  constructor(private verFlota: SflotaService, private buscarFlotaService: SflotaService) {}
 
   ngOnInit(): void {
     this.verFlota.getflota().subscribe(data => {
-      this.registrosFlota = data; // Almacena los datos en la variable
+      this.registrosFlota = data;
     });
-  }
-  mostrarResultado() {
-    this.mostrarTabla = true;
   }
 
   buscarPorOrigenYDestino() {
-    console.log('Origen:', this.origen);
-    console.log('Destino:', this.destino);
-  
     if (this.origen && this.destino) {
-      this.buscarFlotaService.buscarFlotaPorOrigenYDestino(this.origen, this.destino)
-        .subscribe(
-          (data: registrarflotaInter[]) => {
+      this.buscarFlotaService.buscarFlota(this.origen, this.destino)
+        .subscribe(data => {
+          // Verifica si la respuesta tiene la propiedad "Mensaje"
+          if (data.mensaje) {
+            // Aquí puedes mostrar el modal o una alerta
+            alert(data.mensaje);
+            this.mostrarModal = true;
+          } else {
             this.registrosFlota = data;
-            this.mostrarTabla = true;
-            console.log('Datos recibidos:', data);
-          },
-          (error) => {
-            console.error('Error al buscar flota:', error);
-            // Manejar el error de manera adecuada, por ejemplo, mostrando un mensaje al usuario.
+            this.mostrarTabla = data.length > 0;
+            this.mostrarModal = false; 
           }
-        );
+        }, error => {
+          alert('Error al realizar la búsqueda.');
+        });
     } else {
       alert('Por favor, seleccione un origen y un destino.');
     }
@@ -51,6 +46,3 @@ export class FormbusComponent   implements OnInit {
   
   
 }
-  
-
-
