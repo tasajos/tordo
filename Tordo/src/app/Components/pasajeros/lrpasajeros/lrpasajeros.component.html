@@ -1,0 +1,15 @@
+<table>
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Passenger</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of [].constructor(passengerCount); let idx = index">
+        <td>{{ idx + 1 }}</td>
+        <td>Passenger {{ idx + 1 }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

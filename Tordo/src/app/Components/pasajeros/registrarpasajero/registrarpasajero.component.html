@@ -18,171 +18,17 @@
 <br>
 <div class="container mt-4">
     <div class="row">
-        <div class="col-md-4 mb-4">
-            <div class="card custom-card">
-                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
+        <div class="col-md-4 mb-4" *ngFor="let flota of flotas">
+            <div class="card custom-card" (click)="showPassengerTable(flota)">
+                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="Asiento" style="width: 90px;">
                 <div class="card-body">
-                    <h5 class="card-title text-center">1</h5>
-                    <p class="card-text"></p>
+                    <h5 class="card-title text-center">{{ flota.cantidadpasajeros }}</h5>
+                    <p class="card-text">{{ flota.placa }}</p>
                 </div>
                 <div class="card-footer">
-                    <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card custom-card">
-                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">2</h5>
-                    <p class="card-text"></p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 mb-4">
-            <div class="card custom-card">
-                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                <div class="card-body">
-                    <h5 class="card-title text-center">3</h5>
-                    <p class="card-text"></p>
-                </div>
-                <div class="card-footer">
-                    <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
+                    <small class="text-body-secondary">{{ flota.origen }} - {{ flota.destino }}</small>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">4</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">5</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">6</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Repite este bloque de código para las tarjetas 4, 5 y 6 -->
-    </div>
-
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">7</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">8</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">9</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-        <!-- Repite este bloque de código para las tarjetas 4, 5 y 6 -->
-    </div>
-
-    <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">10</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">11</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-4">
-                <div class="card custom-card">
-                    <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="..." style="width: 90px;">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">12</h5>
-                        <p class="card-text"></p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-body-secondary">Ultima Actualizacion 2 mins </small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    
-    </div>
-    
-
 </div>

@@ -39,6 +39,7 @@ import { PasajerosComponent } from './Components/pasajeros/pasajeros.component';
 import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
 import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
 import { ToastrModule } from 'ngx-toastr';
+import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasajeros.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { ToastrModule } from 'ngx-toastr';
     MvendedorComponent,
     PasajerosComponent,
     ManifestoComponent,
-    RegistrarpasajeroComponent
+    RegistrarpasajeroComponent,
+    LrpasajerosComponent
     
   ],
   imports: [
