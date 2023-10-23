@@ -13,12 +13,18 @@ export class ReservapasajeComponent implements OnInit {
     fecharegistro: '',
     origen: '',
     destino: '',
+    nit: '',
+    telefono: '',
+    email: '',
     // ... otros campos
   };
   nombre: string = '';
   apellidos: string = '';
   origen: string = '';
   destino: string = '';
+  nit: number = 0;
+  telefono:  number= 0;
+  email: string = '';
   // ... otros campos
 
   constructor(private route: ActivatedRoute) {}
