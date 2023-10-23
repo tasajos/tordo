@@ -11,3 +11,6 @@
 .col-md-4 {
     padding: 0; /* Elimina el espacio interno de las columnas */
 }
+.cursor-pointer {
+    cursor: pointer;
+}

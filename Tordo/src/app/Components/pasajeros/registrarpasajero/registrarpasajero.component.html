@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-md-4 mb-4" *ngFor="let flota of flotas">
             <div class="card custom-card" (click)="showPassengerTable(flota)">
-                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3" alt="Asiento" style="width: 90px;">
+                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3 cursor-pointer" alt="Asiento" style="width: 90px;">
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ flota.cantidadpasajeros }}</h5>
                     <p class="card-text">{{ flota.placa }}</p>

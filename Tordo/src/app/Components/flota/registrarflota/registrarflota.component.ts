@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { registrarflotaInter  } from 'src/app/Interfaz/flota';
 import { ActivatedRoute, Router } from '@angular/router';
 
+declare var bootstrap: any; // Para acceder a los métodos de Bootstrap
+
 @Component({
   selector: 'app-registrarflota',
   templateUrl: './registrarflota.component.html',
@@ -12,13 +14,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RegistrarflotaComponent implements OnInit {
   formulario: FormGroup;
-  showAlert: boolean = false;
  
-  closeAlert(): void {
-    this.showAlert = false;
-  }
-
-
+  today!: string;  // Usa el operador "!" aquí
+  twoWeeksLater!: string;  // Y aquí también
+ 
+  
   constructor(
     private fb: FormBuilder,
    
@@ -38,6 +38,7 @@ export class RegistrarflotaComponent implements OnInit {
       destino: ['', Validators.required],
       estado: ['', Validators.required],
       precio: ['', Validators.required],
+      fecharegistro: ['', Validators.required],
       
          });
   }
@@ -55,6 +56,7 @@ export class RegistrarflotaComponent implements OnInit {
         destino: this.formulario.value.destino,
         estado: this.formulario.value.estado,
         precio: this.formulario.value.precio,
+        fecharegistro: this.formulario.value.fecharegistro,
        
       };
   
@@ -69,16 +71,30 @@ export class RegistrarflotaComponent implements OnInit {
    // });
 }
 showSuccessAlert(): void {
-  this.showAlert = true;
-}
+  const modal = new bootstrap.Modal(document.getElementById('successModal'));
+    modal.show();
+  }
    
 
   ngOnInit(): void {
-
+    this.calculateDates();
 }
 
+calculateDates(): void {
+  const currentDate = new Date();
+  this.today = this.formatDate(currentDate);
 
+  const twoWeeksFromNow = new Date(currentDate);
+  twoWeeksFromNow.setDate(currentDate.getDate() + 14);
+  this.twoWeeksLater = this.formatDate(twoWeeksFromNow);
+}
 
+formatDate(date: Date): string {
+  let day: string = date.getDate().toString().padStart(2, '0');
+  let month: string = (date.getMonth() + 1).toString().padStart(2, '0');
+  let year: string = date.getFullYear().toString();
+  return `${year}-${month}-${day}`;
+}
 }
 
 

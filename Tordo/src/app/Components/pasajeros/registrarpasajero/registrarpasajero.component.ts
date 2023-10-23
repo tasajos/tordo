@@ -24,7 +24,14 @@ export class RegistrarpasajeroComponent implements OnInit {
     );
   }
   showPassengerTable(flota: registrarflotaInter): void {
-    this.router.navigate(['/pasajeros-tabla', flota.cantidadpasajeros]);
-  }
+    this.router.navigate(['/pasajeros-tabla', flota.cantidadpasajeros], {
+      queryParams: {
+        origen: flota.origen,
+        destino: flota.destino,
+        hora: flota.hora,
+        placa: flota.placa,
+        fecharegistro: flota.fecharegistro
+      }
+    });
 
-}
+}}

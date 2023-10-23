@@ -114,17 +114,48 @@
             <span class="input-group-text">Bs</span>
           </div>
         </div>
-        </div>
+        <div class="row">
+          <div class="col-md-4"> <!-- Campo de Fecha de salida, mitad del tamaño en pantallas medianas -->
+            <div class="input-group mt-3">
+                <input class="form-control" type="date" id="fecharegistro" formControlName="fecharegistro" [min]="today" [max]="twoWeeksLater">
+                <label class="input-group-text" for="fecharegistro">Fecha de Salida</label>
+            </div>
+            <!-- Esto muestra la fecha en el formato deseado -->
+            <div class="mt-2">
+                <span>Formato visual: {{ formatDate(formulario.value.fecharegistro) }}</span>
+            </div>
+      </div>
+      
       </div>
 <br>
 <br>
-      <div *ngIf="showAlert" class="alert alert-success alert-dismissible fade show" role="alert">
-        ¡Registro exitoso! Mensaje de éxito.
-        <br>
-        <button type="button" class="btn-close" aria-label="Close" (click)="closeAlert()"></button>
-      </div>
+<br>
+<br>
+
+     
       <br>
-      <button type="submit" class="btn btn-primary mt-3">REGISTRAR </button>
-    </form>
+    </div>
   </div>
+    <button type="submit" class="btn btn-primary mt-3">REGISTRAR </button>
+  </form>
   
+ <!-- Modal para Registro Exitoso -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registro exitoso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¡La flota ha sido registrada con éxito!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+     
+ 
