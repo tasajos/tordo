@@ -40,6 +40,9 @@ import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.c
 import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
 import { ToastrModule } from 'ngx-toastr';
 import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasajeros.component';
+import { VentasComponent } from './Components/ventas/ventas.component';
+import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
+import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +75,10 @@ import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasaj
     PasajerosComponent,
     ManifestoComponent,
     RegistrarpasajeroComponent,
-    LrpasajerosComponent
+    LrpasajerosComponent,
+    VentasComponent,
+    VentapasajeComponent,
+    ReservapasajeComponent
     
   ],
   imports: [

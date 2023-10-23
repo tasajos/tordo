@@ -1,0 +1,43 @@
+<app-cabecera></app-cabecera>
+<p></p>
+<p></p>
+<p></p>
+<br>
+<p></p>
+<br>
+<p>
+    <br>
+    <p></p>
+    <br>
+    <p>
+<div class="container mt-4">
+    <form #reservaForm="ngForm" (ngSubmit)="onSubmit(reservaForm.value)">
+        <div class="mb-3">
+            <label for="asiento" class="form-label">Número de Asiento</label>
+            <input type="number" class="form-control" id="asiento" name="asiento" [(ngModel)]="flota.asiento" readonly>
+        </div>
+        <div class="mb-3">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="text" class="form-control" id="fecha" name="fecha" [(ngModel)]="flota.fecharegistro" readonly>
+        </div>
+      
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos" [(ngModel)]="apellidos" required>
+        </div>
+        <div class="mb-3">
+            <label for="origen" class="form-label">Origen</label>
+            <input type="text" class="form-control" id="origen" name="origen" [(ngModel)]="flota.origen" required readonly>
+        </div>
+        <div class="mb-3">
+            <label for="destino" class="form-label">Destino</label>
+            <input type="text" class="form-control" id="destino" name="destino" [(ngModel)]="flota.destino" required readonly>
+        </div>
+        <!-- ... -->
+        <button type="submit" class="btn btn-primary">Reservar</button>
+    </form>
+</div>

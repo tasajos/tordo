@@ -16,7 +16,7 @@
                 <div class="card">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="../../../../assets/img/asiento.png" class="img-fluid rounded-start centered-image cursor-pointer" alt="Imagen de pasajero {{ idx + 1 }}">
+                            <img src="../../../../assets/img/asiento.png" a [routerLink]="['/reservapasaje']" [queryParams]="{asiento: idx + 1, fecha: flota.fecharegistro,origen:flota.origen,destino:flota.destino}" class="img-fluid rounded-start centered-image cursor-pointer" alt="Imagen de pasajero {{ idx + 1 }}">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">

@@ -11,6 +11,7 @@ import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.c
 import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
 import { TicketPasajeComponent } from './Components/ticket-pasaje/ticket-pasaje.component';
 import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasajeros.component';
+import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
 {path: 'manifesto',component:ManifestoComponent},
 {path: 'rrpasajero',component:RegistrarpasajeroComponent},
 {path: 'ticketpasajero',component:TicketPasajeComponent},
+{path: 'reservapasaje',component:ReservapasajeComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
 {path: '**', redirectTo:'principal', pathMatch:'full'}
 
