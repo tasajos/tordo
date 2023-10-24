@@ -50,6 +50,18 @@
       </div>
       <div class="col-md-4">
         <div class="mb-3">
+          <label for="ci" class="form-label">CI</label>
+          <input type="number" class="form-control" id="ci" name="ci" [(ngModel)]="ci" required>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-2">
+          <label for="precio" class="form-label">Precio</label>
+          <input type="number" class="form-control" id="precio" name="precio" [(ngModel)]="flota.precio" readonly>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
           <label for="telefono" class="form-label">Telefono</label>
           <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" required>
         </div>
