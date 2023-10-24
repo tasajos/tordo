@@ -15,3 +15,26 @@ export interface RegistroUsuarioTicketInter {
     metodopago:string
 }
 
+export interface VentaPasajeticketInter {
+    id?: number,
+    asiento: string,
+    fecharegistro: string,
+    nombre: string,
+    apellidos: string,
+    nit: string,
+    ci:number,
+    precio:number,
+    tipo: string,
+    telefono: string,
+    email: string,
+    origen: string,
+    destino: string,
+    hora: string,
+    placa: string,
+    fechanacimiento: Date | null;
+    metodopago: string,
+    estado?: string,
+    
+       
+}
+

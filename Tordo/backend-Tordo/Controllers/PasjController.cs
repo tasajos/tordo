@@ -54,6 +54,41 @@ namespace backend_Tordo.Controllers
     }
 
 
+    [HttpGet("ventaticket")]
+    public async Task<IActionResult> GetVentaTicket()
+    {
+      try
+      {
+        var listaventa = await _context.VentaPasajeCliente.ToListAsync();
+        return Ok(listaventa);
+      }
+      catch (Exception ex)
+      {
+
+        return BadRequest(ex.Message);
+
+
+      }
+    }
+
+    [HttpPost("pventaticket")]
+    public async Task<IActionResult> Post(VentaPasajero VentaPasajeCliente)
+    {
+      try
+      {
+        VentaPasajeCliente.FechaCreacion = DateTime.Now;
+        _context.Add(VentaPasajeCliente);
+        await _context.SaveChangesAsync();
+        return CreatedAtAction("GetVentaTicket", new { Id = VentaPasajeCliente.id }, VentaPasajeCliente);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+
+
 
   }
 }

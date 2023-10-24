@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using backend_Tordo.Models;
 
@@ -11,9 +12,11 @@ using backend_Tordo.Models;
 namespace backend_Tordo.Migrations
 {
     [DbContext(typeof(TordoContext))]
-    partial class TordoContextModelSnapshot : ModelSnapshot
+    [Migration("20231024042941_ventapasajerosfechas")]
+    partial class ventapasajerosfechas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -127,9 +130,8 @@ namespace backend_Tordo.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("nit")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("nit")
+                        .HasColumnType("int");
 
                     b.Property<string>("nombre")
                         .IsRequired()

@@ -15,6 +15,8 @@ namespace backend_Tordo.Models
 
     public DbSet<pasajeros> PasajeCliente { get; set; } //<clase> Nombre de la tabla
 
+    public DbSet<VentaPasajero> VentaPasajeCliente { get; set; } //<clase> Nombre de la tabla
+
 
     //flota
 

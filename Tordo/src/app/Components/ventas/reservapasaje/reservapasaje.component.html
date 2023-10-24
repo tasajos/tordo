@@ -23,7 +23,7 @@
       <div class="col-md-4">
         <div class="mb-2">
           <label for="fecha" class="form-label">Fecha</label>
-          <input type="text" class="form-control" id="fecha" name="fecha" [(ngModel)]="flota.fecharegistro" readonly>
+          <input type="text" class="form-control" id="fecharegistro" name="fecharegistro" [(ngModel)]="flota.fecharegistro" readonly>
         </div>
       </div>
       <div class="col-md-4">
@@ -44,14 +44,36 @@
       </div>
       <div class="col-md-4">
         <div class="mb-3">
-          <label for="nit" class="form-label">NIT</label>
-          <input type="number" class="form-control" id="nit" name="nit" [(ngModel)]="nit" required>
+          <label for="apellidos" class="form-label">Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="FechaNacimiento" name="FechaNacimiento" [(ngModel)]="fechanacimiento" required>
         </div>
       </div>
       <div class="col-md-4">
         <div class="mb-3">
+          <label for="nit" class="form-label">NIT</label>
+          <input type="text" class="form-control" id="nit" name="nit" [(ngModel)]="nit" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Telefono</label>
+          <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" required>
+        </div>
+      </div>
+      
+
+      <div class="col-md-4">
+        <div class="mb-3">
           <label for="ci" class="form-label">CI</label>
           <input type="number" class="form-control" id="ci" name="ci" [(ngModel)]="ci" required>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="correo" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
         </div>
       </div>
       <div class="col-md-4">
@@ -66,22 +88,15 @@
           <input type="text" class="form-control" id="tipo" name="tipo" [(ngModel)]="flota.tipo" required readonly>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="mb-3">
-          <label for="telefono" class="form-label">Telefono</label>
-          <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" required>
-        </div>
-      </div>
+
+      
+
+      
     </div>
 
     <!-- Tercera fila de campos -->
     <div class="row">
-      <div class="col-md-4">
-        <div class="mb-3">
-          <label for="correo" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
-        </div>
-      </div>
+      
       <div class="col-md-4">
         <div class="mb-3">
           <label for="origen" class="form-label">Origen</label>
