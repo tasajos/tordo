@@ -18,17 +18,23 @@ export class ReservapasajeComponent implements OnInit {
     email: '',
     ci: '',
     precio: '',
+    tipo: '',
+    hora: '',
+    placa: '',
     // ... otros campos
   };
   nombre: string = '';
   apellidos: string = '';
   origen: string = '';
   destino: string = '';
-  nit: number = 0;
-  telefono:  number= 0;
+  nit: number | null = null; // Inicializa nit como null en lugar de 0
+  telefono:  number | null = null; // Inicializa nit como null en lugar de 0
   email: string = '';
   ci: number | null = null; // Inicializa ci como null en lugar de 0
   precio:  number = 0;
+  tipo: string = '';
+  hora: string = '';
+  placa: string = '';
   // ... otros campos
 
   constructor(private route: ActivatedRoute) {}
@@ -40,6 +46,9 @@ export class ReservapasajeComponent implements OnInit {
     this.flota.destino = this.route.snapshot.queryParamMap.get('destino');
     //this.flota.precio = this.route.snapshot.queryParamMap.get('precio');
     this.flota.precio = this.route.snapshot.queryParamMap.get('precio');
+    this.flota.tipo = this.route.snapshot.queryParamMap.get('tipo');
+    this.flota.hora = this.route.snapshot.queryParamMap.get('hora');
+    this.flota.placa = this.route.snapshot.queryParamMap.get('placa');
   }
 
   onSubmit(formData: any) {

@@ -18,15 +18,19 @@
                         <div class="col-md-4">
                             <img src="../../../../assets/img/asiento.png" a [routerLink]="['/reservapasaje']" [queryParams]="{asiento: idx + 1,
                                  fecha: flota.fecharegistro,
-                                 origen:flota.origen,
+                                 origen:flota.origen,  
                                  destino:flota.destino,
+                                 tipo:flota.tipo,
+                                 hora:flota.hora,
+                                 placa:flota.placa,
                                  precio:flota.precio}" class="img-fluid rounded-start centered-image cursor-pointer" alt="Imagen de pasajero {{ idx + 1 }}">
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">Asiento {{ idx + 1 }}</h5>
                                 <p class="card-text">{{ flota.origen }} &rarr; {{ flota.destino }} | Hora: {{ flota.hora }}</p>
-                                <p class="card-text"><small class="text-body-secondary">{{ flota.placa }} -{{ flota.fecharegistro }} - {{flota.precio}}</small></p>
+                                <p class="card-text">Tipo: {{ flota.tipo }}</p>
+                                <p class="card-text"><small class="text-body-secondary">{{ flota.placa }} -{{ flota.fecharegistro }} - {{flota.precio}} Bs </small></p>
                             </div>
                         </div>
                     </div>

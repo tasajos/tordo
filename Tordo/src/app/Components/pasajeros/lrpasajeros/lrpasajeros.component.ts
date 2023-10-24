@@ -25,6 +25,7 @@ export class LrpasajerosComponent implements OnInit {
     const placa = this.route.snapshot.queryParamMap.get('placa');
     const fecharegistro = this.route.snapshot.queryParamMap.get('fecharegistro');
     const precio = this.route.snapshot.queryParamMap.get('precio');
+    const tipo = this.route.snapshot.queryParamMap.get('tipo');
 
 
     this.flota = {
@@ -33,6 +34,7 @@ export class LrpasajerosComponent implements OnInit {
       hora: hora,
       placa: placa,
       precio: precio,
+      tipo: tipo,
       fecharegistro: this.formatDate(fecharegistro || '')
     };
   } 

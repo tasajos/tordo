@@ -62,6 +62,12 @@
       </div>
       <div class="col-md-4">
         <div class="mb-3">
+          <label for="tipo" class="form-label">Tipo</label>
+          <input type="text" class="form-control" id="tipo" name="tipo" [(ngModel)]="flota.tipo" required readonly>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
           <label for="telefono" class="form-label">Telefono</label>
           <input type="tel" class="form-control" id="telefono" name="telefono" [(ngModel)]="telefono" required>
         </div>
@@ -86,6 +92,18 @@
         <div class="mb-3">
           <label for="destino" class="form-label">Destino</label>
           <input type="text" class="form-control" id="destino" name="destino" [(ngModel)]="flota.destino" required readonly>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="hora" class="form-label">Hora</label>
+          <input type="text" class="form-control" id="hora" name="hora" [(ngModel)]="flota.hora" required readonly>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mb-3">
+          <label for="placa" class="form-label">Placa</label>
+          <input type="text" class="form-control" id="placa" name="placa" [(ngModel)]="flota.placa" required readonly>
         </div>
       </div>
     </div>

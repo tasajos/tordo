@@ -31,7 +31,8 @@ export class RegistrarpasajeroComponent implements OnInit {
         hora: flota.hora,
         placa: flota.placa,
         fecharegistro: flota.fecharegistro,
-        precio: flota.precio
+        precio: flota.precio,
+        tipo: flota.tipo
       }
     });
 
