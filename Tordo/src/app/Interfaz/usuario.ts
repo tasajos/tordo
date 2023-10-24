@@ -18,7 +18,7 @@ export interface RegistroUsuarioTicketInter {
 export interface VentaPasajeticketInter {
     id?: number,
     asiento: string,
-    fecharegistro: string,
+    fecha: string,
     nombre: string,
     apellidos: string,
     nit: string,
@@ -33,7 +33,7 @@ export interface VentaPasajeticketInter {
     placa: string,
     fechanacimiento: Date | null;
     metodopago: string,
-    estado?: string,
+    //estado?: string,
     
        
 }

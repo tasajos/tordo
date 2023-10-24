@@ -77,6 +77,8 @@ namespace backend_Tordo.Controllers
       try
       {
         VentaPasajeCliente.FechaCreacion = DateTime.Now;
+        VentaPasajeCliente.estado = "1"; // Asigna el valor "1" al campo estado
+        VentaPasajeCliente.preciocalculado = 0.14m; // Asigna el valor 0.14 al campo preciocalculado
         _context.Add(VentaPasajeCliente);
         await _context.SaveChangesAsync();
         return CreatedAtAction("GetVentaTicket", new { Id = VentaPasajeCliente.id }, VentaPasajeCliente);
@@ -86,7 +88,6 @@ namespace backend_Tordo.Controllers
         return BadRequest(ex.Message);
       }
     }
-
 
 
 

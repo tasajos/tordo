@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SusuarioService } from 'src/app/Services/susuario.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reservapasaje',
@@ -9,9 +10,11 @@ import { SusuarioService } from 'src/app/Services/susuario.service';
 })
 export class ReservapasajeComponent implements OnInit {
 
+
+  
   flota: any = {
     asiento: null,
-    fecharegistro: '',
+    fecha: '',
     origen: '',
     destino: '',
     nit: '',
@@ -28,7 +31,7 @@ export class ReservapasajeComponent implements OnInit {
   };
   nombre: string = '';
   apellidos: string = '';
-  fecharegistro: string = '';
+  fecha: string = '';
   origen: string = '';
   destino: string = '';
   nit: string = '';
@@ -41,6 +44,7 @@ export class ReservapasajeComponent implements OnInit {
   placa: string = '';
   fechanacimiento: Date| null = null;
   metodopago: string = '';
+  estado: string = '';
   // ... otros campos
 
   constructor(private route: ActivatedRoute, private rtServicio: SusuarioService) {}
@@ -48,7 +52,7 @@ export class ReservapasajeComponent implements OnInit {
 
   ngOnInit(): void {
     this.flota.asiento = this.route.snapshot.queryParamMap.get('asiento');
-    this.flota.fecharegistro = this.route.snapshot.queryParamMap.get('fecha');
+    this.flota.fecha = this.route.snapshot.queryParamMap.get('fecha');
     this.flota.origen = this.route.snapshot.queryParamMap.get('origen');
     this.flota.destino = this.route.snapshot.queryParamMap.get('destino');
     //this.flota.precio = this.route.snapshot.queryParamMap.get('precio');
@@ -64,7 +68,7 @@ export class ReservapasajeComponent implements OnInit {
 
     const pasajero = {
       asiento: this.flota.asiento,
-      fecharegistro: this.fecharegistro, // Asegúrate de proporcionar un valor para fecha
+      fecha: this.flota.fecha, // Asegúrate de proporcionar un valor para fecha
       nombre: this.nombre,
       apellidos: this.apellidos,
       nit: this.nit,
@@ -79,7 +83,8 @@ export class ReservapasajeComponent implements OnInit {
       hora: this.flota.hora,
       placa: this.flota.placa,
       fechanacimiento: this.fechanacimiento|| null,
-      metodopago: this.metodopago
+      metodopago: this.metodopago,
+      estado: this.estado
       // ... otros campos
     };
 

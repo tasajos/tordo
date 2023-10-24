@@ -6,7 +6,7 @@ namespace backend_Tordo.Models.Pasajeros
 
     public int asiento { get; set; }
 
-    public string fecharegistro { get; set; }
+    public string fecha { get; set; }
 
     public string nombre { get; set; }
 
@@ -16,7 +16,7 @@ namespace backend_Tordo.Models.Pasajeros
     public int ci { get; set; }
     public int precio { get; set; }
 
-    public int preciocalculado { get; set; }
+    public decimal preciocalculado { get; set; }
 
     public string tipo { get; set; }
     public string telefono { get; set; }

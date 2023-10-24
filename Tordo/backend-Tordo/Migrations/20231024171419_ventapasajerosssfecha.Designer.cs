@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using backend_Tordo.Models;
 
@@ -11,9 +12,11 @@ using backend_Tordo.Models;
 namespace backend_Tordo.Migrations
 {
     [DbContext(typeof(TordoContext))]
-    partial class TordoContextModelSnapshot : ModelSnapshot
+    [Migration("20231024171419_ventapasajerosssfecha")]
+    partial class ventapasajerosssfecha
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,8 +149,8 @@ namespace backend_Tordo.Migrations
                     b.Property<int>("precio")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("preciocalculado")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int>("preciocalculado")
+                        .HasColumnType("int");
 
                     b.Property<string>("telefono")
                         .IsRequired()
