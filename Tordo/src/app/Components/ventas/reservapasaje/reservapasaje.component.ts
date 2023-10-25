@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SusuarioService } from 'src/app/Services/susuario.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-reservapasaje',
@@ -105,19 +106,20 @@ export class ReservapasajeComponent implements OnInit {
 
   openModal() {
     if (this.metodopago === 'qr') {
-      // Abre el modal "staticBackdrop" si la opción de pago es "QR"
-      const modal = document.getElementById('staticBackdrop');
-      if (modal) {
-        modal.classList.add('show');
-        modal.style.display = 'block';
+      // Abre el modal "QR"
+      const modalQR = document.getElementById('staticBackdropQR');
+      if (modalQR) {
+        const bsModal = new bootstrap.Modal(modalQR);
+        bsModal.show();
       }
     } else if (this.metodopago === 'efectivo') {
-      // Abre el modal "staticBackdropefectivo" si la opción de pago es "Efectivo"
+      // Abre el modal "Efectivo"
       const modalEfectivo = document.getElementById('staticBackdropefectivo');
       if (modalEfectivo) {
-        modalEfectivo.classList.add('show');
-        modalEfectivo.style.display = 'block';
+        const bsModal = new bootstrap.Modal(modalEfectivo);
+        bsModal.show();
       }
     }
-}
+  }
+  
 }
