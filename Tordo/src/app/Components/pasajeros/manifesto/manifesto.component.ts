@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { SusuarioService } from 'src/app/Services/susuario.service';
+import { VentaPasajeticketInter  } from 'src/app/Interfaz/usuario';
 
 @Component({
   selector: 'app-manifesto',
@@ -8,9 +11,22 @@ import { Component } from '@angular/core';
 export class ManifestoComponent {
 
 mostrarTabla: boolean = false;
+pasajeros: VentaPasajeticketInter[] = [];
 
+constructor(private listadopasajeros: SusuarioService) {}
 
 mostrarResultado() {
   this.mostrarTabla = true;
 }
+ngOnInit() {
+  this.listadopasajeros.getpasajerosventa().subscribe(
+    data => {
+      this.pasajeros = data;
+    },
+    error => {
+      console.log('Error:', error);
+    }
+  );
+}
+
 }
