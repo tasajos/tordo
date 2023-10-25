@@ -147,7 +147,7 @@
     <div class="row mt-3">
       <div class="col-md-12">
         <!--<button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Pagar</button>-->
-        <button type="submit" class="btn btn-primary" (click)="openModal()">Pagar</button>
+        <button type="button" class="btn btn-primary" (click)="openModal()">Pagar</button>
       </div>
     </div>
   </form>
@@ -157,7 +157,7 @@
     Launch static backdrop modal
   </button>-->
   
-  <!-- Modal QR -->
+<!-- Modal QR -->
 <div class="modal fade" id="staticBackdropQR" tabindex="-1" aria-labelledby="staticBackdropLabelQR" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -167,15 +167,18 @@
       </div>
       <div class="modal-body">
         <img src="../../../../assets/img/frame.png" alt="QR" width="80%">
+        <!-- Alerta de registro exitoso -->
+        <div class="alert alert-success mt-3" *ngIf="registroExitoso">
+          Registro exitoso. ¡Gracias por tu compra!
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit(reservaForm.value)">Confirmar</button>
       </div>
     </div>
   </div>
 </div>
-
 <!-- Modal Efectivos -->
 <div class="modal fade" id="staticBackdropefectivo" tabindex="-1" aria-labelledby="staticBackdropLabelefectivo" aria-hidden="true">
   <div class="modal-dialog">
@@ -187,9 +190,13 @@
       <div class="modal-body">
         <h1>Por Favor Pagar <span class="badge bg-secondary">{{ flota.precio }} Bs</span></h1>
       </div>
+      <!-- Alerta de registro exitoso -->
+      <div class="alert alert-success mt-3" *ngIf="registroExitoso">
+        Registro exitoso. ¡Gracias por tu compra!
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <button type="button" class="btn btn-primary" (click)="onSubmit(reservaForm.value)">Confirmar</button>
       </div>
     </div>
   </div>

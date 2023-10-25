@@ -11,6 +11,7 @@ import * as bootstrap from 'bootstrap';
 })
 export class ReservapasajeComponent implements OnInit {
 
+  registroExitoso: boolean = false;
 
   
   flota: any = {
@@ -89,7 +90,8 @@ export class ReservapasajeComponent implements OnInit {
       // ... otros campos
     };
 
-
+ // Después de un registro exitoso
+ this.registroExitoso = true;
     // Aquí puedes procesar los datos del formulario, como enviarlos a un backend
 
     this.rtServicio.postaddpasajero(pasajero).subscribe(
@@ -102,6 +104,7 @@ export class ReservapasajeComponent implements OnInit {
         // Maneja el error de acuerdo a tus necesidades
       }
     );
+     
   }
 
   openModal() {
