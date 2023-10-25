@@ -102,5 +102,22 @@ export class ReservapasajeComponent implements OnInit {
       }
     );
   }
+
+  openModal() {
+    if (this.metodopago === 'qr') {
+      // Abre el modal "staticBackdrop" si la opción de pago es "QR"
+      const modal = document.getElementById('staticBackdrop');
+      if (modal) {
+        modal.classList.add('show');
+        modal.style.display = 'block';
+      }
+    } else if (this.metodopago === 'efectivo') {
+      // Abre el modal "staticBackdropefectivo" si la opción de pago es "Efectivo"
+      const modalEfectivo = document.getElementById('staticBackdropefectivo');
+      if (modalEfectivo) {
+        modalEfectivo.classList.add('show');
+        modalEfectivo.style.display = 'block';
+      }
+    }
 }
- 
+}
