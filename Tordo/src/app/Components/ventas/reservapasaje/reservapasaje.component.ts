@@ -12,6 +12,8 @@ import * as bootstrap from 'bootstrap';
 export class ReservapasajeComponent implements OnInit {
 
   registroExitoso: boolean = false;
+  botonConfirmarHabilitado: boolean = true;
+  botonConfirmarModalHabilitado: boolean = true;
 
   
   flota: any = {
@@ -97,6 +99,7 @@ export class ReservapasajeComponent implements OnInit {
     this.rtServicio.postaddpasajero(pasajero).subscribe(
       (response) => {
         console.log('Registro exitoso:', response);
+        this.botonConfirmarModalHabilitado = false;
         // Realiza cualquier otra acción que desees después de registrar los datos
       },
       (error) => {
@@ -105,6 +108,7 @@ export class ReservapasajeComponent implements OnInit {
       }
     );
      
+    this.botonConfirmarHabilitado = false;
   }
 
   openModal() {
@@ -114,6 +118,8 @@ export class ReservapasajeComponent implements OnInit {
       if (modalQR) {
         const bsModal = new bootstrap.Modal(modalQR);
         bsModal.show();
+        // Deshabilita el botón "Confirmar" después de abrir el modal
+      this.botonConfirmarHabilitado = false;
       }
     } else if (this.metodopago === 'efectivo') {
       // Abre el modal "Efectivo"
@@ -121,6 +127,8 @@ export class ReservapasajeComponent implements OnInit {
       if (modalEfectivo) {
         const bsModal = new bootstrap.Modal(modalEfectivo);
         bsModal.show();
+        // Deshabilita el botón "Confirmar" después de abrir el modal
+      this.botonConfirmarHabilitado = false;
       }
     }
   }
