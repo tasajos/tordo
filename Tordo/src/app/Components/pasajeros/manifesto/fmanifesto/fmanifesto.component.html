@@ -1,1 +1,32 @@
-<p>fmanifesto works!</p>
+<app-cabecera></app-cabecera>
+<p></p>
+<p></p>
+<p></p>
+<br>
+<p></p>
+<br>
+<p>
+    <app-mvendedor></app-mvendedor>
+    <div class="container mb-4 mt-4">
+
+        <mat-form-field>
+            <mat-label>Seleccione un Rango</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Start date">
+              <input matEndDate placeholder="End date">
+            </mat-date-range-input>
+            <mat-hint>MM/DD/AAAA – MM/DD/AAAA</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+
+          <mat-divider></mat-divider>
+          <section>
+              <div class="example-button-row mt-4">
+              <button mat-raised-button color="primary">Buscar</button>
+              </div>
+          </section>
+
+
+
+    </div>

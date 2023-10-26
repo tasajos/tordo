@@ -39,6 +39,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 
@@ -113,6 +116,8 @@ import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
