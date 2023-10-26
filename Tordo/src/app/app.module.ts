@@ -30,6 +30,15 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importa BrowserAnimationsModule
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 //modulos
 import {AngularFireModule } from '@angular/fire/compat'
@@ -43,6 +52,7 @@ import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasaj
 import { VentasComponent } from './Components/ventas/ventas.component';
 import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
 import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
+
 
 @NgModule({
   declarations: [
@@ -88,6 +98,15 @@ import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reserv
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MatSlideToggleModule,
+    MatIconModule,
+    MatDividerModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
