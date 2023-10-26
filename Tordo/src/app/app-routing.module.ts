@@ -13,6 +13,7 @@ import { TicketPasajeComponent } from './Components/ticket-pasaje/ticket-pasaje.
 import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasajeros.component';
 import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
 import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
+import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
 
 
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
 {path: 'rrpasajero',component:RegistrarpasajeroComponent},
 {path: 'ticketpasajero',component:TicketPasajeComponent},
 {path: 'reservapasaje',component:ReservapasajeComponent},
+{path: 'mfecha',component:FmanifestoComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
 {path: '**', redirectTo:'principal', pathMatch:'full'}
 
