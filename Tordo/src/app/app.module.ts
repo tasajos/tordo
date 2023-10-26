@@ -39,6 +39,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 
@@ -55,6 +58,7 @@ import { VentasComponent } from './Components/ventas/ventas.component';
 import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
 import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
 import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
+import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
 
 
 @NgModule({
@@ -92,7 +96,8 @@ import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.
     VentasComponent,
     VentapasajeComponent,
     ReservapasajeComponent,
-    MflotaComponent
+    MflotaComponent,
+    FmanifestoComponent
     
   ],
   imports: [
@@ -111,6 +116,8 @@ import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
