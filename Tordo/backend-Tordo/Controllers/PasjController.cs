@@ -90,6 +90,28 @@ namespace backend_Tordo.Controllers
     }
 
 
+    [HttpGet("byplaca/{placa}")]
+
+    //get por placa
+    public async Task<IActionResult> GetByPlaca(string placa)
+    {
+      try
+      {
+        var pasajeroPorPlaca = await _context.VentaPasajeCliente.Where(p => p.placa == placa).ToListAsync();
+
+        if (!pasajeroPorPlaca.Any())
+        {
+          return NotFound($"No se encontraron pasajeros con la placa {placa}");
+        }
+
+        return Ok(pasajeroPorPlaca);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
 
   }
 }

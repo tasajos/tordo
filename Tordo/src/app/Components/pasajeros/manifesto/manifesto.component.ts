@@ -12,7 +12,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./manifesto.component.css'],
 })
 export class ManifestoComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento', 'origen', 'destino', 'hora', 'precio', 'placa',  'metodopago'];
+  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa',  'metodopago'];
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
