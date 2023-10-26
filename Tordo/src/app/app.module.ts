@@ -40,6 +40,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
+
+
 //modulos
 import {AngularFireModule } from '@angular/fire/compat'
 import { environment } from 'src/environments/environment';
@@ -52,6 +54,7 @@ import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasaj
 import { VentasComponent } from './Components/ventas/ventas.component';
 import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
 import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
+import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
 
 
 @NgModule({
@@ -88,7 +91,8 @@ import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reserv
     LrpasajerosComponent,
     VentasComponent,
     VentapasajeComponent,
-    ReservapasajeComponent
+    ReservapasajeComponent,
+    MflotaComponent
     
   ],
   imports: [
