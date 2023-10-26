@@ -8,26 +8,91 @@
 <p>
     <app-mvendedor></app-mvendedor>
 
-    <form class="row g-3 mx-5">
-        <label for="exampleDataList" class="form-label">Busqueda</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Buscar...">
-        <datalist id="datalistOptions">
-          <option value="La Paz">
-          <option value="Cochabamba">
-          <option value="Santa Cruz">
-          </datalist>
-    </form>
-    
-    <!-- Título de la Tabla -->
+    <div class="container mb-4">
+    <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar..">
+      </mat-form-field>
+      
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+          
+          <!-- Columnas, como un ejemplo -->
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+          </ng-container>
+          <ng-container matColumnDef="apellidos">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Apellido</th>
+            <td mat-cell *matCellDef="let row"> {{row.apellidos}} </td>
+          </ng-container>
+          <ng-container matColumnDef="ci">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>CI</th>
+            <td mat-cell *matCellDef="let row"> {{row.ci}} </td>
+          </ng-container>
+          <ng-container matColumnDef="asiento">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Asiento</th>
+            <td mat-cell *matCellDef="let row"> {{row.asiento}} </td>
+          </ng-container>
+          <ng-container matColumnDef="tipo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</th>
+            <td mat-cell *matCellDef="let row"> {{row.tipo}} </td>
+          </ng-container>
+          <ng-container matColumnDef="origen">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Origen</th>
+            <td mat-cell *matCellDef="let row"> {{row.origen}} </td>
+          </ng-container>
+          <ng-container matColumnDef="destino">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Destino</th>
+            <td mat-cell *matCellDef="let row"> {{row.destino}} </td>
+          </ng-container>
+          <ng-container matColumnDef="hora">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Hora</th>
+            <td mat-cell *matCellDef="let row"> {{row.hora}} </td>
+          </ng-container>
+          <ng-container matColumnDef="precio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Precio</th>
+            <td mat-cell *matCellDef="let row"> {{row.precio}} </td>
+          </ng-container>
+          <ng-container matColumnDef="placa">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Placa</th>
+            <td mat-cell *matCellDef="let row"> {{row.placa}} </td>
+          </ng-container>
+         
+          <ng-container matColumnDef="metodopago">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Metodo Pago</th>
+            <td mat-cell *matCellDef="let row"> {{row.metodopago}} </td>
+          </ng-container>
+
+          <!--... Añade aquí las otras columnas ...-->
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="11">No hay datos que coincidan con el filtro</td>
+          </tr>
+        </table>
+      
+        <mat-paginator [pageSizeOptions]="[10, 30, 40, 100]" aria-label="Seleccionar página"></mat-paginator>
+      </div>
+    </div>
+
+
+  
+    <!--
+
+
+     Título de la Tabla 
     <h3 class="mx-5 mt-4">Lista de Pasajeros</h3>
     
-    <div class="col-md-6 mx-5"> <!-- Columna derecha para la tabla con un margen -->
+    <div class="col-md-6 mx-5">  Columna derecha para la tabla con un margen 
         <div class="card rounded-lg" style="margin-top: 2px;">
             <div class="card-body">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th scope="col">Nro</th>
+                            <th scope="col"># Nro</th>
                             <th scope="col">Nombre y Apellido</th>
                             <th scope="col">CI</th>
                             <th scope="col">Asiento</th>
@@ -60,13 +125,13 @@
         </div>
     </div>
     
-    <!-- Espaciado después de la tabla -->
+     Espaciado después de la tabla 
     <div class="mt-4"></div>
     
-    <!-- Título para los botones -->
+     Título para los botones 
     <h3 class="mx-5 mt-5">Exportar Datos</h3>
     
-    <div class="col-md-6 mx-5 mb-5"> <!-- Columna derecha para los botones con un margen -->
+    <div class="col-md-6 mx-5 mb-5">  Columna derecha para los botones con un margen
         <button type="button" class="btn btn-outline-primary mx-3 mb-4">PDF</button>
         <button type="button" class="btn btn-outline-secondary mx-3 mb-4">XLS</button>
         <button type="button" class="btn btn-outline-info mx-3 mb-4">Ventana</button>
@@ -78,3 +143,13 @@
   <br>
   <p>
 </p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p>-->
+
+    
