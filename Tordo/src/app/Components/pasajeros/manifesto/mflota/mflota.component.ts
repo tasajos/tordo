@@ -15,12 +15,15 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class MflotaComponent implements OnInit {
   resultados: VentaPasajeticketInter[] = [];
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio'];
+  //resultados!: MatTableDataSource<VentaPasajeticketInter>;
+  
+  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'placa'];
 
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild(MatPaginator, {static: false}) paginator!: MatPaginator;
+  @ViewChild(MatSort, {static: false}) sort!: MatSort;
+  
 
 
 
