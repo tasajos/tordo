@@ -55,6 +55,7 @@ import { VentasComponent } from './Components/ventas/ventas.component';
 import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
 import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
 import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
+import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
 
 
 @NgModule({
@@ -92,7 +93,8 @@ import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.
     VentasComponent,
     VentapasajeComponent,
     ReservapasajeComponent,
-    MflotaComponent
+    MflotaComponent,
+    FmanifestoComponent
     
   ],
   imports: [
