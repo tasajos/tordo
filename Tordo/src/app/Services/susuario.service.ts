@@ -21,6 +21,7 @@ export class SusuarioService {
   private Myapiurl: string = 'api/Pasj';
   private Myapigvurl: string = 'api/Pasj/ventaticket';
   private Myapipvurl: string = 'api/Pasj/pventaticket';
+  private Myapigfurl: string = 'api/Pasj/byplaca/';
 
   //constructor
   constructor(private http: HttpClient) { }
@@ -57,5 +58,14 @@ postaddpasajero  (regpt: VentaPasajeticketInter): Observable<VentaPasajeticketIn
   return this.http.post<VentaPasajeticketInter>(`${this.Myappurl}${this.Myapipvurl}`,regpt);
 
 }
+
+//getflota
+
+getpasajerosflota(placa: string): Observable<VentaPasajeticketInter[]> {
+  return this.http.get<VentaPasajeticketInter[]>(`${this.Myappurl}${this.Myapigfurl}${placa}`);
+}
+
+
+
 
 }

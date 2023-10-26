@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { SusuarioService } from 'src/app/Services/susuario.service';
 import { VentaPasajeticketInter } from 'src/app/Interfaz/usuario';
 import { MatTableDataSource } from '@angular/material/table';
@@ -7,12 +10,12 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
 @Component({
-  selector: 'app-manifesto',
-  templateUrl: './manifesto.component.html',
-  styleUrls: ['./manifesto.component.css'],
+  selector: 'app-fmanifesto',
+  templateUrl: './fmanifesto.component.html',
+  styleUrls: ['./fmanifesto.component.css']
 })
-export class ManifestoComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa',  'metodopago'];
+export class FmanifestoComponent implements OnInit {
+  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa'];
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -50,3 +53,4 @@ export class ManifestoComponent implements OnInit {
   }
   
 }
+
