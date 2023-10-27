@@ -21,11 +21,12 @@
         <h4>Seleccionar Buses</h4>
         <mat-form-field>
           <mat-label>Bus</mat-label>
-          <mat-select [(ngModel)]="selectedValue" name="food">
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
+          
+          <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterFlotasBasedOnDate()" [ngModelOptions]="{standalone: true}">
+            <mat-option *ngFor="let bus of Buss" [value]="bus.value">
+              {{bus.viewValue}}
             </mat-option>
-          </mat-select>
+         </mat-select>
         </mat-form-field>
         <p> Seleccion: {{selectedValue}} </p>
     </form>

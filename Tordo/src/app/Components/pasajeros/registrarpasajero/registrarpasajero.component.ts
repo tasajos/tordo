@@ -8,7 +8,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 
-interface Food {
+interface Bus {
   value: string;
   viewValue: string;
 }
@@ -26,30 +26,32 @@ interface Car {
 })
 export class RegistrarpasajeroComponent implements OnInit {
 
-
+  allFlotas: registrarflotaInter[] = []; 
   flotas: registrarflotaInter[] = [];
-  selectedValue!: string;
+  selectedValue: string = 'Hoy';
+
   selectedCar!: string;
 
-  foods: Food[] = [
+  Buss: Bus[] = [
+    {value: 'Hoy', viewValue: 'Hoy'},
     {value: 'Fechas Anteriores', viewValue: 'Fechas Anteriores'},
     {value: 'Fechas Futuras', viewValue: 'Fechas Futuras'},
-      ];
-
-  
+  ];
 
   constructor(private flotaService: SflotaService,private router: Router) {}
 
   ngOnInit(): void {
     this.flotaService.getflota().subscribe(
       (data) => {
-        this.flotas = data;
+        this.allFlotas = data;
+        this.filterFlotasBasedOnDate(); // <-- Llama al filtro inmediatamente después de obtener todos los datos
       },
       (error) => {
         console.error('Error al obtener flota:', error);
       }
     );
   }
+
   showPassengerTable(flota: registrarflotaInter): void {
     this.router.navigate(['/pasajeros-tabla', flota.cantidadpasajeros], {
       queryParams: {
@@ -80,5 +82,25 @@ formatDate(dateOrString: Date | string): string {
   return `${day}/${month}/${year}`;
 }
 
+normalizeDate(date: Date): Date {
+  date.setHours(0, 0, 0, 0);
+  return date;
 }
 
+filterFlotasBasedOnDate() {
+  const currentDate = this.normalizeDate(new Date());
+  
+  if (this.selectedValue === 'Fechas Anteriores') {
+    this.flotas = this.allFlotas.filter(flota => this.normalizeDate(new Date(flota.fecharegistro)) < currentDate);
+  } else if (this.selectedValue === 'Fechas Futuras') {
+    this.flotas = this.allFlotas.filter(flota => this.normalizeDate(new Date(flota.fecharegistro)) > currentDate);
+  } else if (this.selectedValue === 'Hoy') {
+    this.flotas = this.allFlotas.filter(flota => {
+      const flotaDate = this.normalizeDate(new Date(flota.fecharegistro));
+      return flotaDate.getTime() === currentDate.getTime();
+    });
+  } else {
+    this.flotas = this.allFlotas;
+  }
+}
+}
