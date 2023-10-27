@@ -15,8 +15,11 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./fmanifesto.component.css']
 })
 export class FmanifestoComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa'];
+  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa','fecha'];
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
+
+  startDate: Date | null = null;
+  endDate: Date | null = null;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -35,6 +38,7 @@ export class FmanifestoComponent implements OnInit {
       },
       error => {
         console.log('Error:', error);
+        
       }
     );
   }
@@ -51,6 +55,46 @@ export class FmanifestoComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
+  onSearch() {
+    console.log('onSearch called', this.startDate, this.endDate);
+    if (this.startDate && this.endDate) {
+        const filteredData = this.dataSource.data.filter(item => {
+
+            // Identificar y convertir la fecha según su formato
+            const [day, month, year] = (item.fecha || '').split('/');
+            const itemDate = new Date(+year, +month - 1, +day);
+
+            // Validación para asegurarnos de que la fecha convertida es válida
+            if (isNaN(itemDate.getTime())) {
+                console.error('Fecha inválida:', item.fecha, 'Ítem completo:', item);
+                return false;
+            }
+
+            console.log('itemDate', itemDate);
+
+            if (this.startDate !== null && this.endDate !== null) {
+                const isIncluded = itemDate >= this.startDate && itemDate <= this.endDate;
+                console.log('isIncluded', isIncluded);
+                return isIncluded;
+            }
+            return false;
+        });
+        console.log('filteredData', filteredData);
+        this.dataSource.data = filteredData;
+    }
+    if (this.dataSource.paginator) {
+        this.dataSource.paginator.firstPage();
+    }
+}
+clearSearch() {
+  this.startDate = null;
+  this.endDate = null;
+  this.ngOnInit();  // Vuelve a cargar los datos originales
+  if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();  // Vuelve a la primera página de la tabla
+  }
+}
+
 }
 
