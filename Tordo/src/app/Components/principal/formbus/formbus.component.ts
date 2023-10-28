@@ -14,6 +14,9 @@ export class FormbusComponent implements OnInit, AfterViewInit {
   origen: string = '';
   destino: string = '';
   mostrarModal: boolean = false ;
+  fechaActual: Date = new Date();
+fechaMaxima: Date = new Date(this.fechaActual);
+
 
   @ViewChild('modalNoResultados') modalNoResultados!: ElementRef;
 
@@ -26,32 +29,56 @@ private modalOD!: Modal;  // Instancia del nuevo modal
 
 
   ngOnInit(): void {
-    this.verFlota.getflota().subscribe(data => {
-      this.registrosFlota = data;
+    this.fechaMaxima.setDate(this.fechaActual.getDate() + 14);
+  
+    this.verFlota.getflota().subscribe((data: registrarflotaInter[]) => {
+      this.registrosFlota = data.filter((registro: registrarflotaInter) => {
+        let fechaRegistro = new Date(registro.fecharegistro);
+        return fechaRegistro >= this.fechaActual && fechaRegistro <= this.fechaMaxima;
+      });
     });
-    
   }
+  
 
   ngAfterViewInit(): void { // <-- Añade esta función
     this.bsModal = new Modal(this.modalNoResultados.nativeElement);
     this.modalOD = new Modal(this.modalOrigenDestino.nativeElement);  // Inicialización del nuevo modal
   }
-
   buscarPorOrigenYDestino() {
     if (this.origen && this.destino) {
       this.buscarFlotaService.buscarFlota(this.origen, this.destino)
-        .subscribe(data => {
-          if (data.mensaje) {
-            this.bsModal.show();
-          } else {
-            this.registrosFlota = data;
-            this.mostrarTabla = data.length > 0;
-          }
-        }, error => {
-          alert('Error al realizar la búsqueda.');  // Podrías considerar convertir también este alert en un modal en el futuro.
+      .subscribe((data: registrarflotaInter[]) => {
+        this.registrosFlota = data.filter((registro: registrarflotaInter) => {
+          let fechaRegistro = new Date(registro.fecharegistro);
+          return fechaRegistro >= this.fechaActual && fechaRegistro <= this.fechaMaxima;
         });
-    } else {
-      this.modalOD.show();  // Mostrar el modal en lugar del alert
-    }
+    
+        this.mostrarTabla = this.registrosFlota.length > 0;
+    
+        if (!this.mostrarTabla) {
+          this.bsModal.show();
+        }
+    
+      }, error => {
+        alert('Error al realizar la búsqueda.');
+      });
 }
+
+}
+formatDate(inputDate: string | Date): string {
+  let date: Date;
+
+  if (typeof inputDate === 'string') {
+    date = new Date(inputDate);
+  } else {
+    date = inputDate;
+  }
+
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+
+  return `${year}/${month}/${day}`;
+}
+
 }
