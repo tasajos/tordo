@@ -17,22 +17,42 @@
   </p>
 <br>
 <div class="container mt-4">
+    <form>
+        <h4>Seleccionar Buses</h4>
+        <mat-form-field>
+          <mat-label>Bus</mat-label>
+          
+          <mat-select [(ngModel)]="selectedValue" (ngModelChange)="filterFlotasBasedOnDate()" [ngModelOptions]="{standalone: true}">
+            <mat-option *ngFor="let bus of Buss" [value]="bus.value">
+              {{bus.viewValue}}
+            </mat-option>
+         </mat-select>
+        </mat-form-field>
+        <p> Seleccion: {{selectedValue}} </p>
+    </form>
+    <br>
     <div class="row">
         <div class="col-md-4 mb-4" *ngFor="let flota of flotas">
             <div class="card custom-card" (click)="showPassengerTable(flota)">
-                <img src="../../../../assets/img/asiento.png" class="card-img-top mx-auto mt-3 cursor-pointer" alt="Asiento" style="width: 90px;">
+                <img src="../../../../assets/img/autobux.png" class="card-img-top mx-auto mt-3 cursor-pointer" alt="Asiento" style="width: 90px;">
                 <div class="card-body">
-                    <h5 class="card-title text-center">{{ flota.cantidadpasajeros }}</h5>
-                    <p class="card-text">{{ flota.placa }}</p>
+                    <h3 class="card-title text-center"> Total: {{ flota.cantidadpasajeros }}</h3>
+                    <!--<h4 class="card-title text-center"> Fecha: {{ flota.fecharegistro }}</h4>-->
+                    <h4 class="card-title text-center"> Fecha: {{ formatDate(flota.fecharegistro) }}</h4>
+
+
+                    <p class="card-text">Placa: {{ flota.placa }}</p>
+                    <p class="card-text">Estado: {{ flota.estado }}</p>
                 </div>
                 <div class="card-footer">
                     <small class="text-body-secondary">{{ flota.origen }} - {{ flota.destino }}</small>
                     <p></p>
                     <small class="text-body-secondary">Tipo: {{ flota.tipo }}</small>
                     <p></p>
-                    <small class="text-body-secondary">Hora: {{ flota.hora }} | Precio: {{flota.precio}} </small>
+                    <small class="text-body-secondary">Hora: {{ flota.hora }} | Precio: {{flota.precio}} Bs </small>
                 </div>
             </div>
         </div>
     </div>
 </div>
+

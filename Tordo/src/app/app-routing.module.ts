@@ -22,7 +22,7 @@ const routes: Routes = [
 {path: 'principal',component:PrincipalComponent},
 {path: 'pagos',component:PagosComponent},
 {path: 'uvendedor',component:VendedorComponent},
-{path: 'verflota',component:VerflotaComponent},
+{path: 'verflota',component:RegistrarpasajeroComponent},
 {path: 'registrarflota',component:RegistrarflotaComponent},
 {path: 'login',component:LoginComponent},
 {path: 'recuperarlogin',component:RecuperarusuarioComponent},

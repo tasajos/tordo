@@ -41,7 +41,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {NgFor} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 
 
 
@@ -118,6 +120,9 @@ import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto
     MatPaginatorModule,
     MatNativeDateModule,
     MatDatepickerModule,
+    NgFor,
+    MatSelectModule,
+    AngularFireDatabaseModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
