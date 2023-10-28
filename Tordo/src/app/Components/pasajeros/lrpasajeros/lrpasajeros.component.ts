@@ -1,5 +1,7 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { VentaPasajeticketInter } from 'src/app/Interfaz/usuario';
+import { SusuarioService } from 'src/app/Services/susuario.service';
 
 @Component({
   selector: 'app-lrpasajeros',
@@ -10,9 +12,10 @@ export class LrpasajerosComponent implements OnInit {
 
   passengerCount: number = 0;
   flota: any;
+  pasajerosVendidos: VentaPasajeticketInter[] = [];
 
-
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+              private asientoser: SusuarioService) {}
 
   ngOnInit(): void {
     const count = this.route.snapshot.paramMap.get('count');
@@ -27,7 +30,6 @@ export class LrpasajerosComponent implements OnInit {
     const precio = this.route.snapshot.queryParamMap.get('precio');
     const tipo = this.route.snapshot.queryParamMap.get('tipo');
 
-
     this.flota = {
       origen: origen,
       destino: destino,
@@ -37,7 +39,17 @@ export class LrpasajerosComponent implements OnInit {
       tipo: tipo,
       fecharegistro: this.formatDate(fecharegistro || '')
     };
-  } 
+  
+    this.asientoser.getpasajerosventa().subscribe((data: VentaPasajeticketInter[]) => {
+      this.pasajerosVendidos = data;
+    });
+  }
+
+  isSeatSold(seatNumber: number): boolean {
+    return this.pasajerosVendidos.some(pasajero => 
+      +pasajero.asiento === seatNumber && pasajero.placa === this.flota.placa
+    );
+  }
 
   formatDate(dateString: string): string {
     const date = new Date(dateString);
@@ -46,5 +58,4 @@ export class LrpasajerosComponent implements OnInit {
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
   }
-  
-}  
+}
