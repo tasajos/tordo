@@ -4,6 +4,7 @@
         <div class="card rounded-lg">
           <div class="card-body">
             <form (submit)="buscarPorOrigenYDestino()">
+              <!--
               <div class="mb-3">
                 <label for="autoSizingInput" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="autoSizingInput" placeholder="Nombre">
@@ -12,6 +13,7 @@
                 <label for="autoSizingInput" class="form-label">Cantidad Pasajeros</label>
                 <input type="number" class="form-control" id="autoSizingInput" placeholder="Número">
               </div>
+              -->
               <div class="mb-3">
                 <label for="autoSizingSelectOrigen" class="form-label">Origen</label>
                 <select class="form-select" id="autoSizingSelectOrigen" [(ngModel)]="origen" [ngModelOptions]="{ standalone: true }">
@@ -32,10 +34,11 @@
                   <option value="Beni">Beni</option>
                 </select>
               </div>
+              <!--
               <div class="mb-3">
                 <label for="autoSizingDate" class="form-label">Fecha</label>
                 <input type="date" class="form-control" id="autoSizingDate">
-              </div>
+              </div>-->
               <button type="button" class="btn btn-primary" (click)="buscarPorOrigenYDestino()">Buscar</button>
             </form>
           </div>
@@ -51,10 +54,10 @@
               </div>
               <div class="col-md-8 mt-2">
                 <div class="card-body">
-                  <h5 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h5>
-                  <h6 class="card-header">Hora: {{ registro.hora }} - {{ registro.destino }}</h6>
-                  <h6 class="card-title">Tipo: {{ registro.tipo }}</h6>
-                  <p><h6 class="card-title">Precio: {{ registro.precio }} Bs</h6>
+                  <h2 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h2>
+                  <h3 class="card-header">Hora: {{ registro.hora }} - {{ registro.fecharegistro }}</h3>
+                  <h3 class="card-title">Tipo: {{ registro.tipo }}</h3>
+                  <p><h3 class="card-title">Precio: {{ registro.precio }} Bs</h3>
                   <a href="#" class="btn btn-primary">Comprar</a>
                 </div>
               </div>
