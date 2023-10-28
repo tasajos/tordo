@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/uvendedor']); 
             //this.router.navigate(['/admin-dashboard']); 
           } else {
-            this.router.navigate(['/admin-dashboard']);
+            this.router.navigate(['/uadministrador']);
           }
         });
       } else {
