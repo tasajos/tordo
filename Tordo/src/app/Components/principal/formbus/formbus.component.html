@@ -56,7 +56,7 @@
                 <div class="card-body">
                   <h2 class="card-title"> {{ registro.origen }} - {{ registro.destino }}</h2>
                   <!--<h3 class="card-header">Hora: {{ registro.hora }} - {{ registro.fecharegistro }}</h3>-->
-                  <h3 class="card-header">Hora: {{ registro.hora }} - {{ formatDate(registro.fecharegistro) }}</h3>
+                  <h3 class="card-header">Hora: {{ registro.hora }} {{ formatDate(registro.fecharegistro) }}</h3>
 
                   <h3 class="card-title">Tipo: {{ registro.tipo }}</h3>
                   <p><h3 class="card-title">Precio: {{ registro.precio }} Bs</h3>
