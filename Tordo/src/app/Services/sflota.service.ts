@@ -63,7 +63,5 @@ buscarFlota(origen: string, destino: string): Observable<any> {
     })
   );
 }
-
-
 }
  
