@@ -19,7 +19,7 @@ import { AdministradorComponent } from './Components/usuarios/administrador/admi
 
 const routes: Routes = [
 
-{path: '', redirectTo:'principal', pathMatch:'full'},
+{path: '', redirectTo:'login', pathMatch:'full'},
 {path: 'principal',component:PrincipalComponent},
 {path: 'pagos',component:PagosComponent},
 {path: 'uvendedor',component:VendedorComponent},
@@ -35,7 +35,7 @@ const routes: Routes = [
 {path: 'reservapasaje',component:ReservapasajeComponent},
 {path: 'mfecha',component:FmanifestoComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
-{path: '**', redirectTo:'principal', pathMatch:'full'}
+{path: '**', redirectTo:'login', pathMatch:'full'}
 
 
 ];
