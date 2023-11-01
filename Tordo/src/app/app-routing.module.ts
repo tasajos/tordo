@@ -14,14 +14,16 @@ import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasaj
 import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
 import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
 import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
+import { AdministradorComponent } from './Components/usuarios/administrador/administrador.component';
 
 
 const routes: Routes = [
 
-{path: '', redirectTo:'principal', pathMatch:'full'},
+{path: '', redirectTo:'login', pathMatch:'full'},
 {path: 'principal',component:PrincipalComponent},
 {path: 'pagos',component:PagosComponent},
 {path: 'uvendedor',component:VendedorComponent},
+{path: 'uadministrador',component:AdministradorComponent},
 {path: 'verflota',component:RegistrarpasajeroComponent},
 {path: 'registrarflota',component:RegistrarflotaComponent},
 {path: 'login',component:LoginComponent},
@@ -33,7 +35,7 @@ const routes: Routes = [
 {path: 'reservapasaje',component:ReservapasajeComponent},
 {path: 'mfecha',component:FmanifestoComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
-{path: '**', redirectTo:'principal', pathMatch:'full'}
+{path: '**', redirectTo:'login', pathMatch:'full'}
 
 
 ];

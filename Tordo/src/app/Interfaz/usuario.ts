@@ -34,6 +34,7 @@ export interface VentaPasajeticketInter {
     fechanacimiento: Date | null;
     metodopago: string,
     preciocalculado?: number,
+    estado?: string,
     
        
 }
