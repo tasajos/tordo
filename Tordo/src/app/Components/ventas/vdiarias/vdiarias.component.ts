@@ -18,6 +18,11 @@ export class VdiariasComponent implements OnInit {
   displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento', 'tipo', 'origen', 'destino', 'hora', 'precio', 'placa', 'fecha','metodopago'];
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
 
+  totalPrecioQR: number = 0; // Total de precio con método de pago "QR"
+totalPrecioEfectivo: number = 0; // Total de precio con método de pago "Efectivo"
+metodoPagoActual: string = ''; // Método de pago actual
+
+
   startDate: Date | null = null;
   endDate: Date | null = null;
   totalPrecio: number = 0; // Variable para almacenar el sumarizado de precio
@@ -58,36 +63,50 @@ export class VdiariasComponent implements OnInit {
 
   onSearch() {
     console.log('onSearch called', this.startDate, this.endDate);
+  
+    // Reinicia los totales por método de pago al inicio de la búsqueda
+    this.totalPrecioQR = 0;
+    this.totalPrecioEfectivo = 0;
+  
     if (this.startDate && this.endDate) {
       const filteredData = this.dataSource.data.filter(item => {
-
+  
         // Identificar y convertir la fecha según su formato
         const [day, month, year] = (item.fecha || '').split('/');
         const itemDate = new Date(+year, +month - 1, +day);
-
+  
         // Validación para asegurarnos de que la fecha convertida es válida
         if (isNaN(itemDate.getTime())) {
           console.error('Fecha inválida:', item.fecha, 'Ítem completo:', item);
           return false;
         }
-
+  
         console.log('itemDate', itemDate);
-
+  
         if (this.startDate !== null && this.endDate !== null) {
           const isIncluded = itemDate >= this.startDate && itemDate <= this.endDate;
           console.log('isIncluded', isIncluded);
-
-          // Actualiza el total del precio al filtrar los datos
+  
+          // Actualiza el total del precio y el método de pago actual al filtrar los datos
           if (isIncluded) {
             this.totalPrecio += item.precio;
+  
+            // Verifica el método de pago actual y suma al total correspondiente
+            if (item.metodopago === 'qr') {
+              this.totalPrecioQR += item.precio;
+              this.metodoPagoActual = 'qr';
+            } else if (item.metodopago === 'efectivo') {
+              this.totalPrecioEfectivo += item.precio;
+              this.metodoPagoActual = 'efectivo';
+            }
           }
-
+  
           return isIncluded;
         }
         return false;
       });
       console.log('filteredData', filteredData);
-
+  
       this.dataSource.data = filteredData;
     }
     if (this.dataSource.paginator) {
