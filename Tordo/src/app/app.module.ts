@@ -63,6 +63,9 @@ import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.
 import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
 import { MadministradorComponent } from './Components/principal/menu/madministrador/madministrador.component';
 import { VpasajeonlineComponent } from './Components/ventas/reservapasaje/vpasajeonline/vpasajeonline.component';
+import { AdmanifestoflotaComponent } from './Components/usuarios/administrador/admanifesto/admanifestoflota/admanifestoflota.component';
+import { AdmanifestofechaComponent } from './Components/usuarios/administrador/admanifesto/admanifestofecha/admanifestofecha.component';
+import { AdmanifestogralComponent } from './Components/usuarios/administrador/admanifesto/admanifestogral/admanifestogral.component';
 
 
 @NgModule({
@@ -103,7 +106,10 @@ import { VpasajeonlineComponent } from './Components/ventas/reservapasaje/vpasaj
     MflotaComponent,
     FmanifestoComponent,
     MadministradorComponent,
-    VpasajeonlineComponent
+    VpasajeonlineComponent,
+    AdmanifestoflotaComponent,
+    AdmanifestofechaComponent,
+    AdmanifestogralComponent
     
   ],
   imports: [

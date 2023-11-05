@@ -15,6 +15,9 @@ import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reserv
 import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
 import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
 import { AdministradorComponent } from './Components/usuarios/administrador/administrador.component';
+import { AdmanifestogralComponent } from './Components/usuarios/administrador/admanifesto/admanifestogral/admanifestogral.component';
+import { AdmanifestoflotaComponent } from './Components/usuarios/administrador/admanifesto/admanifestoflota/admanifestoflota.component';
+import { AdmanifestofechaComponent } from './Components/usuarios/administrador/admanifesto/admanifestofecha/admanifestofecha.component';
 
 
 const routes: Routes = [
@@ -29,11 +32,14 @@ const routes: Routes = [
 {path: 'login',component:LoginComponent},
 {path: 'recuperarlogin',component:RecuperarusuarioComponent},
 {path: 'manifesto',component:ManifestoComponent},
+{path: 'admanifesto',component:AdmanifestogralComponent},
 {path: 'mflota',component:MflotaComponent},
+{path: 'admanifestoflota',component:AdmanifestoflotaComponent},
 {path: 'rrpasajero',component:RegistrarpasajeroComponent},
 {path: 'ticketpasajero',component:TicketPasajeComponent},
 {path: 'reservapasaje',component:ReservapasajeComponent},
 {path: 'mfecha',component:FmanifestoComponent},
+{path: 'admfecha',component:AdmanifestofechaComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
