@@ -16,7 +16,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./admanifestofecha.component.css']
 })
 export class AdmanifestofechaComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa','fecha'];
+  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa','fecha','FechaCreacion'];
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
 
   startDate: Date | null = null;

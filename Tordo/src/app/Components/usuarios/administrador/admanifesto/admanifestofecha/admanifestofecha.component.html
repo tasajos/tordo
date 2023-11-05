@@ -84,7 +84,11 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha</th>
                 <td mat-cell *matCellDef="let row"> {{row.fecha}} </td>
               </ng-container>
-             
+              <ng-container matColumnDef="FechaCreacion">
+                <th mat-header-cell *matHeaderCellDef> Fecha Creación </th>
+                <td mat-cell *matCellDef="let element"> {{ element.fechaCreacion | date: 'short' }} </td>
+
+              </ng-container>
                  
               <!--... Añade aquí las otras columnas ...-->
           
