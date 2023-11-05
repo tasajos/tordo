@@ -1,0 +1,168 @@
+<app-cabecera></app-cabecera>
+<p></p>
+<p></p>
+<p>
+
+</p>
+<br>
+<p>
+
+</p>
+<br>
+
+<app-madministrador></app-madministrador>
+<div class="basic">
+  <!--<img class="imgfor" src="../../../../assets/img/logo 1.png" alt="Chakuy logo">-->
+  <h3> Registrar Flota</h3>   
+</div>
+
+<div class="container mt-4 ml-2"> <!-- Contenedor con margen a la izquierda -->
+<br>
+<form class="example-form" [formGroup]="formulario" (ngSubmit)="registrarflota()" >
+      <div class="row">
+        <div class="col-md-6"> <!-- Campo de Placa, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="placa">Placa:</label>
+            <input type="text" class="form-control" id="placa" name="placa" formControlName="placa">
+          </div>
+        </div>
+        <div class="col-md-6"> <!-- Campo de Conductor, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="conductor">Conductor:</label>
+            <input type="text" class="form-control" id="conductor" name="conductor" formControlName="conductor">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="hora-salida">Hora de salida:</label>
+            <input type="time" class="form-control" id="hora-salida" name="hora" formControlName="hora">
+          </div>
+        </div>
+        <div class="col-md-6"> <!-- Campo de Tipo, mitad del tamaño en pantallas medianas -->
+          <div class="form-group">
+            <label for="tipo">Tipo:</label>
+            <select class="form-control" id="tipo" name="tipo" formControlName="tipo">
+              <option value="normal">Normal</option>
+              <option value="Leito">Leito</option>
+              <option value="Suite">Suite</option>
+              <option value="SemiCama">Semicama</option>
+
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-2"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+            <div class="input-group mt-3">
+              <select class="form-select" id="inputGroupSelect02" formControlName="cantidadpasajeros">
+                <option selected>Selecciona...</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+                <option value="40">40</option>
+                <option value="50">50</option>
+                <option value="60">60</option>
+                </select>
+              <label class="input-group-text" for="inputGroupSelect02">#Pasajeros</label>
+            </div>
+            
+          </div>
+          <div class="col-md-3"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+            <div class="input-group mt-3">
+              <select class="form-select" id="inputGroupSelect02" formControlName="origen">
+                <option selected>Selecciona Origen...</option>
+                <option value="La Paz">La Paz</option>
+                <option value="Cochabamba">Cochabamba</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                </select>
+              <label class="input-group-text" for="inputGroupSelect02">Origen</label>
+            </div>
+            
+          </div>
+          <div class="col-md-3"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+            <div class="input-group mt-3">
+              <select class="form-select" id="inputGroupSelect02" formControlName="destino">
+                <option selected>Selecciona Destino...</option>
+                <option value="La Paz">La Paz</option>
+                <option value="Cochabamba">Cochabamba</option>
+                <option value="Santa Cruz">Santa Cruz</option>
+                </select>
+              <label class="input-group-text" for="inputGroupSelect02">Destino</label>
+            </div>
+            
+          </div>
+
+          <div class="col-md-2"> <!-- Campo de Hora de salida, mitad del tamaño en pantallas medianas -->
+            <div class="input-group mt-3">
+              <select class="form-select" id="inputGroupSelect02" formControlName="estado">
+                <option selected>Estado...</option>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+                <option value="En Ruta">En Ruta</option>
+                <option value="Mantenimiento">Mantenimiento</option>
+                </select>
+              <label class="input-group-text" for="inputGroupSelect02">Estado</label>
+            </div>
+                      
+          </div>
+          <div class="col-md-2">
+          <div class="input-group mt-3">
+            <span class="input-group-text">Precio</span>
+            <input type="number" class="form-control" aria-label="Amount (to the nearest dollar)" formControlName="precio">
+            <span class="input-group-text">Bs</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"> <!-- Campo de Fecha de salida, mitad del tamaño en pantallas medianas -->
+            <div class="input-group mt-3">
+                <input class="form-control" type="date" id="fecharegistro" formControlName="fecharegistro" [min]="today" [max]="twoWeeksLater">
+                <label class="input-group-text" for="fecharegistro">Fecha de Salida</label>
+            </div>
+            <!-- Esto muestra la fecha en el formato deseado -->
+            <div class="mt-2">
+                <span>Formato visual: {{ formatDate(formulario.value.fecharegistro) }}</span>
+            </div>
+      </div>
+      
+      </div>
+<br>
+<br>
+<br>
+<br>
+
+     
+      <br>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <button type="submit" class="btn btn-primary custom-button">Registrar</button>
+      <button mat-raised-button color="accent" class="custom-button" (click)="volver()">Volver</button>
+    </div>
+  </div>
+    <!--<button type="submit" class="btn btn-primary mt-3">REGISTRAR </button>-->
+  </form>
+  
+ <!-- Modal para Registro Exitoso -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Registro exitoso</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ¡La flota ha sido registrada con éxito!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+     
+ 

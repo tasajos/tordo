@@ -69,6 +69,9 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
+import { AdverflotasComponent } from './Components/usuarios/administrador/adflotas/adverflotas/adverflotas.component';
+import { AdregistrarflotasComponent } from './Components/usuarios/administrador/adflotas/adregistrarflotas/adregistrarflotas.component';
+import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
 
 
 export const MY_FORMATS = {
@@ -124,7 +127,10 @@ export const MY_FORMATS = {
     VpasajeonlineComponent,
     AdmanifestoflotaComponent,
     AdmanifestofechaComponent,
-    AdmanifestogralComponent
+    AdmanifestogralComponent,
+    AdverflotasComponent,
+    AdregistrarflotasComponent,
+    AdlistflotaComponent
     
   ],
   imports: [

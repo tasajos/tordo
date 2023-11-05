@@ -18,6 +18,9 @@ import { AdministradorComponent } from './Components/usuarios/administrador/admi
 import { AdmanifestogralComponent } from './Components/usuarios/administrador/admanifesto/admanifestogral/admanifestogral.component';
 import { AdmanifestoflotaComponent } from './Components/usuarios/administrador/admanifesto/admanifestoflota/admanifestoflota.component';
 import { AdmanifestofechaComponent } from './Components/usuarios/administrador/admanifesto/admanifestofecha/admanifestofecha.component';
+import { AdverflotasComponent } from './Components/usuarios/administrador/adflotas/adverflotas/adverflotas.component';
+import { AdregistrarflotasComponent } from './Components/usuarios/administrador/adflotas/adregistrarflotas/adregistrarflotas.component';
+import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
 
 
 const routes: Routes = [
@@ -40,7 +43,10 @@ const routes: Routes = [
 {path: 'reservapasaje',component:ReservapasajeComponent},
 {path: 'mfecha',component:FmanifestoComponent},
 {path: 'admfecha',component:AdmanifestofechaComponent},
+{path: 'adverflota',component:AdverflotasComponent},
+{path: 'adregflota',component:AdregistrarflotasComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
+{path: 'lpasajeros-tabla/:count',component:AdlistflotaComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 
