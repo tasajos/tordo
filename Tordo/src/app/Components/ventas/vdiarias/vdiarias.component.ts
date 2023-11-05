@@ -123,4 +123,8 @@ metodoPagoActual: string = ''; // Método de pago actual
       this.dataSource.paginator.firstPage();  // Vuelve a la primera página de la tabla
     }
   }
+
+  recargar() {
+    this.ngOnInit();
+  }
 }
