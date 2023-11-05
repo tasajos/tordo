@@ -72,6 +72,7 @@ import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/materia
 import { AdverflotasComponent } from './Components/usuarios/administrador/adflotas/adverflotas/adverflotas.component';
 import { AdregistrarflotasComponent } from './Components/usuarios/administrador/adflotas/adregistrarflotas/adregistrarflotas.component';
 import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
+import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.component';
 
 
 export const MY_FORMATS = {
@@ -130,7 +131,8 @@ export const MY_FORMATS = {
     AdmanifestogralComponent,
     AdverflotasComponent,
     AdregistrarflotasComponent,
-    AdlistflotaComponent
+    AdlistflotaComponent,
+    VdiariasComponent
     
   ],
   imports: [

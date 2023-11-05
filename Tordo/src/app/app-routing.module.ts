@@ -22,6 +22,7 @@ import { AdverflotasComponent } from './Components/usuarios/administrador/adflot
 import { AdregistrarflotasComponent } from './Components/usuarios/administrador/adflotas/adregistrarflotas/adregistrarflotas.component';
 import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
 import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
+import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.component';
 
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
 {path: 'lpasajeros-tabla/:count',component:AdlistflotaComponent},
 {path: 'rventapasaje',component:VentapasajeComponent},
+{path: 'vdiaria',component:VdiariasComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 
