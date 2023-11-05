@@ -27,13 +27,12 @@ export class AdmanifestofechaComponent implements OnInit {
   ngOnInit() {
     this.listadopasajeros.getpasajerosventa().subscribe(
       data => {
-        // Map and format FechaCreacion
         const formattedData = data.map(item => ({
           ...item,
-          FechaCreacion: item.FechaCreacion ? this.formatDate(new Date(item.FechaCreacion)) : ''
-        })) as VentaPasajeticketInter[];  // Cast back to the expected type
+          // Corrected the property name to 'FechaCreacion'
+          FechaCreacion: item.FechaCreacion ? new Date(item.FechaCreacion).toLocaleDateString('en-US') : ''
+        })) as VentaPasajeticketInter[];
         
-        // Create a new MatTableDataSource with the formatted data
         this.dataSource = new MatTableDataSource<VentaPasajeticketInter>(formattedData);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
@@ -43,7 +42,6 @@ export class AdmanifestofechaComponent implements OnInit {
       }
     );
   }
-  
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -60,23 +58,21 @@ export class AdmanifestofechaComponent implements OnInit {
   }
 
   onSearch() {
-    console.log('onSearch called', this.startDate, this.endDate);
-    if (this.startDate !== null && this.endDate !== null) {
-      // Normalize the startDate and endDate to remove time part
-      const start = new Date(this.startDate.setHours(0, 0, 0, 0));
-      const end = new Date(this.endDate.setHours(23, 59, 59, 999));
+    if (this.startDate && this.endDate) {
+      const start = new Date(this.startDate);
+      const end = new Date(this.endDate);
+  
+      start.setHours(0, 0, 0, 0);
+      end.setHours(23, 59, 59, 999);
   
       const filteredData = this.dataSource.data.filter(item => {
+        // Corrected the property name to 'FechaCreacion'
         if (!item.FechaCreacion) {
           console.error('FechaCreacion is missing or invalid:', item);
           return false;
         }
-  
-        // Normalize the item.FechaCreacion to remove time part
+        // Corrected the property name to 'FechaCreacion'
         const itemDate = new Date(item.FechaCreacion);
-        itemDate.setHours(0, 0, 0, 0); // Set to start of the day for comparison
-  
-        // Check if the itemDate falls within the start and end date range
         return itemDate >= start && itemDate <= end;
       });
   
@@ -93,18 +89,34 @@ export class AdmanifestofechaComponent implements OnInit {
   clearSearch() {
     this.startDate = null;
     this.endDate = null;
-    this.ngOnInit(); // Reload the original data
+    this.ngOnInit(); // Puede que quieras reemplazar esto con una llamada a una función que recupere todos los datos nuevamente
     if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage(); // Go back to the first page of the table
+      this.dataSource.paginator.firstPage();
     }
   }
 
   formatDate(date: Date): string {
-    const day = ('0' + date.getDate()).slice(-2); // Add leading zero and get last two digits
-    const month = ('0' + (date.getMonth() + 1)).slice(-2); // Months are 0-based in JS
+    // Esta función no es necesaria si las fechas ya están en el formato correcto
+    // Sin embargo, la dejo aquí por si es necesaria en otra parte del código
+    const day = ('0' + date.getDate()).slice(-2);
+    const month = ('0' + (date.getMonth() + 1)).slice(-2);
     const year = date.getFullYear();
     
-    return `${day}/${month}/${year}`; // Changed to DD/MM/YYYY format
+    return `${day}/${month}/${year}`;
   }
-  
+
+  parseDate(fechaCreacion: string): Date {
+    // Esta función convierte una cadena de fecha en formato DD/MM/YYYY a un objeto Date
+    const parts = fechaCreacion.split('/');
+    const day = parseInt(parts[0], 10);
+    const month = parseInt(parts[1], 10) - 1; // Los meses en JavaScript son 0-indexados
+    const year = parseInt(parts[2], 10);
+    return new Date(year, month, day);
+  }
+
+  // Esta función podría no ser necesaria si las fechas de los DatePicker ya están en el formato correcto
+  parseSearchDate(input: string): Date {
+    const [day, month, year] = input.split('/').map(val => parseInt(val, 10));
+    return new Date(year, month - 1, day);
+  }
 }

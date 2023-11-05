@@ -28,6 +28,27 @@ import { VerflotaComponent } from './Components/flota/verflota/verflota.componen
 import { LoginComponent } from './Components/login/login.component';
 import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { RecuperarusuarioComponent } from './Components/login/recuperarusuario/recuperarusuario.component';
+
+import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasajeros.component';
+import { VentasComponent } from './Components/ventas/ventas.component';
+import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
+import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
+import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
+import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
+import { MadministradorComponent } from './Components/principal/menu/madministrador/madministrador.component';
+import { VpasajeonlineComponent } from './Components/ventas/reservapasaje/vpasajeonline/vpasajeonline.component';
+import { AdmanifestoflotaComponent } from './Components/usuarios/administrador/admanifesto/admanifestoflota/admanifestoflota.component';
+import { AdmanifestofechaComponent } from './Components/usuarios/administrador/admanifesto/admanifestofecha/admanifestofecha.component';
+import { AdmanifestogralComponent } from './Components/usuarios/administrador/admanifesto/admanifestogral/admanifestogral.component';
+import { MvendedorComponent } from './Components/principal/menu/mvendedor/mvendedor.component';
+import { PasajerosComponent } from './Components/pasajeros/pasajeros.component';
+import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
+import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
+
+
+//modulos
+import {AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // Importa BrowserAnimationsModule
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -44,29 +65,23 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-
-
-
-//modulos
-import {AngularFireModule } from '@angular/fire/compat'
-import { environment } from 'src/environments/environment';
-import { MvendedorComponent } from './Components/principal/menu/mvendedor/mvendedor.component';
-import { PasajerosComponent } from './Components/pasajeros/pasajeros.component';
-import { ManifestoComponent } from './Components/pasajeros/manifesto/manifesto.component';
-import { RegistrarpasajeroComponent } from './Components/pasajeros/registrarpasajero/registrarpasajero.component';
 import { ToastrModule } from 'ngx-toastr';
-import { LrpasajerosComponent } from './Components/pasajeros/lrpasajeros/lrpasajeros.component';
-import { VentasComponent } from './Components/ventas/ventas.component';
-import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
-import { ReservapasajeComponent } from './Components/ventas/reservapasaje/reservapasaje.component';
-import { MflotaComponent } from './Components/pasajeros/manifesto/mflota/mflota.component';
-import { FmanifestoComponent } from './Components/pasajeros/manifesto/fmanifesto/fmanifesto.component';
-import { MadministradorComponent } from './Components/principal/menu/madministrador/madministrador.component';
-import { VpasajeonlineComponent } from './Components/ventas/reservapasaje/vpasajeonline/vpasajeonline.component';
-import { AdmanifestoflotaComponent } from './Components/usuarios/administrador/admanifesto/admanifestoflota/admanifestoflota.component';
-import { AdmanifestofechaComponent } from './Components/usuarios/administrador/admanifesto/admanifestofecha/admanifestofecha.component';
-import { AdmanifestogralComponent } from './Components/usuarios/administrador/admanifesto/admanifestogral/admanifestogral.component';
 
+import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
+import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
+
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'DD/MM/YYYY',
+  },
+  display: {
+    dateInput: 'DD/MM/YYYY',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 @NgModule({
   declarations: [
@@ -133,11 +148,15 @@ import { AdmanifestogralComponent } from './Components/usuarios/administrador/ad
     NgFor,
     MatSelectModule,
     AngularFireDatabaseModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
   ],
-  providers: [],
+  providers: [ { provide: MAT_DATE_LOCALE, useValue: 'es' },
+  { provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE] },
+  { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
