@@ -21,6 +21,7 @@ import { AdmanifestofechaComponent } from './Components/usuarios/administrador/a
 import { AdverflotasComponent } from './Components/usuarios/administrador/adflotas/adverflotas/adverflotas.component';
 import { AdregistrarflotasComponent } from './Components/usuarios/administrador/adflotas/adregistrarflotas/adregistrarflotas.component';
 import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
+import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,7 @@ const routes: Routes = [
 {path: 'adregflota',component:AdregistrarflotasComponent},
 {path: 'pasajeros-tabla/:count',component:LrpasajerosComponent},
 {path: 'lpasajeros-tabla/:count',component:AdlistflotaComponent},
+{path: 'rventapasaje',component:VentapasajeComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 
