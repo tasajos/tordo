@@ -1,14 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import { SusuarioService } from 'src/app/Services/susuario.service';
-import { VentaPasajeticketInter } from 'src/app/Interfaz/usuario';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-
+import { SusuarioService } from 'src/app/Services/susuario.service';
+import { VentaPasajeticketInter } from 'src/app/Interfaz/usuario';
 
 @Component({
   selector: 'app-admanifestofecha',
@@ -16,7 +11,7 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./admanifestofecha.component.css']
 })
 export class AdmanifestofechaComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento','tipo', 'origen', 'destino', 'hora', 'precio', 'placa','fecha','FechaCreacion'];
+  displayedColumns: string[] = ['nombre', 'apellidos', 'ci', 'asiento', 'tipo', 'origen', 'destino', 'hora', 'precio', 'placa', 'fecha', 'FechaCreacion'];
   dataSource!: MatTableDataSource<VentaPasajeticketInter>;
 
   startDate: Date | null = null;
@@ -32,17 +27,24 @@ export class AdmanifestofechaComponent implements OnInit {
   ngOnInit() {
     this.listadopasajeros.getpasajerosventa().subscribe(
       data => {
-        console.log('Datos recibidos:', data); // <-- Imprime los datos aquí
-        this.dataSource = new MatTableDataSource(data);
+        // Map and format FechaCreacion
+        const formattedData = data.map(item => ({
+          ...item,
+          FechaCreacion: item.FechaCreacion ? this.formatDate(new Date(item.FechaCreacion)) : ''
+        })) as VentaPasajeticketInter[];  // Cast back to the expected type
+        
+        // Create a new MatTableDataSource with the formatted data
+        this.dataSource = new MatTableDataSource<VentaPasajeticketInter>(formattedData);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
       },
       error => {
-        console.log('Error:', error);
-        
+        console.error('Error:', error);
       }
     );
   }
+  
+
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
@@ -59,43 +61,50 @@ export class AdmanifestofechaComponent implements OnInit {
 
   onSearch() {
     console.log('onSearch called', this.startDate, this.endDate);
-    if (this.startDate && this.endDate) {
-        const filteredData = this.dataSource.data.filter(item => {
-
-            // Identificar y convertir la fecha según su formato
-            const [day, month, year] = (item.fecha || '').split('/');
-            const itemDate = new Date(+year, +month - 1, +day);
-
-            // Validación para asegurarnos de que la fecha convertida es válida
-            if (isNaN(itemDate.getTime())) {
-                console.error('Fecha inválida:', item.fecha, 'Ítem completo:', item);
-                return false;
-            }
-
-            console.log('itemDate', itemDate);
-
-            if (this.startDate !== null && this.endDate !== null) {
-                const isIncluded = itemDate >= this.startDate && itemDate <= this.endDate;
-                console.log('isIncluded', isIncluded);
-                return isIncluded;
-            }
-            return false;
-        });
-        console.log('filteredData', filteredData);
-        this.dataSource.data = filteredData;
+    if (this.startDate !== null && this.endDate !== null) {
+      // Normalize the startDate and endDate to remove time part
+      const start = new Date(this.startDate.setHours(0, 0, 0, 0));
+      const end = new Date(this.endDate.setHours(23, 59, 59, 999));
+  
+      const filteredData = this.dataSource.data.filter(item => {
+        if (!item.FechaCreacion) {
+          console.error('FechaCreacion is missing or invalid:', item);
+          return false;
+        }
+  
+        // Normalize the item.FechaCreacion to remove time part
+        const itemDate = new Date(item.FechaCreacion);
+        itemDate.setHours(0, 0, 0, 0); // Set to start of the day for comparison
+  
+        // Check if the itemDate falls within the start and end date range
+        return itemDate >= start && itemDate <= end;
+      });
+  
+      this.dataSource.data = filteredData;
+    } else {
+      console.error('startDate and/or endDate is null');
     }
+  
     if (this.dataSource.paginator) {
-        this.dataSource.paginator.firstPage();
+      this.dataSource.paginator.firstPage();
     }
-}
-clearSearch() {
-  this.startDate = null;
-  this.endDate = null;
-  this.ngOnInit();  // Vuelve a cargar los datos originales
-  if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();  // Vuelve a la primera página de la tabla
   }
-}
 
-}
+  clearSearch() {
+    this.startDate = null;
+    this.endDate = null;
+    this.ngOnInit(); // Reload the original data
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage(); // Go back to the first page of the table
+    }
+  }
 
+  formatDate(date: Date): string {
+    const day = ('0' + date.getDate()).slice(-2); // Add leading zero and get last two digits
+    const month = ('0' + (date.getMonth() + 1)).slice(-2); // Months are 0-based in JS
+    const year = date.getFullYear();
+    
+    return `${day}/${month}/${year}`; // Changed to DD/MM/YYYY format
+  }
+  
+}

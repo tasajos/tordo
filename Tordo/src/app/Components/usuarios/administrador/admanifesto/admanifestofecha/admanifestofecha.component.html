@@ -86,8 +86,7 @@
               </ng-container>
               <ng-container matColumnDef="FechaCreacion">
                 <th mat-header-cell *matHeaderCellDef> Fecha Creación </th>
-                <td mat-cell *matCellDef="let element"> {{ element.fechaCreacion | date: 'short' }} </td>
-
+                <td mat-cell *matCellDef="let element"> {{element.fechaCreacion | date: 'dd/MM/yyyy'}} </td> <!-- Updated pipe format -->
               </ng-container>
                  
               <!--... Añade aquí las otras columnas ...-->
