@@ -24,6 +24,7 @@ import { AdlistflotaComponent } from './Components/usuarios/administrador/adflot
 import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaje.component';
 import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.component';
 import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/cantpasajeros.component';
+import { NovedadesComponent } from './Components/libronovedades/novedades/novedades.component';
 
 
 const routes: Routes = [
@@ -53,6 +54,7 @@ const routes: Routes = [
 {path: 'rventapasaje',component:VentapasajeComponent},
 {path: 'vdiaria',component:VdiariasComponent},
 {path: 'cpasajeros',component:CantpasajerosComponent},
+{path: 'regnovedades',component:NovedadesComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 

@@ -74,6 +74,8 @@ import { AdregistrarflotasComponent } from './Components/usuarios/administrador/
 import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
 import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.component';
 import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/cantpasajeros.component';
+import { NovedadesComponent } from './Components/libronovedades/novedades/novedades.component';
+import { ListanovedadesComponent } from './Components/libronovedades/listanovedades/listanovedades.component';
 
 
 export const MY_FORMATS = {
@@ -134,7 +136,9 @@ export const MY_FORMATS = {
     AdregistrarflotasComponent,
     AdlistflotaComponent,
     VdiariasComponent,
-    CantpasajerosComponent
+    CantpasajerosComponent,
+    NovedadesComponent,
+    ListanovedadesComponent
     
   ],
   imports: [
