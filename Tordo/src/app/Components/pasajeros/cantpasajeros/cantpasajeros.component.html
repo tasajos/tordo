@@ -1,0 +1,46 @@
+<div class="container mb-4 mt-4">
+
+    <mat-form-field>
+        <mat-label>Seleccione un Rango</mat-label>
+        <mat-date-range-input [rangePicker]="picker">
+
+          <input matStartDate placeholder="Fecha Inicio" [(ngModel)]="startDate">
+          <input matEndDate placeholder="Fecha Fin" [(ngModel)]="endDate">
+
+          <!--<input matStartDate placeholder="Start date">
+          <input matEndDate placeholder="End date">-->
+        </mat-date-range-input>
+        <mat-hint>DD/MM/AAAA – DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+      <section>
+          <div class="example-button-row mt-4">
+          <!--<button mat-raised-button color="primary">Buscar</button>-->
+          <button mat-raised-button color="primary" class="mr-2" (click)="onSearch()">Buscar</button>
+          <button mat-raised-button color="warn" class="mr-2" (click)="clearSearch()">Limpiar</button>
+          <!--<button mat-raised-button color="accent" class="ml-2" (click)="recargar()"> Volver</button>-->
+
+          </div>
+      </section>
+
+        <!-- Agrega esto donde desees mostrar el total precio -->
+
+
+        <div class="card text-center mt-4">
+            <div class="card-header">
+              Total Pasajeros
+            </div>
+            <div class="card-body">
+              <h3 class="card-title">Pasajeros</h3>
+              <p class="card-text">{{ cantidadPasajeros }}</p>
+              
+              <button mat-raised-button color="primary" (click)="descargarDatos()">Descargar</button>
+            </div>
+            <div class="card-footer text-body-secondary">
+               
+    
+       
+     

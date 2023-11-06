@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class VentapasajeComponent {
 
   mostrarVdiarias: boolean = false;
-
+  mostrarcpasajeros: boolean = false;
 }

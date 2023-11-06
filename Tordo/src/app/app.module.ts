@@ -73,6 +73,7 @@ import { AdverflotasComponent } from './Components/usuarios/administrador/adflot
 import { AdregistrarflotasComponent } from './Components/usuarios/administrador/adflotas/adregistrarflotas/adregistrarflotas.component';
 import { AdlistflotaComponent } from './Components/usuarios/administrador/adflotas/adlistflota/adlistflota.component';
 import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.component';
+import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/cantpasajeros.component';
 
 
 export const MY_FORMATS = {
@@ -132,7 +133,8 @@ export const MY_FORMATS = {
     AdverflotasComponent,
     AdregistrarflotasComponent,
     AdlistflotaComponent,
-    VdiariasComponent
+    VdiariasComponent,
+    CantpasajerosComponent
     
   ],
   imports: [

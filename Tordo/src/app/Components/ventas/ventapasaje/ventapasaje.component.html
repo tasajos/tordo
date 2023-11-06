@@ -11,7 +11,7 @@
     </div>
     <div class="col">
         <div class="card custom-card">
-        <img src="../../../../assets/img/viajero.png" class="card-img-top" alt="...">
+        <img src="../../../../assets/img/viajero.png"  (click)="mostrarcpasajeros = true" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"><strong>Cantidad de Pasajeros Transportados</strong></h3>
           <p class="card-text">
@@ -45,3 +45,5 @@
   </div>
 
   <app-vdiarias *ngIf="mostrarVdiarias"></app-vdiarias>
+  <app-cantpasajeros *ngIf="mostrarcpasajeros"></app-cantpasajeros>
+  
