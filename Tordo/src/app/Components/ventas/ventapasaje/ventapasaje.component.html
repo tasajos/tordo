@@ -33,7 +33,7 @@
     </div>
     <div class="col">
         <div class="card custom-card">
-        <img src="../../../../assets/img/inmigracion.png" class="card-img-top" alt="...">
+        <img src="../../../../assets/img/inmigracion.png"  (click)="mostrarNovedades = true" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"><strong>Novedades</strong></h3>
           <p class="card-text">
@@ -46,4 +46,5 @@
 
   <app-vdiarias *ngIf="mostrarVdiarias"></app-vdiarias>
   <app-cantpasajeros *ngIf="mostrarcpasajeros"></app-cantpasajeros>
+  <app-novedades *ngIf="mostrarNovedades"></app-novedades>
   

@@ -9,4 +9,6 @@ export class VentapasajeComponent {
 
   mostrarVdiarias: boolean = false;
   mostrarcpasajeros: boolean = false;
+  mostrarNovedades: boolean = false;
+  
 }
