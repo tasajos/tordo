@@ -36,6 +36,7 @@ export interface VentaPasajeticketInter {
     preciocalculado?: number,
     estado?: string,
     FechaCreacion?: string,
+    [key: string]: any;
        
 }
 

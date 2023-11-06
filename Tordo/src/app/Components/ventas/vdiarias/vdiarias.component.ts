@@ -8,6 +8,8 @@ import { VentaPasajeticketInter } from 'src/app/Interfaz/usuario';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
+import * as XLSX from 'xlsx';
+
 
 @Component({
   selector: 'app-vdiarias',
@@ -126,5 +128,30 @@ metodoPagoActual: string = ''; // Método de pago actual
 
   recargar() {
     this.ngOnInit();
+  }
+
+  descargarDatos() {
+    // Arreglo para almacenar los datos que se exportarán
+    const datosParaExportar: any[] = [];
+  
+    // Columnas que se exportarán
+    const columnasExportar = ['nombre', 'apellidos', 'ci', 'asiento', 'tipo', 'origen', 'destino', 'hora', 'precio', 'placa', 'fecha', 'metodopago'];
+  
+    // Itera sobre los datos filtrados y construye el arreglo de datos para exportar
+    this.dataSource.filteredData.forEach(item => {
+      const datoExportar: any = {};
+      columnasExportar.forEach(columna => {
+        datoExportar[columna] = item[columna];
+      });
+      datosParaExportar.push(datoExportar);
+    });
+  
+    // Crea un libro de Excel con los datos exportados
+    const wb = XLSX.utils.book_new();
+    const ws = XLSX.utils.json_to_sheet(datosParaExportar);
+    XLSX.utils.book_append_sheet(wb, ws, 'DatosFiltrados');
+  
+    // Exporta el libro de Excel como un archivo .xlsx
+    XLSX.writeFile(wb, 'datos_filtrados.xlsx');
   }
 }
