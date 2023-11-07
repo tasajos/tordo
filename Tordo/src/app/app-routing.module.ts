@@ -25,6 +25,7 @@ import { VentapasajeComponent } from './Components/ventas/ventapasaje/ventapasaj
 import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.component';
 import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/cantpasajeros.component';
 import { NovedadesComponent } from './Components/libronovedades/novedades/novedades.component';
+import { CostosComponent } from './Components/costos/costos.component';
 
 
 const routes: Routes = [
@@ -55,6 +56,7 @@ const routes: Routes = [
 {path: 'vdiaria',component:VdiariasComponent},
 {path: 'cpasajeros',component:CantpasajerosComponent},
 {path: 'regnovedades',component:NovedadesComponent},
+{path: 'costos',component:CostosComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 

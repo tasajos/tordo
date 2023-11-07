@@ -76,6 +76,7 @@ import { VdiariasComponent } from './Components/ventas/vdiarias/vdiarias.compone
 import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/cantpasajeros.component';
 import { NovedadesComponent } from './Components/libronovedades/novedades/novedades.component';
 import { ListanovedadesComponent } from './Components/libronovedades/listanovedades/listanovedades.component';
+import { CostosComponent } from './Components/costos/costos.component';
 
 
 export const MY_FORMATS = {
@@ -138,7 +139,8 @@ export const MY_FORMATS = {
     VdiariasComponent,
     CantpasajerosComponent,
     NovedadesComponent,
-    ListanovedadesComponent
+    ListanovedadesComponent,
+    CostosComponent
     
   ],
   imports: [

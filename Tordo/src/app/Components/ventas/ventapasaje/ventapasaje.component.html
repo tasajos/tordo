@@ -22,7 +22,7 @@
     </div>
     <div class="col">
         <div class="card custom-card">
-        <img src="../../../../assets/img/reduccion.png" class="card-img-top" alt="...">
+        <img src="../../../../assets/img/reduccion.png" (click)="mostrarComponente('costos')" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"><strong>Costos</strong></h3>
           <p class="card-text">
@@ -47,4 +47,5 @@
   <app-vdiarias *ngIf="mostrarVdiarias"></app-vdiarias>
   <app-cantpasajeros *ngIf="mostrarcpasajeros"></app-cantpasajeros>
   <app-novedades *ngIf="mostrarNovedades"></app-novedades>
+  <app-costos *ngIf="mostrarCostos"></app-costos>
   
