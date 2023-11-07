@@ -1,3 +1,4 @@
+using backend_Tordo.Models.Costos;
 using backend_Tordo.Models.Flota;
 using backend_Tordo.Models.Pasajeros;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,12 @@ namespace backend_Tordo.Models
     //flota
 
     public DbSet<RegistroFlota> Rflota { get; set; } //<clase> Nombre de la tabla
+
+
+    //Costos
+
+    public DbSet<ccostofijo> Tordo_costosfijo { get; set; } //<clase> Nombre de la tabla
+    public DbSet<ccostovariable> Tordo_costosvariables { get; set; } //<clase> Nombre de la tabla
 
 
   }
