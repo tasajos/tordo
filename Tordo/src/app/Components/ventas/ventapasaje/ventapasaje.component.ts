@@ -11,6 +11,7 @@ export class VentapasajeComponent {
   mostrarcpasajeros: boolean = false;
   mostrarNovedades: boolean = false;
   mostrarCostos: boolean = false;
+  mostrarcostosoperacionales: boolean = false;
 
 
   mostrarComponente(componente: string) {
@@ -19,6 +20,7 @@ export class VentapasajeComponent {
     this.mostrarcpasajeros = false;
     this.mostrarNovedades = false;
     this.mostrarCostos = false;
+    this.mostrarcostosoperacionales = false;
 
     // Luego activamos el componente específico que se quiere mostrar.
     switch (componente) {
@@ -34,7 +36,11 @@ export class VentapasajeComponent {
       case 'costos':
         this.mostrarCostos = true;
         break;
-        
+        case 'costosoperacionales':
+          this.mostrarcostosoperacionales = true;
+          break;
+  
+
       default:
         // No hacer nada o manejar cualquier caso que no sea esperado
         break;

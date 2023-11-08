@@ -1,6 +1,8 @@
 <br>
 <p></p>
-<div class="card mt-4">
+
+
+   <div class="card mt-4 mb-3">
     <div class="card-header">
         Gestión
     </div>
@@ -12,11 +14,11 @@
             <li class="list-group-item">Análisis de punto de equilibrio y márgenes de beneficio</li>
             
           </ol>
-<p></p>
-  
-      <a href="#" class="btn btn-primary">Ingresar</a>
+<p></p>    
+<button mat-raised-button color="primary" (click)="toggleCostosOperacionales()">Ingresar</button>
     </div>
   </div>
+  <app-costosoperacionales *ngIf="mostrarCostosOperacionales"></app-costosoperacionales>
 
   <br>
 <p></p>
@@ -36,7 +38,7 @@
           </ol>
 <p></p>
   
-      <a href="#" class="btn btn-primary">Ingresar</a>
+<button mat-raised-button color="primary" (click)="toggleCostosOperacionales()">Ingresar</button>
     </div>
   </div>
   <br>
@@ -59,3 +61,9 @@
   <br>
   <p></p>
   <mat-divider></mat-divider>
+
+ 
+  
+
+
+  

@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./costos.component.css']
 })
 export class CostosComponent {
+  mostrarCostosOperacionales: boolean = false;
 
+  toggleCostosOperacionales() {
+    this.mostrarCostosOperacionales = !this.mostrarCostosOperacionales;
+  }
 }

@@ -77,6 +77,7 @@ import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/can
 import { NovedadesComponent } from './Components/libronovedades/novedades/novedades.component';
 import { ListanovedadesComponent } from './Components/libronovedades/listanovedades/listanovedades.component';
 import { CostosComponent } from './Components/costos/costos.component';
+import { CostosoperacionalesComponent } from './Components/costos/costosoperacionales/costosoperacionales.component';
 
 
 export const MY_FORMATS = {
@@ -140,7 +141,8 @@ export const MY_FORMATS = {
     CantpasajerosComponent,
     NovedadesComponent,
     ListanovedadesComponent,
-    CostosComponent
+    CostosComponent,
+    CostosoperacionalesComponent
     
   ],
   imports: [
