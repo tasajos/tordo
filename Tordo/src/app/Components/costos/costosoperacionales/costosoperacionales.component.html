@@ -1,50 +1,69 @@
 
 <!--Costo Fijo-->
 <div class="custom-card">
-<form class="example-form">
+    <span class="badge rounded-pill text-bg-warning fs-5 mb-2">Costos Fijos</span>
+<form [formGroup]="costoFijoForm" (ngSubmit)="onSubmit()" class="example-form">
     <mat-form-field class="example-full-width">
-      <mat-label>Company (disabled)</mat-label>
-      <input matInput disabled value="Google">
+      <mat-label>Empresa </mat-label>
+      <input matInput disabled value="Trans Chakuy">
     </mat-form-field>
   
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
-        <mat-label>First name</mat-label>
-        <input matInput>
+        <mat-label>Concepto:</mat-label>
+        <input matInput formControlName="concepto">
       </mat-form-field></td>
       <td><mat-form-field class="example-full-width">
-        <mat-label>Long Last Name That Will Be Truncated</mat-label>
-        <input matInput>
+        <mat-label>Monto:</mat-label>
+        <input matInput formControlName="monto">
       </mat-form-field></td>
-    </tr></table>
-  
-    <p>
-      <mat-form-field class="example-full-width">
-        <mat-label>Address</mat-label>
-        <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Address 2</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
-    </p>
+      <td><mat-form-field>
+        <mat-label>Seleccione una fecha</mat-label>
+        <input matInput formControlName="fechacostofijo" [matDatepicker]="picker">
+        <mat-hint>DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field></td>
+      <td><button  type="submit" mat-raised-button color="primary">Registrar</button></td>
+      <td><button mat-raised-button color="accent">Limpiar</button></td>
+  </tr></table>
+  </form>
+</div>
+
+<!--Costo Variable-->
+
+
+<div class="custom-card">
+    <span class="badge rounded-pill text-bg-warning fs-5 mb-2">Costos Variables</span>
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Empresa </mat-label>
+      <input matInput disabled value="Trans Chakuy">
+    </mat-form-field>
   
     <table class="example-full-width" cellspacing="0"><tr>
       <td><mat-form-field class="example-full-width">
-        <mat-label>City</mat-label>
-        <input matInput placeholder="Ex. San Francisco">
+        <mat-label>Concepto:</mat-label>
+        <input matInput>
       </mat-form-field></td>
       <td><mat-form-field class="example-full-width">
-        <mat-label>State</mat-label>
-        <input matInput placeholder="Ex. California">
+        <mat-label>Monto:</mat-label>
+        <input matInput>
       </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Postal Code</mat-label>
-        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+      <td><mat-form-field>
+        <mat-label>Seleccione una fecha</mat-label>
+        <input matInput [matDatepicker]="pickers">
+        <mat-hint>DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickers"></mat-datepicker-toggle>
+        <mat-datepicker #pickers></mat-datepicker>
       </mat-form-field></td>
-    </tr></table>
+      <td><button mat-raised-button color="primary">Registrar</button></td>
+      <td><button mat-raised-button color="accent">Limpiar</button></td>
+  </tr></table>
   </form>
 </div>
-  <mat-divider></mat-divider>
-<!--Costo Variable-->
+
+
+<mat-divider></mat-divider>
+
+

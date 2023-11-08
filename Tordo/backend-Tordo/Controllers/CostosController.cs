@@ -60,6 +60,9 @@ namespace backend_Tordo.Controllers
     [HttpPost("Fijos")]
     public ActionResult<ccostofijo> CreateCostoFijo(ccostofijo costofijo)
     {
+      costofijo.FechaCreacion = DateTime.Now;
+
+
       _context.Tordo_costosfijo.Add(costofijo);
       _context.SaveChanges();
 

@@ -6,7 +6,7 @@ namespace backend_Tordo.Models.Costos
 
     public string concepto { get; set; }
 
-    public double monto { get; set; }
+    public int monto { get; set; }
 
     public string fechacostovariable { get; set; }
 

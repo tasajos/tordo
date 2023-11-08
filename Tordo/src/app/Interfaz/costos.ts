@@ -1,14 +1,14 @@
 export interface CostoFijo {
-    id: number;
+    id?: number;
     concepto: string;
     monto: number;
-    fecha: Date;
+    fechacostofijo: Date;
   }
   
   export interface CostoVariable {
     id: number;
     concepto: string;
     monto: number;
-    fecha: Date;
+    fechacostovariable: Date;
   }
   

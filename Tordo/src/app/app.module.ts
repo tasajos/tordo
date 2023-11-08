@@ -66,6 +66,8 @@ import {NgFor} from '@angular/common';
 import {MatSelectModule} from '@angular/material/select';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ToastrModule } from 'ngx-toastr';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
 import { MAT_DATE_LOCALE, MAT_DATE_FORMATS, DateAdapter } from '@angular/material/core';
@@ -168,6 +170,7 @@ export const MY_FORMATS = {
     AngularFireDatabaseModule,
     MatDatepickerModule,
     MatMomentDateModule,
+    MatSnackBarModule,
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    

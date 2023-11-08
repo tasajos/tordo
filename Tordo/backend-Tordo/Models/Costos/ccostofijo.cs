@@ -4,9 +4,9 @@ namespace backend_Tordo.Models.Costos
   {
     public int id { get; set; }
 
-    public string placa { get; set; }
+    public string concepto { get; set; }
 
-    public string conductor { get; set; }
+    public int monto { get; set; }
 
     public string fechacostofijo { get; set; }
 
