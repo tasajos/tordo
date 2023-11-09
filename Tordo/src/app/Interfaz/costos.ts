@@ -6,7 +6,7 @@ export interface CostoFijo {
   }
   
   export interface CostoVariable {
-    id: number;
+    id?: number;
     concepto: string;
     monto: number;
     fechacostovariable: Date;

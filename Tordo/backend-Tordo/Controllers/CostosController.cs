@@ -73,6 +73,9 @@ namespace backend_Tordo.Controllers
     [HttpPost("Variables")]
     public ActionResult<ccostovariable> CreateCostoVariable(ccostovariable costovariable)
     {
+
+      costovariable.FechaCreacion = DateTime.Now;
+
       _context.Tordo_costosvariables.Add(costovariable);
       _context.SaveChanges();
 

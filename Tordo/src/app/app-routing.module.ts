@@ -27,6 +27,7 @@ import { CantpasajerosComponent } from './Components/pasajeros/cantpasajeros/can
 import { NovedadesComponent } from './Components/libronovedades/novedades/novedades.component';
 import { CostosComponent } from './Components/costos/costos.component';
 import { CostosoperacionalesComponent } from './Components/costos/costosoperacionales/costosoperacionales.component';
+import { ListascopComponent } from './Components/costos/costosoperacionales/listascop/listascop.component';
 
 
 const routes: Routes = [
@@ -59,6 +60,7 @@ const routes: Routes = [
 {path: 'regnovedades',component:NovedadesComponent},
 {path: 'costos',component:CostosComponent},
 {path: 'costosoperacionales',component:CostosoperacionalesComponent},
+{path: 'listacostoop',component:ListascopComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 
