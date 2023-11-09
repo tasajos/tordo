@@ -28,6 +28,7 @@ import { NovedadesComponent } from './Components/libronovedades/novedades/noveda
 import { CostosComponent } from './Components/costos/costos.component';
 import { CostosoperacionalesComponent } from './Components/costos/costosoperacionales/costosoperacionales.component';
 import { ListascopComponent } from './Components/costos/costosoperacionales/listascop/listascop.component';
+import { TotcostosfijosComponent } from './Components/costos/costosoperacionales/listascop/totcostosfijos/totcostosfijos.component';
 
 
 const routes: Routes = [
@@ -61,6 +62,7 @@ const routes: Routes = [
 {path: 'costos',component:CostosComponent},
 {path: 'costosoperacionales',component:CostosoperacionalesComponent},
 {path: 'listacostoop',component:ListascopComponent},
+{path: 'tcostofijo',component:TotcostosfijosComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 

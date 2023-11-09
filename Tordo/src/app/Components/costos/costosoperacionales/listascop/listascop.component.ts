@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ScostosService } from '../../../../Services/servcostos/scostos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listascop',
@@ -10,7 +11,8 @@ export class ListascopComponent implements OnInit {
   cantidadCostosFijos: number = 0;
   cantidadCostosVariables: number = 0;
 
-  constructor(private scostosService: ScostosService) { }
+  constructor(private scostosService: ScostosService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.recargarDatos();
@@ -49,4 +51,12 @@ export class ListascopComponent implements OnInit {
       }
     });
   }
+  navegarACostosFijos(): void {
+    // Navega a la ruta deseada, por ejemplo 'costos-fijos'
+    //this.router.navigate(['/tcostofijo']); // Asegúrate de que esta ruta está configurada en tu módulo de enrutamiento
+    window.open('/tcostofijo', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600');
+
+}
+
+
 }

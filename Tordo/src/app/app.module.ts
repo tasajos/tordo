@@ -81,6 +81,8 @@ import { ListanovedadesComponent } from './Components/libronovedades/listanoveda
 import { CostosComponent } from './Components/costos/costos.component';
 import { CostosoperacionalesComponent } from './Components/costos/costosoperacionales/costosoperacionales.component';
 import { ListascopComponent } from './Components/costos/costosoperacionales/listascop/listascop.component';
+import { TotcostosfijosComponent } from './Components/costos/costosoperacionales/listascop/totcostosfijos/totcostosfijos.component';
+import { TotcostosvariablesComponent } from './Components/costos/costosoperacionales/listascop/totcostosvariables/totcostosvariables.component';
 
 
 export const MY_FORMATS = {
@@ -146,7 +148,9 @@ export const MY_FORMATS = {
     ListanovedadesComponent,
     CostosComponent,
     CostosoperacionalesComponent,
-    ListascopComponent
+    ListascopComponent,
+    TotcostosfijosComponent,
+    TotcostosvariablesComponent
     
   ],
   imports: [

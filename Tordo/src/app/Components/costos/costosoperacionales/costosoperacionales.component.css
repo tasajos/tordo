@@ -25,3 +25,13 @@
     margin-left: 360px;
     margin-bottom: 20px;
   }
+
+  .modal-content {
+    background-color: white !important; /* Usa !important con precaución */
+  }
+
+  .modal-backdrop.show {
+    background-color: white !important; /* Usa !important con precaución */
+  }
+
+ 
