@@ -58,5 +58,8 @@ export class ListascopComponent implements OnInit {
 
 }
 
+navegarACostosVariables(): void {
 
-}
+  window.open('/tcostovariable', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600');
+
+}}

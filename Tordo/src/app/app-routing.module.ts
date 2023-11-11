@@ -29,6 +29,8 @@ import { CostosComponent } from './Components/costos/costos.component';
 import { CostosoperacionalesComponent } from './Components/costos/costosoperacionales/costosoperacionales.component';
 import { ListascopComponent } from './Components/costos/costosoperacionales/listascop/listascop.component';
 import { TotcostosfijosComponent } from './Components/costos/costosoperacionales/listascop/totcostosfijos/totcostosfijos.component';
+import { TotcostosvariablesComponent } from './Components/costos/costosoperacionales/listascop/totcostosvariables/totcostosvariables.component';
+import { DifoperacionComponent } from './Components/costos/costosoperacionales/difoperacion/difoperacion.component';
 
 
 const routes: Routes = [
@@ -63,6 +65,8 @@ const routes: Routes = [
 {path: 'costosoperacionales',component:CostosoperacionalesComponent},
 {path: 'listacostoop',component:ListascopComponent},
 {path: 'tcostofijo',component:TotcostosfijosComponent},
+{path: 'tcostovariable',component:TotcostosvariablesComponent},
+{path: 'difoperacion',component:DifoperacionComponent},
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 

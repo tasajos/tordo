@@ -67,6 +67,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { ToastrModule } from 'ngx-toastr';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatSort} from '@angular/material/sort';
+import {MatTableDataSource} from '@angular/material/table';
 
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -83,6 +86,7 @@ import { CostosoperacionalesComponent } from './Components/costos/costosoperacio
 import { ListascopComponent } from './Components/costos/costosoperacionales/listascop/listascop.component';
 import { TotcostosfijosComponent } from './Components/costos/costosoperacionales/listascop/totcostosfijos/totcostosfijos.component';
 import { TotcostosvariablesComponent } from './Components/costos/costosoperacionales/listascop/totcostosvariables/totcostosvariables.component';
+import { DifoperacionComponent } from './Components/costos/costosoperacionales/difoperacion/difoperacion.component';
 
 
 export const MY_FORMATS = {
@@ -150,7 +154,8 @@ export const MY_FORMATS = {
     CostosoperacionalesComponent,
     ListascopComponent,
     TotcostosfijosComponent,
-    TotcostosvariablesComponent
+    TotcostosvariablesComponent,
+    DifoperacionComponent
     
   ],
   imports: [

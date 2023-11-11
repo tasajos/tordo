@@ -131,4 +131,23 @@ openModal() {
 }
 
 
+openModalvariable() {
+  const element = document.getElementById('miModalvariable');
+ 
+  if (element) {
+    const myModal = new bootstrap.Modal(element, {
+      keyboard: false
+    });
+    myModal.show();
+  } else {
+    console.error('Modal element not found');
+  }
+
 }
+
+navegarAdifoperacion(): void {
+
+  window.open('/difoperacion', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600');
+
+}}
+
