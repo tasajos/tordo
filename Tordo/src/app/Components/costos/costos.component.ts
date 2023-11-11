@@ -11,4 +11,11 @@ export class CostosComponent {
   toggleCostosOperacionales() {
     this.mostrarCostosOperacionales = !this.mostrarCostosOperacionales;
   }
+
+
+  navegarAcontabilidad(): void {
+
+    window.open('/contabilidad', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=800,height=600');
+  
+  }
 }

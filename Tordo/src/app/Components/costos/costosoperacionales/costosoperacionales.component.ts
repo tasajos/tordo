@@ -149,5 +149,7 @@ navegarAdifoperacion(): void {
 
   window.open('/difoperacion', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=600,height=600');
 
-}}
+}
+
+}
 

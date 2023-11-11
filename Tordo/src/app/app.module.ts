@@ -88,6 +88,11 @@ import { ListascopComponent } from './Components/costos/costosoperacionales/list
 import { TotcostosfijosComponent } from './Components/costos/costosoperacionales/listascop/totcostosfijos/totcostosfijos.component';
 import { TotcostosvariablesComponent } from './Components/costos/costosoperacionales/listascop/totcostosvariables/totcostosvariables.component';
 import { DifoperacionComponent } from './Components/costos/costosoperacionales/difoperacion/difoperacion.component';
+import { CactivosComponent } from './Components/contabilidad/cactivos/cactivos.component';
+import { CpasivoComponent } from './Components/contabilidad/cpasivo/cpasivo.component';
+import { CpatrimonioComponent } from './Components/contabilidad/cpatrimonio/cpatrimonio.component';
+import { CingresosComponent } from './Components/contabilidad/cingresos/cingresos.component';
+import { CegresosComponent } from './Components/contabilidad/cegresos/cegresos.component';
 
 
 export const MY_FORMATS = {
@@ -156,7 +161,12 @@ export const MY_FORMATS = {
     ListascopComponent,
     TotcostosfijosComponent,
     TotcostosvariablesComponent,
-    DifoperacionComponent
+    DifoperacionComponent,
+    CactivosComponent,
+    CpasivoComponent,
+    CpatrimonioComponent,
+    CingresosComponent,
+    CegresosComponent
     
   ],
   imports: [
