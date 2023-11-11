@@ -4,6 +4,10 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ScostosService } from '../../../../Services/servcostos/scostos.service';
 import { forkJoin } from 'rxjs';
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
+
+
 
 export interface UserData {
   id: string;
@@ -83,4 +87,31 @@ export class DifoperacionComponent implements AfterViewInit {
       this.dataSource.paginator.firstPage();
     }
   }
-}
+  descargarDatos() {
+    const ws: XLSX.WorkSheet = XLSX.utils.json_to_sheet(this.obtenerDatosParaExcel());
+    const wb: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(wb, ws, 'Datos');
+  
+    /* Genera el archivo XLS */
+    const wbout: Blob = new Blob([XLSX.write(wb, { bookType: 'xlsx', type: 'array' })], { type: 'application/octet-stream' });
+    saveAs(wbout, 'Datos.xlsx');
+  }
+  
+  obtenerDatosParaExcel() {
+    // Primero, copia los datos existentes de dataSource a una nueva variable
+    const datos = this.dataSource.data.map(row => ({
+      ID: row.id,
+      Concepto: row.concepto,
+      Monto: row.monto,
+      Fecha: row.fecha,
+      Tipo: row.tipo
+    }));
+  
+    // Ahora agrega las sumatorias y el total a la variable datos
+    datos.push({ ID: '', Concepto: 'Sumatoria Costos Fijos', Monto: this.sumatoriaFijos, Fecha: '', Tipo: '' });
+    datos.push({ ID: '', Concepto: 'Sumatoria Costos Variables', Monto: this.sumatoriaVariables, Fecha: '', Tipo: '' });
+    datos.push({ ID: '', Concepto: 'Total', Monto: this.total, Fecha: '', Tipo: '' });
+  
+    // Finalmente, devuelve los datos modificados
+    return datos;
+  }}

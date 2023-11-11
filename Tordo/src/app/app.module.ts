@@ -70,6 +70,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { saveAs } from 'file-saver';
 
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -182,6 +183,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatMomentDateModule,
     MatSnackBarModule,
+    
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
    
