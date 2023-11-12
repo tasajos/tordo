@@ -51,3 +51,11 @@ export interface EstructuraDto {
     subniveles: number[];
   }
   
+  export interface Estructura {
+    id: number;
+    nombre: string;
+    tipo: string;
+    nivel: number;
+    subniveles?: Estructura[]; // Subniveles es opcional y puede ser una lista de estructuras
+  }
+  

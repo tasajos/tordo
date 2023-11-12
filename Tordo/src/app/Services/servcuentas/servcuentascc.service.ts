@@ -22,8 +22,12 @@ export class ServcuentasccService {
     patrimonio: 'api/Patrimonio',
     ingreso: 'api/Ingreso',
     egreso: 'api/Egreso',
-    estructuradto: 'api/CuentaNiv/CrearEstructura'
+    estructuradto: 'api/CuentaNiv/CrearEstructura',
+    obtenerEstructuras: 'api/CuentaNiv/ObtenerEstructuras'
+
+  
   };
+
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
@@ -137,10 +141,16 @@ deleteEgreso(id: number): Observable<Egreso> {
   return this.http.delete<Egreso>(`${this.Myappurl}${this.apiUrls.egreso}/${id}`);
 }
 
+//estructura
 
 crearEstructura(estructura: EstructuraDto): Observable<any> {
   return this.http.post(`${this.Myappurl}${this.apiUrls.estructuradto}`, estructura);;
-  //return this.http.post<Egreso>(`${this.Myappurl}${this.apiUrls.egreso}`, egreso);
+  
 }
+
+obtenerEstructuras(): Observable<any> {
+  return this.http.get(`${this.Myappurl}${this.apiUrls.obtenerEstructuras}`);
+}
+
   // Continúa con los métodos para Patrimonio, Ingreso y Egreso
 }

@@ -31,7 +31,7 @@ namespace backend_Tordo.Controllers.Cuentas
           // Crear nivel principal
           var cuentaPrincipal = new Cuenta
           {
-            Nombre = $"Nivel {i}",
+            Nombre = $"{i}",
             Tipo = estructura.Tipo,
             Nivel = i,
             ParentId = null // No tiene padre porque es un nivel principal
@@ -46,7 +46,7 @@ namespace backend_Tordo.Controllers.Cuentas
             {
               var cuentaSubnivel = new Cuenta
               {
-                Nombre = $"Nivel {i}.{j}",
+                Nombre = $"{i}.{j}",
                 Tipo = estructura.Tipo,
                 Nivel = i,
                 ParentId = cuentaPrincipal.Id // Asignar el ID del nivel principal
@@ -65,5 +65,38 @@ namespace backend_Tordo.Controllers.Cuentas
         return StatusCode(500, "Un error ocurrió mientras se procesaba su solicitud: " + ex.Message);
       }
     }
+
+
+    [HttpGet("ObtenerEstructuras")]
+    public IActionResult ObtenerEstructuras()
+    {
+      try
+      {
+        var estructuras = _context.Tordo_Contabilidad_Registrosnivels
+            .Where(c => c.ParentId == null) // Obtener solo niveles principales
+            .Select(c => new
+            {
+              c.Id,
+              c.Nombre,
+              c.Tipo,
+              c.Nivel,
+              Subniveles = _context.Tordo_Contabilidad_Registrosnivels
+                    .Where(sub => sub.ParentId == c.Id) // Obtener subniveles
+                    .OrderBy(sub => sub.Nivel)
+                    .Select(sub => new { sub.Id, sub.Nombre })
+                    .ToList()
+            })
+            .ToList();
+
+        return Ok(estructuras);
+      }
+      catch (Exception ex)
+      {
+        // Log the exception here
+        return StatusCode(500, "Un error ocurrió mientras se procesaba su solicitud: " + ex.Message);
+      }
+    }
   }
+
+
 }
