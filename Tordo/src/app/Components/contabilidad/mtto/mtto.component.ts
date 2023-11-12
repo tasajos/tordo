@@ -57,14 +57,9 @@ export class MttoComponent  {
 
   seleccionarTipo(tipo: string, event: Event): void {
     event.preventDefault(); // Evita el comportamiento predeterminado del enlace
-    //if (tipo === 'Pasivos') {
-      //if (this.timeoutRef) {
-        //clearTimeout(this.timeoutRef); // Cancela el timeout antes de navegar
-     // }
-      //this.router.navigate(['/cmttop']); // Navega a 'cmttop'
-    //} else {
-      this.selectedTipo = tipo;
-    //}
+    this.selectedTipo = tipo;
+    this.estructura.tipo = tipo; 
+    
   }
 
   handleInputChange(event: Event, nivel: number): void {
