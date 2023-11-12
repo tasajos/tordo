@@ -93,6 +93,7 @@ import { CpasivoComponent } from './Components/contabilidad/cpasivo/cpasivo.comp
 import { CpatrimonioComponent } from './Components/contabilidad/cpatrimonio/cpatrimonio.component';
 import { CingresosComponent } from './Components/contabilidad/cingresos/cingresos.component';
 import { CegresosComponent } from './Components/contabilidad/cegresos/cegresos.component';
+import { MttoComponent } from './Components/contabilidad/mtto/mtto.component';
 
 
 export const MY_FORMATS = {
@@ -166,7 +167,8 @@ export const MY_FORMATS = {
     CpasivoComponent,
     CpatrimonioComponent,
     CingresosComponent,
-    CegresosComponent
+    CegresosComponent,
+    MttoComponent
     
   ],
   imports: [

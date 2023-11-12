@@ -1,0 +1,27 @@
+<div class="container">
+  <div *ngIf="showSuccessAlert" class="alert alert-success" role="alert">
+    Activo registrado con éxito.
+  </div>
+  
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item" *ngFor="let tipo of ['Activos', 'Pasivos', 'Patrimonio', 'Ingresos', 'Egresos']">
+        <a class="nav-link" href="#" (click)="seleccionarTipo(tipo)">{{ tipo }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <form (ngSubmit)="registrar()">
+      <div class="row g-3">
+        <div class="col" *ngFor="let nivel of [1, 2, 3, 4, 5]; let i = index">
+          Nivel {{ nivel }}
+          <input type="number" class="form-control" [placeholder]="'Nivel ' + nivel" 
+       (change)="actualizarSubniveles(i + 1, $any($event.target).value)" aria-label="Nivel">
+          <br>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+  </div>
+</div>

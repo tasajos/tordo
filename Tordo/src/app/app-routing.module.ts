@@ -37,6 +37,7 @@ import { CpasivoComponent } from './Components/contabilidad/cpasivo/cpasivo.comp
 import { CpatrimonioComponent } from './Components/contabilidad/cpatrimonio/cpatrimonio.component';
 import { CingresosComponent } from './Components/contabilidad/cingresos/cingresos.component';
 import { CegresosComponent } from './Components/contabilidad/cegresos/cegresos.component';
+import { MttoComponent } from './Components/contabilidad/mtto/mtto.component';
 
 
 const routes: Routes = [
@@ -79,6 +80,8 @@ const routes: Routes = [
 {path: 'cpatrimonio',component:CpatrimonioComponent},
 {path: 'cingresos',component:CingresosComponent},
 {path: 'cegresos',component:CegresosComponent},
+{path: 'cmtto',component:MttoComponent},
+
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
 

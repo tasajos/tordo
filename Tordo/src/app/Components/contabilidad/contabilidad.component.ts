@@ -35,4 +35,9 @@ export class ContabilidadComponent {
             window.open('/cegresos', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=900,height=700');
             }
 
+            navegarAmtto(): void {
+
+              window.open('/cmtto', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=900,height=700');
+              }
+
 }

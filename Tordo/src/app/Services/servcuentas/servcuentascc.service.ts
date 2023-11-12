@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Activo, Pasivo, Patrimonio, Ingreso, Egreso } from '../../Interfaz/cuentas';
+import { Activo, Pasivo, Patrimonio, Ingreso, Egreso,EstructuraDto } from '../../Interfaz/cuentas';
 import { ToastrService } from 'ngx-toastr'; 
 import { environment } from 'src/environments/environment';
 
@@ -21,7 +21,8 @@ export class ServcuentasccService {
     pasivo: 'api/Pasivo',
     patrimonio: 'api/Patrimonio',
     ingreso: 'api/Ingreso',
-    egreso: 'api/Egreso'
+    egreso: 'api/Egreso',
+    estructuradto: 'api/CuentaNiv/CrearEstructura'
   };
 
   constructor(private http: HttpClient, private toastr: ToastrService) { }
@@ -136,5 +137,10 @@ deleteEgreso(id: number): Observable<Egreso> {
   return this.http.delete<Egreso>(`${this.Myappurl}${this.apiUrls.egreso}/${id}`);
 }
 
+
+crearEstructura(estructura: EstructuraDto): Observable<any> {
+  return this.http.post(`${this.Myappurl}${this.apiUrls.estructuradto}`, estructura);;
+  //return this.http.post<Egreso>(`${this.Myappurl}${this.apiUrls.egreso}`, egreso);
+}
   // Continúa con los métodos para Patrimonio, Ingreso y Egreso
 }

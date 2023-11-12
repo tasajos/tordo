@@ -1,1 +1,37 @@
-<p>cpasivo works!</p>
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<p></p>
+<div class="container">
+    <div class="container">
+        <div *ngIf="showSuccessAlert" class="alert alert-success" role="alert">
+          Activo registrado con éxito.
+        </div>
+    <form [formGroup]="pasivoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="categoria">Categoría</label>
+        <input type="text" class="form-control" id="categoria" formControlName="categoria">
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+      </div>
+      <div class="form-group">
+        <label for="monto">Monto</label>
+        <input type="number" class="form-control" id="monto" formControlName="monto">
+      </div>
+      <div class="form-group">
+        <label for="fechaIncidencia">Fecha de Incidencia</label>
+        <input type="date" class="form-control" id="fechaIncidencia" formControlName="fechaIncidencia">
+      </div>
+      <div class="form-group">
+        <label for="fechaVencimiento">Fecha de Vencimiento</label>
+        <input type="date" class="form-control" id="fechaVencimiento" formControlName="fechaVencimiento">
+      </div>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary">Guardar Pasivo</button>
+    </form>
+  </div>

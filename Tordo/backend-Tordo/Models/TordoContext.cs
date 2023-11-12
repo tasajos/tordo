@@ -42,9 +42,30 @@ namespace backend_Tordo.Models
     public DbSet<cuentas.Ingreso> Tordo_Contabilidad_Ingresos { get; set; }
     public DbSet<cuentas.Egreso> Tordo_Contabilidad_Egresos { get; set; }
 
+    //registrocuentas
+
+    public DbSet<registroscuentas.Nivel> Tordo_Contabilidad_Registroscuentas { get; set; }
+    public DbSet<registroscuentas.ActNivel1> Tordo_Contabilidad_Registroscuentas_ActivoNvl1 { get; set; }
+
+    public DbSet<registroscuentas.ActNivel2> Tordo_Contabilidad_Registroscuentas_ActivoNvl2 { get; set; }
+
+    public DbSet<registroscuentas.ActNivel3> Tordo_Contabilidad_Registroscuentas_ActivoNvl3 { get; set; }
+
+    public DbSet<registroscuentas.ActNivel4> Tordo_Contabilidad_Registroscuentas_ActivoNvl4 { get; set; }
+
+    public DbSet<registroscuentas.ActNivel5> Tordo_Contabilidad_Registroscuentas_ActivoNvl5 { get; set; }
+
+
+    //NivelCuenta
+
+    public DbSet<CuentaNivel.Cuenta> Tordo_Contabilidad_Registrosnivels { get; set; }
+
 
   }
 
+
+ 
+ 
 }
 
 

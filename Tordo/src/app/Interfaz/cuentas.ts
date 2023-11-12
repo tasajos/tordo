@@ -44,3 +44,10 @@ export interface Egreso {
     destinatario: string;
     cuentaRelacionadaId: number;
 }
+
+export interface EstructuraDto {
+    tipo: string;
+    niveles: number;
+    subniveles: number[];
+  }
+  
