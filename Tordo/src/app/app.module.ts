@@ -94,6 +94,10 @@ import { CpatrimonioComponent } from './Components/contabilidad/cpatrimonio/cpat
 import { CingresosComponent } from './Components/contabilidad/cingresos/cingresos.component';
 import { CegresosComponent } from './Components/contabilidad/cegresos/cegresos.component';
 import { MttoComponent } from './Components/contabilidad/mtto/mtto.component';
+import { MttopasivoComponent } from './Components/contabilidad/mtto/mttopasivo/mttopasivo.component';
+import { MttopatrimonioComponent } from './Components/contabilidad/mtto/mttopatrimonio/mttopatrimonio.component';
+import { MttoingresoComponent } from './Components/contabilidad/mtto/mttoingreso/mttoingreso.component';
+import { MttoegresoComponent } from './Components/contabilidad/mtto/mttoegreso/mttoegreso.component';
 
 
 export const MY_FORMATS = {
@@ -168,7 +172,11 @@ export const MY_FORMATS = {
     CpatrimonioComponent,
     CingresosComponent,
     CegresosComponent,
-    MttoComponent
+    MttoComponent,
+    MttopasivoComponent,
+    MttopatrimonioComponent,
+    MttoingresoComponent,
+    MttoegresoComponent
     
   ],
   imports: [

@@ -38,6 +38,10 @@ import { CpatrimonioComponent } from './Components/contabilidad/cpatrimonio/cpat
 import { CingresosComponent } from './Components/contabilidad/cingresos/cingresos.component';
 import { CegresosComponent } from './Components/contabilidad/cegresos/cegresos.component';
 import { MttoComponent } from './Components/contabilidad/mtto/mtto.component';
+import { MttopasivoComponent } from './Components/contabilidad/mtto/mttopasivo/mttopasivo.component';
+import { MttopatrimonioComponent } from './Components/contabilidad/mtto/mttopatrimonio/mttopatrimonio.component';
+import { MttoingresoComponent } from './Components/contabilidad/mtto/mttoingreso/mttoingreso.component';
+import { MttoegresoComponent } from './Components/contabilidad/mtto/mttoegreso/mttoegreso.component';
 
 
 const routes: Routes = [
@@ -81,6 +85,10 @@ const routes: Routes = [
 {path: 'cingresos',component:CingresosComponent},
 {path: 'cegresos',component:CegresosComponent},
 {path: 'cmtto',component:MttoComponent},
+{path: 'cmttop',component:MttopasivoComponent},
+{path: 'cmttopat',component:MttopatrimonioComponent},
+{path: 'cmttoing',component:MttoingresoComponent},
+{path: 'cmttoegr',component:MttoegresoComponent},
 
 {path: '**', redirectTo:'login', pathMatch:'full'}
 

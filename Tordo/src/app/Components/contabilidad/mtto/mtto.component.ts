@@ -1,13 +1,22 @@
 import { Component } from '@angular/core';
 import { ServcuentasccService } from '../../../Services/servcuentas/servcuentascc.service';
 import { EstructuraDto } from '../../../Interfaz/cuentas'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mtto',
   templateUrl: './mtto.component.html',
   styleUrls: ['./mtto.component.css']
 })
-export class MttoComponent {
+export class MttoComponent  {
+
+  private timeoutRef: any;
+  selectedTipo: string = 'Activos';
+
+  ngOnInit(): void {
+    // Inicialización si es necesaria
+  }
+
 
   showSuccessAlert = false;
   estructura: EstructuraDto = {
@@ -17,7 +26,8 @@ export class MttoComponent {
    
   };
 
-  constructor(private cuentasService: ServcuentasccService) {}
+  constructor(private cuentasService: ServcuentasccService,
+    private router: Router) {}
 
   registrar(): void {
     // Aquí se podría incluir lógica para validar la estructura antes de enviar
@@ -45,13 +55,25 @@ export class MttoComponent {
     this.estructura.subniveles[nivel - 1] = parseInt(subniveles) || 0;
   }
 
-  seleccionarTipo(tipo: string): void {
-    this.estructura.tipo = tipo;
+  seleccionarTipo(tipo: string, event: Event): void {
+    event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+    //if (tipo === 'Pasivos') {
+      //if (this.timeoutRef) {
+        //clearTimeout(this.timeoutRef); // Cancela el timeout antes de navegar
+     // }
+      //this.router.navigate(['/cmttop']); // Navega a 'cmttop'
+    //} else {
+      this.selectedTipo = tipo;
+    //}
   }
+
   handleInputChange(event: Event, nivel: number): void {
     const input = event.target as HTMLInputElement;
     if (input) {
       this.actualizarSubniveles(nivel, input.value);
     }
 
-}}
+}
+
+
+}
