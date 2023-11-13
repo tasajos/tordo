@@ -16,3 +16,9 @@ table {
     text-align: center;
     margin-top: 10px;
   }
+  .totals-container {
+    margin-top: 20px;
+    font-weight: bold;
+    /* Otros estilos que necesites para que coincida con el estilo de tu tabla */
+  }
+  
