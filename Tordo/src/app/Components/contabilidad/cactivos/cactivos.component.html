@@ -14,7 +14,8 @@
         <label for="categoria">Categoría</label>
         <select class="form-control" id="categoria" formControlName="categoria">
           <!-- Aquí usamos e.nombre para mostrar tanto niveles como subniveles -->
-          <option *ngFor="let e of categoriasActivos" [value]="e.nombre">{{ e.nombre }}</option>
+          
+          <option *ngFor="let e of categoriasActivos" [value]="'1.' + e.nombre">1.{{ e.nombre }}</option>
         </select>
       </div>
       <div class="form-group">

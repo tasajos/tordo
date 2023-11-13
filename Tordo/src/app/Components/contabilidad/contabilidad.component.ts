@@ -40,4 +40,11 @@ export class ContabilidadComponent {
               window.open('/cmtto', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=900,height=700');
               }
 
+              navegarAestadoResultado(): void {
+
+                window.open('/estadofi', '_blank', 'toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=900,height=700');
+                }
+
+              
+
 }
