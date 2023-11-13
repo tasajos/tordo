@@ -19,6 +19,7 @@ export interface Pasivo {
 
 export interface Patrimonio {
     id: number;
+    categoria: string;
     tipo: string;
     descripcion: string;
     monto: number;
@@ -59,3 +60,13 @@ export interface EstructuraDto {
     subniveles?: Estructura[]; // Subniveles es opcional y puede ser una lista de estructuras
   }
   
+  export interface Finanza {
+    id: number;
+    categoria: string;
+    descripcion: string;
+    monto: number;
+    fecha?: Date; // Fecha general para cualquier tipo de finanza
+    tipo?: string;
+    Etipo?: string; // Puede ser 'Activo', 'Pasivo', 'Patrimonio', 'Ingreso', 'Egreso'
+    // ... Otras propiedades específicas
+}

@@ -42,6 +42,7 @@ import { MttopasivoComponent } from './Components/contabilidad/mtto/mttopasivo/m
 import { MttopatrimonioComponent } from './Components/contabilidad/mtto/mttopatrimonio/mttopatrimonio.component';
 import { MttoingresoComponent } from './Components/contabilidad/mtto/mttoingreso/mttoingreso.component';
 import { MttoegresoComponent } from './Components/contabilidad/mtto/mttoegreso/mttoegreso.component';
+import { EstadofinanzasComponent } from './Components/contabilidad/estadofinanzas/estadofinanzas.component';
 
 
 const routes: Routes = [
@@ -89,6 +90,7 @@ const routes: Routes = [
 {path: 'cmttopat',component:MttopatrimonioComponent},
 {path: 'cmttoing',component:MttoingresoComponent},
 {path: 'cmttoegr',component:MttoegresoComponent},
+{path: 'estadofi',component:EstadofinanzasComponent},
 
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
