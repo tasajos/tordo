@@ -1,0 +1,6 @@
+.image-size {
+    width: 30%;    /* Ancho de la imagen como porcentaje del contenedor */
+    height: auto;  /* Altura automática para mantener la proporción de la imagen */
+    display: block;/* Hace que la imagen se comporte como un bloque para centrar */
+    margin: 20px auto; /* Margen superior e inferior de 10px y centrado horizontal */
+}

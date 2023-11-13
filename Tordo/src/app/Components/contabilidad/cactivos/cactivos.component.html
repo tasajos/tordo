@@ -1,0 +1,43 @@
+<br>
+<br>
+<p></p>
+<br>
+<br>
+<p></p>
+<div class="container">
+    <div class="container">
+        <div *ngIf="showSuccessAlert" class="alert alert-success" role="alert">
+          Activo registrado con éxito.
+        </div>
+    <form [formGroup]="activoForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="categoria">Categoría</label>
+        <select class="form-control" id="categoria" formControlName="categoria">
+          <!-- Aquí usamos e.nombre para mostrar tanto niveles como subniveles -->
+          
+          <option *ngFor="let e of categoriasActivos" [value]="'1.' + e.nombre">1.{{ e.nombre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripción</label>
+        <input type="text" class="form-control" id="descripcion" formControlName="descripcion">
+      </div>
+      <div class="form-group">
+        <label for="monto">Monto</label>
+        <input type="number" class="form-control" id="monto" formControlName="monto">
+      </div>
+      <div class="form-group">
+        <label for="fechaAdquisicion">Fecha de Adquisición</label>
+        <input type="date" class="form-control" id="fechaAdquisicion" formControlName="fechaAdquisicion">
+      </div>
+      <div class="form-group">
+        <label for="fechaValoracion">Fecha de Valoración</label>
+        <input type="date" class="form-control" id="fechaValoracion" formControlName="fechaValoracion">
+      </div>
+      <div class="form-group">
+        <label for="vidaUtilEstimada">Vida Útil Estimada</label>
+        <input type="number" class="form-control" id="vidaUtilEstimada" formControlName="vidaUtilEstimada">
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Guardar Activo</button>
+    </form>
+  </div>

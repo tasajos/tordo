@@ -1,0 +1,72 @@
+<br>
+<br>
+<p></p>
+
+<div class="container">
+    <!-- Campo de Búsqueda -->
+    <mat-form-field>
+        <mat-label>Buscar</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Buscar por categoría, descripción, etc." #input>
+    </mat-form-field>
+
+    <!-- Tabla Unificada -->
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource" matSort>
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Categoria Column -->
+            <ng-container matColumnDef="categoria">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Categoría </th>
+                <td mat-cell *matCellDef="let element"> {{element.categoria}} </td>
+            </ng-container>
+
+            <!-- Descripcion Column -->
+            <ng-container matColumnDef="descripcion">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Descripción </th>
+                <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+            </ng-container>
+
+            <!-- Monto Column -->
+            <ng-container matColumnDef="monto">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Monto </th>
+                <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+            </ng-container>
+
+            <!-- Filas de Datos y Filas de Totales -->
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" [class.total-row]="!row.id"></tr>
+        </table>
+    </div>
+
+   <!-- <div class="totals-container">
+        <div>Total Activos: {{ totalActivos }}</div>
+        <div>Total Pasivos: {{ totalPasivos }}</div>
+        <div>Total Patrimonios: {{ totalPatrimonios }}</div>
+        <div>Total Ingresos: {{ totalIngresos }}</div>
+        <div>Total Egresos: {{ totalEgresos }}</div>
+      </div>-->
+<br>
+<br>
+
+      <ul class="list-group">
+        <li class="list-group-item">Total Activos: {{ totalActivos }}</li>
+        <li class="list-group-item">Total Pasivos: {{ totalPasivos }}</li>
+        <li class="list-group-item">Total Patrimonios: {{ totalPatrimonios }}</li>
+        <li class="list-group-item">Total Ingresos: {{ totalIngresos }}</li>
+        <li class="list-group-item">Total Egresos: {{ totalEgresos }}</li>
+        <li class="list-group-item">Total ingresos - Egresos: {{ totalDiferencia  }}</li>
+        
+      </ul>
+
+    <!-- Paginator -->
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Seleccionar página"></mat-paginator>
+
+    <!-- Botón de Descarga -->
+    <div class="descarga-container">
+        <button mat-raised-button color="primary" (click)="descargarDatos()">Descarga</button>
+    </div>
+</div>

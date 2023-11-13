@@ -1,0 +1,26 @@
+<ol class="list-group list-group-numbered mb-2">
+    <!-- Mostrar el total de costos fijos -->
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Total Costos Fijos</div>
+      </div>
+      <span class="badge bg-primary rounded-pill badge-number">{{ totalSumaCostosVariables | currency:'Bs' }}</span>
+    </li>
+  </ol>
+  
+  <!-- Botón para recargar los datos -->
+  <button mat-raised-button color="primary" (click)="cargarSumaCostosVariables()">Recargar Datos</button>
+  
+  <!-- Listado detallado de los costos fijos -->
+  <ol class="list-group list-group-numbered mb-2">
+    <li class="list-group-item" *ngFor="let costoFijo of listaCostosVariables; let i = index">
+      <div>Nro: {{ i + 1 }}</div>
+      <div>Concepto: {{ costoFijo.concepto }}</div>
+      <div>Fecha: {{ costoFijo.fechacostovariable | date:'dd/MM/yyyy' }}</div>
+
+      <div>Monto: {{ costoFijo.monto | currency:'Bs' }}</div>
+
+    </li>
+  </ol>
+  
+

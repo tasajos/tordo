@@ -26,7 +26,8 @@ export class RegistrarflotaComponent implements OnInit {
     private router: Router,
     //private _snackBar: MatSnackBar,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private routes: Router
   ) {
     this.formulario = this.fb.group({
       placa: ['', Validators.required],
@@ -94,6 +95,10 @@ formatDate(date: Date): string {
   let month: string = (date.getMonth() + 1).toString().padStart(2, '0');
   let year: string = date.getFullYear().toString();
   return `${year}-${month}-${day}`;
+}
+volver() {
+  // Redirige al usuario a la página principal
+  this.routes.navigateByUrl('/verflota');
 }
 }
 

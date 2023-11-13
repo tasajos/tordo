@@ -1,0 +1,69 @@
+<br>
+<p></p>
+
+
+   <div class="card mt-4 mb-3">
+    <div class="card-header">
+        Gestión
+    </div>
+    <div class="card-body">
+      <h3 class="card-title"><strong> Costos Operacionales </strong></h3>
+      <p class="card-text">
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Registro y seguimiento de costos fijos (salarios, alquileres) y variables (mantenimiento, combustible).</li>
+            <li class="list-group-item">Análisis de punto de equilibrio y márgenes de beneficio</li>
+            
+          </ol>
+<p></p>    
+<button mat-raised-button color="primary" (click)="toggleCostosOperacionales()">Ingresar</button>
+    </div>
+  </div>
+  <app-costosoperacionales *ngIf="mostrarCostosOperacionales"></app-costosoperacionales>
+
+  <br>
+<p></p>
+<div class="card mt-4">
+    <div class="card-header">
+        Gestión
+    </div>
+    <div class="card-body">
+      <h3 class="card-title"><strong> Contabilidad y Finanzas </strong></h3>
+      <p class="card-text">
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Contabilidad general (balance de situación, cuenta de resultados).</li>
+            <li class="list-group-item">Gestión de flujo de caja y proyecciones</li>
+            <li class="list-group-item">Conciliación bancaria automática</li>
+            
+            
+          </ol>
+<p></p>
+  
+<button mat-raised-button color="primary" (click)="navegarAcontabilidad()">Ingresar</button>
+    </div>
+  </div>
+  <br>
+<p></p>
+<div class="card mt-4">
+    <div class="card-header">
+        Gestión
+    </div>
+    <div class="card-body">
+      <h3 class="card-title"><strong> Pagos y Facturación </strong></h3>
+      <p class="card-text">
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">Integración de sistemas de pago en línea para la compra de pasajes.</li>
+            <li class="list-group-item">Generación automática de facturas y recibos</li>
+          </ol>
+<p></p>
+<button mat-raised-button color="primary" (click)="toggleCostosOperacionales()"> Ingresar</button>
+    </div>
+  </div>
+  <br>
+  <p></p>
+  <mat-divider></mat-divider>
+
+ 
+  
+
+
+  
