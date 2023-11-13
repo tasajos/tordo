@@ -1,0 +1,101 @@
+
+<!--Costo Fijo-->
+<div class="custom-card">
+    <span class="badge rounded-pill text-bg-warning fs-5 mb-2">Costos Fijos</span>
+<form [formGroup]="costoFijoForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Empresa </mat-label>
+      <input matInput disabled value="Trans Chakuy">
+    </mat-form-field>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Concepto:</mat-label>
+        <input matInput formControlName="concepto">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Monto:</mat-label>
+        <input matInput formControlName="monto">
+      </mat-form-field></td>
+      <td><mat-form-field>
+        <mat-label>Seleccione una fecha</mat-label>
+        <input matInput formControlName="fechacostofijo" [matDatepicker]="picker">
+        <mat-hint>DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field></td>
+      <td><button  type="submit" mat-raised-button color="primary">Registrar</button></td>
+      <td><button mat-raised-button color="accent">Limpiar</button></td>
+  </tr></table>
+  </form>
+</div>
+
+<!--Costo Variable-->
+
+
+<div class="custom-card">
+    <span class="badge rounded-pill text-bg-warning fs-5 mb-2">Costos Variables</span>
+    <form [formGroup]="costoVariableForm" (ngSubmit)="onSubmitvariable()" class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Empresa </mat-label>
+      <input matInput disabled value="Trans Chakuy">
+    </mat-form-field>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Concepto:</mat-label>
+        <input matInput formControlName="concepto">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Monto:</mat-label>
+        <input matInput formControlName="monto">
+      </mat-form-field></td>
+      <td><mat-form-field>
+        <mat-label>Seleccione una fecha</mat-label>
+        <input matInput formControlName="fechacostovariable" [matDatepicker]="pickers">
+        <mat-hint>DD/MM/AAAA</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="pickers"></mat-datepicker-toggle>
+        <mat-datepicker #pickers></mat-datepicker>
+      </mat-form-field></td>
+      <td><button mat-raised-button color="primary">Registrar</button></td>
+      <td><button mat-raised-button color="accent">Limpiar</button></td>
+  </tr></table>
+  </form>
+</div>
+
+<div class="btn-group mt-4 mb-3" role="group" aria-label="Basic radio toggle button group">
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off">
+    
+    <label class="btn btn-outline-primary" for="btnradio1" (click)="openModal()">Lista</label>
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btnradio2" (click)="navegarAdifoperacion()">Estado</label>
+  <!--
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+    <label class="btn btn-outline-primary" for="btnradio3">Radio 3</label>
+  </div>
+-->
+<mat-divider></mat-divider>
+
+
+
+<!--Modal-->
+<div class="modal" id="miModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title">Listas de Costos Operacionales</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            <app-listascop></app-listascop>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

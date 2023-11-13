@@ -25,7 +25,7 @@ export class SflotaService {
   //constructor
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
-//funcion obtejer flota
+//funcion obtener flota
 
 getflota(): Observable<registrarflotaInter[]> {
      

@@ -1,1 +1,94 @@
-<p>contabilidad works!</p>
+<div class="container mt-4">
+    <div class="row">
+        <!-- Card para Activos -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/activo-fijo.png" class="card-img-top image-size" alt="Activos">
+                <div class="card-body">
+                    <h5 class="card-title">Activos</h5>
+                    <p class="card-text">Descripción breve de Activos.</p>
+
+                    <button mat-raised-button color="primary" (click)="navegarAactivo()">Ver Activos</button>
+                    
+                </div>
+            </div>
+        </div>
+
+        <!-- Card para Pasivos -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/pasivos.png" class="card-img-top image-size" alt="Pasivos">
+                <div class="card-body">
+                    <h5 class="card-title">Pasivos</h5>
+                    <p class="card-text">Descripción breve de Pasivos.</p>
+                    <button mat-raised-button color="primary" (click)="navegarApasivo()">Ver Pasivos</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card para Patrimonio -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/patrimonio.png" class="card-img-top image-size" alt="Patrimonio">
+                <div class="card-body">
+                    <h5 class="card-title">Patrimonio</h5>
+                    <p class="card-text">Descripción breve de Patrimonio.</p>
+                    <button mat-raised-button color="primary" (click)="navegarApatrimonio()">Ver Patrimonio</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Card para Ingresos -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/egresos.png" class="card-img-top image-size" alt="Ingresos">
+                <div class="card-body">
+                    <h5 class="card-title">Ingresos</h5>
+                    <p class="card-text">Descripción breve de Ingresos.</p>
+                    <button mat-raised-button color="primary" (click)="navegarAingreso()">Ver Ingresos</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card para Egresos -->
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/ingresos.png" class="card-img-top image-size" alt="Egresos">
+                <div class="card-body">
+                    <h5 class="card-title">Egresos</h5>
+                    <p class="card-text">Descripción breve de Egresos.</p>
+                    
+                    <button mat-raised-button color="primary" (click)="navegarAegreso()">Ver Egresos</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/expediente.png" class="card-img-top image-size" alt="Estado Resultados">
+                <div class="card-body">
+                    <h5 class="card-title">Estado Resultados</h5>
+                    <p class="card-text">Descripción breve de Estados Resultados.</p>
+                    
+                    <button mat-raised-button color="primary" (click)="navegarAestadoResultado()">Ver Estados</button>
+                </div>
+            </div>
+        </div>
+
+          <!-- Card para Mantenimiento -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="../../../assets/img/contabilidad_img/mantenimientos.png" class="card-img-top image-size" alt="Mantenimiento">
+                <div class="card-body">
+                    <h5 class="card-title">Mantenimiento</h5>
+                    <p class="card-text">Mantenimiento</p>
+                    
+                    <button mat-raised-button color="primary" (click)="navegarAmtto()">Acceso Mantenimiento</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

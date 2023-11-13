@@ -1,0 +1,19 @@
+<ol class="list-group list-group-numbered">
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Costos Fijos</div>
+      </div>
+      <!--<span class="badge bg-primary rounded-pill badge-number">{{ cantidadCostosFijos }}</span>-->
+      <span class="badge bg-primary rounded-pill badge-number cursor-pointer" (click)="navegarACostosFijos()">{{ cantidadCostosFijos }}</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <div class="ms-2 me-auto">
+        <div class="fw-bold">Costos Variables</div>
+      </div>
+      <span class="badge bg-primary rounded-pill badge-number cursor-pointer" (click)="navegarACostosVariables()">{{ cantidadCostosVariables }}</span>
+    </li>
+<br>
+<br>
+    <button mat-raised-button color="primary" (click)="recargarDatos()">Recargar Datos</button>
+  </ol>
+  

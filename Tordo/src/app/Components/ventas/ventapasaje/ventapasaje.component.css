@@ -1,0 +1,25 @@
+/* Agregar margen a los cards */
+.custom-card {
+    /*margin: 20px; /* Ajusta el valor de margen según tus preferencias */
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+  
+ /* Estilo personalizado para el tamaño de la imagen y su alineación */
+.custom-card .card-img-top {
+    width: 100px;
+    height: 100px;
+    /* Ajusta el ancho y la altura según tus preferencias */
+    vertical-align: middle; /* Alinea verticalmente al centro */
+    margin: 30px auto 0; /* Espacio en la parte superior y centrado horizontalmente */
+  }
+  
+  .custom-card .card-title {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .custom-card .card-text {
+    text-align: center;
+    margin-top: 10px;
+  }
