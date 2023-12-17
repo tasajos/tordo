@@ -2,6 +2,7 @@ using backend_Tordo.Models.Contabilidad;
 using backend_Tordo.Models.Costos;
 using backend_Tordo.Models.Flota;
 using backend_Tordo.Models.Pasajeros;
+using backend_Tordo.Models.QRClases;
 using Microsoft.EntityFrameworkCore;
 namespace backend_Tordo.Models
 {
@@ -59,6 +60,14 @@ namespace backend_Tordo.Models
     //NivelCuenta
 
     public DbSet<CuentaNivel.Cuenta> Tordo_Contabilidad_Registrosnivels { get; set; }
+
+
+    //
+    //SerializadoQR
+
+    public DbSet<QRClases.RespuestaModelo> Tordo_QRC_Responses { get; set; }
+
+    public DbSet<QRClases.ObjetoRespuesta> Tordo_QRC_QRresponse { get; set; }
 
 
   }
