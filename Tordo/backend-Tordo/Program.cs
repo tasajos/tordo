@@ -40,8 +40,17 @@ app.UseCors("AllowWebapp");
 
 app.UseHttpsRedirection();
 
+//app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
+
+
+/*Para produccion comentar run, comentar app.UseHttpsRedirction y descomentar el segmento de ip*/
+
+//app.Run();
+
+//app.Run("http://0.0.0.0:5201");

@@ -1,0 +1,17 @@
+.centered-image {
+    display: block;
+    margin: 20px auto 0 auto; /* Ajusta el valor "20px" según lo que necesites para el margen superior */
+}
+.card-route-info {
+    font-weight: bold;
+    color: #333; /* Ajusta el color según tu diseño */
+    /* Añade más estilos según lo que necesites */
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+.orange-background {
+    background-color: #E2D162;
+  }
+  
