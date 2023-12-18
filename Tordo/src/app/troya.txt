@@ -1,0 +1,18 @@
+
+Application Pools
+
+              NET CLR --> No Manage --> Integrated
+
+URL Rewrite
+
+Pattern: .*
+
+        {REQUEST_FILENAME} -> Is Not a REQUEST_FILE
+        {REQUEST_FILENAME} -> Is Not a Directory
+
+/index.html
+
+Tordoonline:86
+
+{REQUEST_FILENAME} -> Is Not a REQUEST_FILE
+        {REQUEST_FILENAME} -> Is Not a Directory

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using backend_Tordo.Models;
 
@@ -11,9 +12,11 @@ using backend_Tordo.Models;
 namespace backend_Tordo.Migrations
 {
     [DbContext(typeof(TordoContext))]
-    partial class TordoContextModelSnapshot : ModelSnapshot
+    [Migration("20231217001730_qrclasses")]
+    partial class qrclasses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -713,7 +716,7 @@ namespace backend_Tordo.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Tordo_QRC_QRresponse");
+                    b.ToTable("ObjetoRespuesta");
                 });
 
             modelBuilder.Entity("backend_Tordo.Models.QRClases.PageInfo", b =>
