@@ -1,6 +1,7 @@
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using backend_Tordo.Models.QRClases;
@@ -295,6 +296,194 @@ namespace backend_Tordo.Controllers
       {
         // Maneja las excepciones
         return StatusCode(500, ex.Message);
+      }
+    }
+
+    [HttpPost("validacionQr")]
+    public async Task<IActionResult> ValidacionQr([FromBody] ValidacionQrRequest requestData)
+    {
+      try
+      {
+        // Configura los encabezados de la solicitud
+        _httpClient.DefaultRequestHeaders.Clear(); // Borra los encabezados anteriores
+        _httpClient.DefaultRequestHeaders.Add("apikeyServicio", "ad3abc8fda3e938efbd6601dd0bd0e7883eeec4d27da85e1");
+        _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "eyJhbGciOiJIUzUxMiJ9.eyJOb21icmUiOiJKVUFOQSBKVUxJQU5BIFZBU1FVRVogVklMTEFSUk9FTCIsInN1YiI6IkpVQU5BSiIsIlRpcG8iOiJFTVBSRVNBIiwiU3VidGlwbyI6bnVsbCwiSWRVc3VhcmlvIjoyOTMwNiwiT2JzZXJ2YWRvIjpmYWxzZSwiTWVudSI6W3sidGl0dWxvIjoiQWRtaW5pc3RyYWNpw7NuIiwib3JkZW4iOjEsImxpc3RhUGVybWlzbyI6W3siaWRQZXJtaXNvIjoxNSwibm9tYnJlIjoiVXN1YXJpb3MiLCJ2YWxvciI6Ii91c3VhcmlvcyIsIm9yZGVuIjoxLCJfX2hpam9zIjpudWxsfV19LHsidGl0dWxvIjoiVHJhbnNmZXJlbmNpYXMiLCJvcmRlbiI6MCwibGlzdGFQZXJtaXNvIjpbeyJpZFBlcm1pc28iOjE3LCJub21icmUiOiJUcmFuc2FjY2lvbmVzIiwidmFsb3IiOiIvdHJhbnNhY2Npb25lcyIsIm9yZGVuIjoxLCJfX2hpam9zIjpudWxsfSx7ImlkUGVybWlzbyI6MjMsIm5vbWJyZSI6IlJlcG9ydGVzIiwidmFsb3IiOiIvcmVwb3J0ZXMiLCJvcmRlbiI6MSwiX19oaWpvcyI6bnVsbH1dfSx7InRpdHVsbyI6IkVudGlkYWRlcyIsIm9yZGVuIjozLCJsaXN0YVBlcm1pc28iOlt7ImlkUGVybWlzbyI6MjEsIm5vbWJyZSI6IlNlcnZpY2lvcyIsInZhbG9yIjoiL3NlcnZpY2lvcyIsIm9yZGVuIjoxLCJfX2hpam9zIjpudWxsfSx7ImlkUGVybWlzbyI6OTcsIm5vbWJyZSI6IkVzdHJ1Y3R1cmEiLCJ2YWxvciI6Ii9lc3RydWN0dXJhIiwib3JkZW4iOjIsIl9faGlqb3MiOm51bGx9XX1dLCJleHAiOjE3MDI5NTE1NzgsImlhdCI6MTcwMjk0Nzk3OCwiRW50aWRhZCI6MTY5NTB9.zxCbClU7KI0as4Dk-SisHFg8FBIHlOiqEL-GYwS3Lg6EMOMTGkDSFG353kn6f4hCoGyE-wMx_kR7gJCDqmFiMw");
+
+        // Convierte los datos en formato JSON (requestData) para el cuerpo de la solicitud
+        var jsonContent = JsonConvert.SerializeObject(requestData);
+        var stringContent = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+        // Realiza la solicitud POST al servicio web
+        var response = await _httpClient.PostAsync("https://sip.mc4.com.bo:8443/api/v1/estadoTransaccion", stringContent);
+
+        // Verifica si la solicitud fue exitosa
+        if (response.IsSuccessStatusCode)
+        {
+          // Lee la respuesta como una cadena JSON
+          var jsonResponse = await response.Content.ReadAsStringAsync();
+
+          // Puedes procesar la respuesta aquí según tus necesidades
+          return Ok(jsonResponse);
+        }
+        else
+        {
+          // Maneja los errores de la solicitud
+          return StatusCode((int)response.StatusCode, response.ReasonPhrase);
+        }
+      }
+      catch (Exception ex)
+      {
+        // Maneja las excepciones
+        return StatusCode(500, ex.Message);
+      }
+    }
+
+
+    /*
+
+    [HttpPost("validacionQryRespuesta")]
+    public async Task<IActionResult> validacionQryRespuesta([FromBody] ValidacionQrRequest requestData)
+    {
+      try
+      {
+        // Define los datos para obtener el token
+        var tokenRequestData = new
+        {
+          username = "JUANAJ",
+          password = "8033310JJvv"
+        };
+
+        // Convierte los datos en formato JSON para la solicitud del token
+        var tokenJsonContent = JsonConvert.SerializeObject(tokenRequestData);
+        var tokenStringContent = new StringContent(tokenJsonContent, Encoding.UTF8, "application/json");
+
+        // Configura los encabezados de la solicitud para obtener el token
+        _httpClient.DefaultRequestHeaders.Add("apikey", "5e1dc11b9a58a6930ad8d5466cf4e2b7bf7c3afe269d5d77");
+
+        // Realiza la solicitud POST para obtener el token
+        var tokenResponse = await _httpClient.PostAsync("autenticacion/v1/generarToken", tokenStringContent);
+
+        // Verifica si la solicitud del token fue exitosa
+        if (tokenResponse.IsSuccessStatusCode)
+        {
+          // Lee la respuesta como una cadena JSON
+          var jsonResponse = await tokenResponse.Content.ReadAsStringAsync();
+
+          // Deserializa la respuesta JSON en un objeto anónimo para extraer el valor del token
+          var responseObject = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+          string token = responseObject.objeto.token; // Aquí obtienes el valor del token
+
+          // Configura los encabezados de la solicitud para el segundo POST (GenerarQr)
+          _httpClient.DefaultRequestHeaders.Clear(); // Borra los encabezados anteriores
+          _httpClient.DefaultRequestHeaders.Add("apikeyServicio", "ad3abc8fda3e938efbd6601dd0bd0e7883eeec4d27da85e1");
+          _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+          // Convierte los datos en formato JSON para el segundo POST (GenerarQr)
+          var jsonContent = JsonConvert.SerializeObject(requestData);
+
+          // Realiza la solicitud POST al servicio web (GenerarQr)
+          var response = await _httpClient.PostAsJsonAsync("api/v1/estadoTransaccion", requestData);
+
+          // Verifica si la solicitud del segundo POST fue exitosa
+          if (response.IsSuccessStatusCode)
+          {
+            // Lee la respuesta como una cadena JSON
+            var jsonResponse2 = await response.Content.ReadAsStringAsync();
+
+            // Puedes procesar la respuesta aquí según tus necesidades
+            return Ok(jsonResponse2);
+          }
+          else
+          {
+            // Maneja los errores de la solicitud del segundo POST
+            return StatusCode((int)response.StatusCode, response.ReasonPhrase);
+          }
+        }
+        else
+        {
+          // Maneja los errores de la solicitud del primer POST
+          return StatusCode((int)tokenResponse.StatusCode, tokenResponse.ReasonPhrase);
+        }
+      }
+      catch (Exception ex)
+      {
+        // Maneja las excepciones
+        return StatusCode(500, ex.Message);
+      }
+    }
+    */
+    [HttpPost("validacionQryRespuesta")]
+    public async Task<IActionResult> validacionQryRespuesta([FromBody] ValidacionQrRequest requestData)
+    {
+      try
+      {
+        // Define los datos para obtener el token
+        var tokenRequestData = new
+        {
+          username = "JUANAJ",
+          password = "8033310JJvv"
+        };
+
+        // Convierte los datos en formato JSON para la solicitud del token
+        var tokenJsonContent = JsonConvert.SerializeObject(tokenRequestData);
+        var tokenStringContent = new StringContent(tokenJsonContent, Encoding.UTF8, "application/json");
+
+        // Configura los encabezados de la solicitud para obtener el token
+        _httpClient.DefaultRequestHeaders.Add("apikey", "5e1dc11b9a58a6930ad8d5466cf4e2b7bf7c3afe269d5d77");
+
+        // Realiza la solicitud POST para obtener el token
+        var tokenResponse = await _httpClient.PostAsync("autenticacion/v1/generarToken", tokenStringContent);
+
+        // Verifica si la solicitud del token fue exitosa
+        if (tokenResponse.IsSuccessStatusCode)
+        {
+          // Lee la respuesta como una cadena JSON
+          var jsonResponse = await tokenResponse.Content.ReadAsStringAsync();
+
+          // Deserializa la respuesta JSON en un objeto anónimo para extraer el valor del token
+          var responseObject = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+          string token = responseObject.objeto.token; // Aquí obtienes el valor del token
+
+          // Configura los encabezados de la solicitud para el segundo POST (GenerarQr)
+          _httpClient.DefaultRequestHeaders.Clear(); // Borra los encabezados anteriores
+          _httpClient.DefaultRequestHeaders.Add("apikeyServicio", "ad3abc8fda3e938efbd6601dd0bd0e7883eeec4d27da85e1");
+          _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}"); // Agrega el token al encabezado de autorización
+
+          // Convierte los datos en formato JSON para el segundo POST (GenerarQr)
+          var jsonContent = JsonConvert.SerializeObject(requestData);
+
+          // Configura el encabezado "Content-Type" para la solicitud POST
+          _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+          // Realiza la solicitud POST al servicio web (GenerarQr)
+          var response = await _httpClient.PostAsJsonAsync("api/v1/estadoTransaccion", requestData);
+
+          // Verifica si la solicitud del segundo POST fue exitosa
+          if (response.IsSuccessStatusCode)
+          {
+            // Lee la respuesta como una cadena JSON
+            var jsonResponse2 = await response.Content.ReadAsStringAsync();
+
+            // Puedes procesar la respuesta aquí según tus necesidades
+            return Ok(jsonResponse2);
+          }
+          else
+          {
+            // Maneja los errores de la solicitud del segundo POST
+            return StatusCode((int)response.StatusCode, response.ReasonPhrase);
+          }
+        }
+        else
+        {
+          // Maneja los errores de la solicitud del primer POST
+          return StatusCode((int)tokenResponse.StatusCode, tokenResponse.ReasonPhrase);
+        }
+      }
+      catch (Exception ex)
+      {
+        // Maneja las excepciones
+        //return StatusCode(500, ex.Message);
+        return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
       }
     }
 
