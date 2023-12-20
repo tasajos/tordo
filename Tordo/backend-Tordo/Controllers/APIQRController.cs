@@ -412,6 +412,8 @@ namespace backend_Tordo.Controllers
       }
     }
     */
+
+    /*
     [HttpPost("validacionQryRespuesta")]
     public async Task<IActionResult> validacionQryRespuesta([FromBody] ValidacionQrRequest requestData)
     {
@@ -483,6 +485,87 @@ namespace backend_Tordo.Controllers
       {
         // Maneja las excepciones
         //return StatusCode(500, ex.Message);
+        return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
+      }
+    }
+
+    */
+    [HttpPost("validacionQryRespuesta")]
+    public async Task<IActionResult> validacionQryRespuesta([FromBody] ValidacionQrRequest requestData)
+    {
+      try
+      {
+        // Define los datos para obtener el token
+        var tokenRequestData = new
+        {
+          username = "JUANAJ",
+          password = "8033310JJvv"
+        };
+
+        // Convierte los datos en formato JSON para la solicitud del token
+        var tokenJsonContent = JsonConvert.SerializeObject(tokenRequestData);
+        var tokenStringContent = new StringContent(tokenJsonContent, Encoding.UTF8, "application/json");
+
+        // Configura los encabezados de la solicitud para obtener el token
+        _httpClient.DefaultRequestHeaders.Add("apikey", "5e1dc11b9a58a6930ad8d5466cf4e2b7bf7c3afe269d5d77");
+
+        // Realiza la solicitud POST para obtener el token
+        var tokenResponse = await _httpClient.PostAsync("autenticacion/v1/generarToken", tokenStringContent);
+
+        // Verifica si la solicitud del token fue exitosa
+        if (tokenResponse.IsSuccessStatusCode)
+        {
+          // Lee la respuesta como una cadena JSON
+          var jsonResponse = await tokenResponse.Content.ReadAsStringAsync();
+
+          // Deserializa la respuesta JSON en un objeto anónimo para extraer el valor del token
+          var responseObject = JsonConvert.DeserializeObject<dynamic>(jsonResponse);
+          string token = responseObject.objeto.token; // Aquí obtienes el valor del token
+
+          // Configura los encabezados de la solicitud para el segundo POST (GenerarQr)
+          _httpClient.DefaultRequestHeaders.Clear(); // Borra los encabezados anteriores
+          _httpClient.DefaultRequestHeaders.Add("apikeyServicio", "ad3abc8fda3e938efbd6601dd0bd0e7883eeec4d27da85e1");
+          _httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {token}"); // Agrega el token al encabezado de autorización
+
+          // Convierte los datos en formato JSON para el segundo POST (GenerarQr)
+          var jsonContent = JsonConvert.SerializeObject(requestData);
+
+          // Configura el encabezado "Content-Type" para la solicitud POST
+          _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+          // Realiza la solicitud POST al servicio web (GenerarQr)
+          var response = await _httpClient.PostAsJsonAsync("api/v1/estadoTransaccion", requestData);
+
+          // Verifica si la solicitud del segundo POST fue exitosa
+          if (response.IsSuccessStatusCode)
+          {
+            // Lee la respuesta como una cadena JSON
+            var jsonResponse2 = await response.Content.ReadAsStringAsync();
+
+            // Deserializa la respuesta JSON en un objeto dinámico
+            dynamic responseObject2 = JsonConvert.DeserializeObject<dynamic>(jsonResponse2);
+
+            // Extrae el estadoActual del objeto
+            string estadoActual = responseObject2.objeto.estadoActual;
+
+            // Devuelve únicamente el estadoActual
+            return Ok(new { estadoActual = estadoActual });
+          }
+          else
+          {
+            // Maneja los errores de la solicitud del segundo POST
+            return StatusCode((int)response.StatusCode, response.ReasonPhrase);
+          }
+        }
+        else
+        {
+          // Maneja los errores de la solicitud del primer POST
+          return StatusCode((int)tokenResponse.StatusCode, tokenResponse.ReasonPhrase);
+        }
+      }
+      catch (Exception ex)
+      {
+        // Maneja las excepciones
         return StatusCode(500, new { message = ex.Message, stackTrace = ex.StackTrace });
       }
     }
