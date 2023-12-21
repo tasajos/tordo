@@ -12,4 +12,11 @@ namespace backend_Tordo.Models.QRClases
     public bool unicoUso { get; set; }
 
   }
+
+  public class ValidacionQrRequest
+  {
+    public string alias { get; set; }
+  }
+
+
 }
