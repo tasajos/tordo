@@ -1,0 +1,25 @@
+Para subir tu branch release1 a main en GitHub, debes seguir estos pasos básicos:
+
+1. Asegúrate de que tu Branch release1 esté actualizado:
+Primero, asegúrate de que todos tus cambios locales en release1 estén confirmados (commit) y actualizados con respecto al repositorio remoto.
+
+git checkout release1
+git pull origin release1
+
+Si tienes cambios que no han sido confirmados, hazlo con:
+
+git add .
+git commit -m "Mensaje de commit"
+
+
+2. Cambiar a la rama main:
+Antes de fusionar, cambia a la rama main y asegúrate de que esté actualizada:
+
+git checkout main
+git pull origin main
+
+3.- Fusionar release1 en main:
+Ahora, estando en la rama main, fusiona release1 en ella:
+
+git merge release1
+
