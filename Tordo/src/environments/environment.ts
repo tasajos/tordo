@@ -10,8 +10,10 @@ export const environment = {
         measurementId: "G-N667CTG9SW"
     },
     endpoint: 'https://localhost:7196/',
-     //production
+     //production old
     //endpoint: 'http://54.213.112.54:5201/',
-
+    //descomentar para produccion
+    //production new
+    //endpoint: 'http://54.70.236.69:5201/'
 
 };
