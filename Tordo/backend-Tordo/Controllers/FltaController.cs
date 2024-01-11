@@ -85,6 +85,39 @@ namespace backend_Tordo.Controllers
         return BadRequest(ex.Message);
       }
     }
+    [HttpGet("buscar/{origen}/{destino}/{fechaRegistro}")]
+    public ActionResult<IEnumerable<RegistroFlota>> BuscarPorOrigenDestinoYFecha(string origen, string destino, DateTime fechaRegistro)
+    {
+      try
+      {
+        // Realiza la búsqueda en la base de datos utilizando los parámetros origen, destino y fecha de registro
+        var resultados = _context.Rflota
+            .Where(r => r.origen.ToLower() == origen.ToLower()
+                     && r.destino.ToLower() == destino.ToLower()
+                     && r.fecharegistro.Date == fechaRegistro.Date) // Filtrar por la fecha sin hora ni minutos
+            .ToList();
+
+        if (resultados.Count == 0)
+        {
+          // Si no se encontraron resultados, crea una respuesta personalizada
+          var respuestaNoEncontrada = new
+          {
+            Mensaje = "No se encontraron resultados"
+          };
+
+          // Devuelve la respuesta personalizada con un código de estado 200 (OK)
+          return Ok(respuestaNoEncontrada);
+        }
+
+        return Ok(resultados);
+      }
+      catch (Exception ex)
+      {
+        return BadRequest(ex.Message);
+      }
+    }
+
+
 
 
   }
