@@ -23,7 +23,11 @@ namespace backend_Tordo.Controllers
     public APIQRController()
     {
       _httpClient = new HttpClient();
+      //prod
       _httpClient.BaseAddress = new Uri("https://sip.mc4.com.bo:8443/");
+
+      //dev
+      //_httpClient.BaseAddress = new Uri("https://dev-sip.mc4.com.bo:8443/");
     }
 
     [HttpPost]
@@ -34,8 +38,16 @@ namespace backend_Tordo.Controllers
         // Define los datos que se enviarán en el cuerpo de la solicitud POST
         var requestContent = new
         {
+          //prod
           username = "JUANAJ",
           password = "8033310JJvv"
+          
+
+          /*
+          //dev
+          username = "INTEGRACION",
+          password = "G8WvhgiK7RueZ*m"
+          */
         };
 
         // Convierte los datos en formato JSON
@@ -199,6 +211,9 @@ namespace backend_Tordo.Controllers
         // Realiza la solicitud POST al servicio web
         var response = await _httpClient.PostAsync("https://sip.mc4.com.bo:8443/api/v1/generaQr", stringContent);
 
+        //dev
+       // var response = await _httpClient.PostAsync("https://dev.mc4.com.bo:8443/api/v1/generaQr", stringContent);
+
         // Verifica si la solicitud fue exitosa
         if (response.IsSuccessStatusCode)
         {
@@ -234,10 +249,17 @@ namespace backend_Tordo.Controllers
       try
       {
         // Define los datos para obtener el token
+
+
         var tokenRequestData = new
         {
+          //prod
           username = "JUANAJ",
           password = "8033310JJvv"
+          
+          /*
+          username = "INTEGRACION",
+          password = "G8WvhgiK7RueZ*m"**/
         };
 
         // Convierte los datos en formato JSON para la solicitud del token
