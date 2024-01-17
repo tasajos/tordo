@@ -40,22 +40,14 @@ app.UseCors("AllowWebapp");
 
 app.UseHttpsRedirection();
 
-//app.UseHttpsRedirection();
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1c80b604f6cca9fdff6a076fdc8b0800b2b6e4a4
 app.UseAuthorization();
 
 app.MapControllers();
 
 app.Run();
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 1c80b604f6cca9fdff6a076fdc8b0800b2b6e4a4
 /*Para produccion comentar run, comentar app.UseHttpsRedirction y descomentar el segmento de ip*/
 
 //app.Run();
