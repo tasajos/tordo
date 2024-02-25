@@ -9,7 +9,8 @@ export const environment = {
         appId: "1:306570664024:web:060cafc91668e75e1a522d",
         measurementId: "G-N667CTG9SW"
     },
-    endpoint: 'https://localhost:7196/',
+    //endpoint: 'https://localhost:7196/',
+    endpoint: 'https://tordotravel.com:7196/',
      //production old
     //endpoint: 'http://54.213.112.54:5201/',
     //descomentar para produccion

@@ -10,3 +10,8 @@
     .Net CLR Version    No Managed Code
     Managed Pipelines   Integrated
     
+**
+Bindings
+
+http  ||centraltordo.tordotravel.com |80
+https ||centraltordo.tordotravel.com |443
