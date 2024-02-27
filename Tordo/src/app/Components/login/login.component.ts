@@ -44,11 +44,16 @@ export class LoginComponent implements OnInit {
       if (usuario && usuario.user) {
         this.db.object(`/users/${usuario.user.uid}/role`).valueChanges().subscribe(role => {
           if (role === "admin") {
-            this.router.navigate(['/uvendedor']); 
+            this.router.navigate(['/uadministrador']); 
             //this.router.navigate(['/admin-dashboard']); 
-          } else {
-            this.router.navigate(['/uadministrador']);
+          }           
+          else if (role === "superusuario"){
+            this.router.navigate(['/usuperusuario']);
           }
+          else  {
+            this.router.navigate(['/uvendedor']);
+          }
+
         });
       } else {
         console.error('No se pudo obtener el usuario de Firebase');

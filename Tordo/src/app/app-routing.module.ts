@@ -43,6 +43,7 @@ import { MttopatrimonioComponent } from './Components/contabilidad/mtto/mttopatr
 import { MttoingresoComponent } from './Components/contabilidad/mtto/mttoingreso/mttoingreso.component';
 import { MttoegresoComponent } from './Components/contabilidad/mtto/mttoegreso/mttoegreso.component';
 import { EstadofinanzasComponent } from './Components/contabilidad/estadofinanzas/estadofinanzas.component';
+import { SuperusuarioComponent } from './Components/usuarios/superusuario/superusuario.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,7 @@ const routes: Routes = [
 {path: 'pagos',component:PagosComponent},
 {path: 'uvendedor',component:VendedorComponent},
 {path: 'uadministrador',component:AdministradorComponent},
+{path: 'usuperusuario',component:SuperusuarioComponent},
 {path: 'verflota',component:RegistrarpasajeroComponent},
 {path: 'registrarflota',component:RegistrarflotaComponent},
 {path: 'login',component:LoginComponent},
