@@ -1,0 +1,52 @@
+<div class="row row-cols-1 row-cols-md-4 g-3">
+    <div class="col">
+      <div class="card custom-card">
+        <img src="../../../../assets/img/reporte.png" (click)="mostrarComponente('vdiarias')" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title"><strong> Reportes</strong></h3>
+          <p class="card-text"> Reportes General
+              </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card custom-card">
+        <img src="../../../../assets/img/edificios.png"  (click)="mostrarComponente('cpasajeros')" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title"><strong>Empresas</strong></h3>
+          <p class="card-text">
+            Empresas Registradas
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card custom-card">
+        <img src="../../../../assets/img/personal.png" (click)="mostrarComponente('costos')" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title"><strong>Gestion de Usuarios</strong></h3>
+          <p class="card-text">
+            Gestion de Usuarios
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="card custom-card">
+        <img src="../../../../assets/img/inmigracion.png"  (click)="mostrarComponente('novedades')" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h3 class="card-title"><strong>Novedades</strong></h3>
+          <p class="card-text">
+            Se refieren a los eventos relevantes que hayan ocurrido en el período de tiempo analizado
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-vdiarias *ngIf="mostrarempresas"></app-vdiarias>
+  <app-cantpasajeros *ngIf="mostrarusuarios"></app-cantpasajeros>
+  <app-novedades *ngIf="mostrarreportes"></app-novedades>
+  <app-costos *ngIf="mostrarnovedades"></app-costos>
+  
+  

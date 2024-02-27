@@ -100,6 +100,8 @@ import { MttoingresoComponent } from './Components/contabilidad/mtto/mttoingreso
 import { MttoegresoComponent } from './Components/contabilidad/mtto/mttoegreso/mttoegreso.component';
 import { EstadofinanzasComponent } from './Components/contabilidad/estadofinanzas/estadofinanzas.component';
 import { ReleasesTComponent } from './Components/releases-t/releases-t.component';
+import { MenusuperusuarioComponent } from './Components/usuarios/superusuario/menusuperusuario/menusuperusuario.component';
+import { Menu2sliderComponent } from './Components/usuarios/superusuario/menu2slider/menu2slider.component';
 
 
 export const MY_FORMATS = {
@@ -180,7 +182,9 @@ export const MY_FORMATS = {
     MttoingresoComponent,
     MttoegresoComponent,
     EstadofinanzasComponent,
-    ReleasesTComponent
+    ReleasesTComponent,
+    MenusuperusuarioComponent,
+    Menu2sliderComponent
     
   ],
   imports: [
