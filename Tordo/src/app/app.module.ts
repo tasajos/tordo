@@ -71,6 +71,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { saveAs } from 'file-saver';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -102,6 +103,9 @@ import { EstadofinanzasComponent } from './Components/contabilidad/estadofinanza
 import { ReleasesTComponent } from './Components/releases-t/releases-t.component';
 import { MenusuperusuarioComponent } from './Components/usuarios/superusuario/menusuperusuario/menusuperusuario.component';
 import { Menu2sliderComponent } from './Components/usuarios/superusuario/menu2slider/menu2slider.component';
+import { SureporteComponent } from './Components/Reportes/sureporte/sureporte.component';
+import { RegemprComponent } from './Components/Empresas/regempr/regempr.component';
+import { GuusuarioComponent } from './Components/GestionUsuario/guusuario/guusuario.component';
 
 
 export const MY_FORMATS = {
@@ -184,7 +188,10 @@ export const MY_FORMATS = {
     EstadofinanzasComponent,
     ReleasesTComponent,
     MenusuperusuarioComponent,
-    Menu2sliderComponent
+    Menu2sliderComponent,
+    SureporteComponent,
+    RegemprComponent,
+    GuusuarioComponent
     
   ],
   imports: [
@@ -211,6 +218,7 @@ export const MY_FORMATS = {
     MatDatepickerModule,
     MatMomentDateModule,
     MatSnackBarModule,
+    MatCheckboxModule,
     
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)

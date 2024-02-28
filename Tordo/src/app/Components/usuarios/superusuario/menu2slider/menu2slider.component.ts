@@ -22,16 +22,16 @@ export class Menu2sliderComponent {
 
     // Luego activamos el componente específico que se quiere mostrar.
     switch (componente) {
-      case 'vdiarias':
+      case 'empresasreg':
         this.mostrarempresas = true;
         break;
-      case 'cpasajeros':
+      case 'gestionusuario':
         this.mostrarusuarios = true;
         break;
-      case 'novedades':
+      case 'reportesu':
         this.mostrarreportes = true;
         break;
-      case 'costos':
+      case 'novedades':
         this.mostrarnovedades = true;
         break;
         

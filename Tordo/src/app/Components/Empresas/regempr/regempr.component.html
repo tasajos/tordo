@@ -1,0 +1,62 @@
+<div style="width: 70%; margin-left: 15%; padding: 20px;">
+    <h1 style="text-align: center;">Registro de Empresas de Transporte</h1> <!-- Título centrado aquí -->
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 5px; width: 50%;"> <!-- Reducir el padding y establecer un ancho -->
+          <mat-form-field style="width: 95%;"> <!-- Establecer el ancho del mat-form-field -->
+            <mat-label>Nombre de la empresa</mat-label>
+            <input matInput placeholder="Nombre de la empresa">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;"> <!-- Igual aquí -->
+          <mat-form-field style="width: 95%;">
+            <mat-label>Representante legal</mat-label>
+            <input matInput placeholder="Representante legal">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Teléfono</mat-label>
+            <input matInput placeholder="Teléfono">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Correo</mat-label>
+            <input matInput placeholder="Correo">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Cantidad de buses</mat-label>
+            <input matInput type="number" placeholder="Cantidad de buses">
+          </mat-form-field>
+        </td>
+        <td></td> <!-- Esta celda permanece vacía para mantener la estructura -->
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 8px;">
+          <p>Rutas:</p>
+          <div><mat-checkbox>La Paz</mat-checkbox></div>
+        <div><mat-checkbox>Cochabamba</mat-checkbox></div>
+        <div><mat-checkbox>Santa Cruz</mat-checkbox></div>
+        <div><mat-checkbox>Tarija</mat-checkbox></div>
+        <div><mat-checkbox>Potosi</mat-checkbox></div>
+        <div><mat-checkbox>Sucre</mat-checkbox></div>
+        <div><mat-checkbox>Beni</mat-checkbox></div>
+        <div><mat-checkbox>Pando</mat-checkbox></div>
+        <div><mat-checkbox>Oruro</mat-checkbox></div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 8px; text-align: left;">
+          <button mat-raised-button color="primary">Registrar</button>
+          <button mat-raised-button color="warn" style="margin-left: 10px;">Limpiar</button>
+        </td>
+      </tr>
+    </table>
+  </div>

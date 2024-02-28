@@ -1,7 +1,7 @@
 <div class="row row-cols-1 row-cols-md-4 g-3">
     <div class="col">
       <div class="card custom-card">
-        <img src="../../../../assets/img/reporte.png" (click)="mostrarComponente('vdiarias')" class="card-img-top" alt="...">
+        <img src="../../../../assets/img/reporte.png" (click)="mostrarComponente('reportesu')" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"><strong> Reportes</strong></h3>
           <p class="card-text"> Reportes General
@@ -11,7 +11,7 @@
     </div>
     <div class="col">
         <div class="card custom-card">
-        <img src="../../../../assets/img/edificios.png"  (click)="mostrarComponente('cpasajeros')" class="card-img-top" alt="...">
+        <img src="../../../../assets/img/edificios.png"  (click)="mostrarComponente('empresasreg')" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"><strong>Empresas</strong></h3>
           <p class="card-text">
@@ -22,7 +22,7 @@
     </div>
     <div class="col">
         <div class="card custom-card">
-        <img src="../../../../assets/img/personal.png" (click)="mostrarComponente('costos')" class="card-img-top" alt="...">
+        <img src="../../../../assets/img/personal.png" (click)="mostrarComponente('gestionusuario')" class="card-img-top" alt="...">
         <div class="card-body">
           <h3 class="card-title"><strong>Gestion de Usuarios</strong></h3>
           <p class="card-text">
@@ -44,9 +44,17 @@
     </div>
   </div>
 
+
+<app-sureporte *ngIf="mostrarreportes"></app-sureporte>
+<app-regempr *ngIf="mostrarempresas"></app-regempr>
+<app-guusuario *ngIf="mostrarusuarios"></app-guusuario>
+<app-novedades *ngIf="mostrarnovedades"></app-novedades>
+
+
+  <!--
   <app-vdiarias *ngIf="mostrarempresas"></app-vdiarias>
   <app-cantpasajeros *ngIf="mostrarusuarios"></app-cantpasajeros>
   <app-novedades *ngIf="mostrarreportes"></app-novedades>
   <app-costos *ngIf="mostrarnovedades"></app-costos>
-  
+  -->
   

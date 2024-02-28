@@ -44,6 +44,9 @@ import { MttoingresoComponent } from './Components/contabilidad/mtto/mttoingreso
 import { MttoegresoComponent } from './Components/contabilidad/mtto/mttoegreso/mttoegreso.component';
 import { EstadofinanzasComponent } from './Components/contabilidad/estadofinanzas/estadofinanzas.component';
 import { SuperusuarioComponent } from './Components/usuarios/superusuario/superusuario.component';
+import { SureporteComponent } from './Components/Reportes/sureporte/sureporte.component';
+import { RegemprComponent } from './Components/Empresas/regempr/regempr.component';
+import { GuusuarioComponent } from './Components/GestionUsuario/guusuario/guusuario.component';
 
 
 const routes: Routes = [
@@ -93,6 +96,9 @@ const routes: Routes = [
 {path: 'cmttoing',component:MttoingresoComponent},
 {path: 'cmttoegr',component:MttoegresoComponent},
 {path: 'estadofi',component:EstadofinanzasComponent},
+{path: 'reportesu',component:SureporteComponent},
+{path: 'empresasreg',component:RegemprComponent},
+{path: 'gestionusuario',component:GuusuarioComponent},
 
 {path: '**', redirectTo:'login', pathMatch:'full'}
 
