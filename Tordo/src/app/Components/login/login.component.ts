@@ -43,6 +43,8 @@ export class LoginComponent implements OnInit {
     .then((usuario) => {
       console.log(usuario);
   
+      /*
+
       // Verifica si usuario y usuario.user existen antes de acceder a uid
       if (usuario && usuario.user) {
         this.db.object(`/users/${usuario.user.uid}/role`).valueChanges().subscribe(role => {
@@ -56,6 +58,22 @@ export class LoginComponent implements OnInit {
           else  {
             this.router.navigate(['/uvendedor']);
           }
+*/
+
+ // Verifica si usuario y usuario.user existen antes de acceder a uid
+ if (usuario && usuario.user) {
+  this.db.object(`/usuarios/${usuario.user.uid}/nivelPermiso`).valueChanges().subscribe(nivelPermiso => {
+    if (nivelPermiso === "admin") {
+      this.router.navigate(['/uadministrador']); 
+      //this.router.navigate(['/admin-dashboard']); 
+    }           
+    else if (nivelPermiso === "superusuario"){
+      this.router.navigate(['/usuperusuario']);
+    }
+    else  {
+     // this.nivelPermiso.navigate(['/uvendedor']);
+    }
+
 
           console.log()
          // Muestra un mensaje de bienvenida

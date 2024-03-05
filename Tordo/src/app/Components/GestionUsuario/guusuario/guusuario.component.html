@@ -1,17 +1,18 @@
 <div style="width: 70%; margin-left: 15%; padding: 20px;">
-    <h1 style="text-align: center;">Registro de Usuarios</h1>
+  <h1 style="text-align: center;">Registro de Usuarios</h1>
+  <form #userForm="ngForm" (ngSubmit)="registerUser()">
     <table style="width: 100%; border-collapse: collapse;">
       <tr>
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Nombre</mat-label>
-            <input matInput placeholder="Nombre">
+            <input matInput [(ngModel)]="nombre" name="nombre" placeholder="Nombre" required>
           </mat-form-field>
         </td>
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Apellido Paterno</mat-label>
-            <input matInput placeholder="Apellido Paterno">
+            <input matInput [(ngModel)]="apellidoPaterno" name="apellidoPaterno" placeholder="Apellido Paterno" required>
           </mat-form-field>
         </td>
       </tr>
@@ -19,13 +20,13 @@
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Apellido Materno</mat-label>
-            <input matInput placeholder="Apellido Materno">
+            <input matInput [(ngModel)]="apellidoMaterno" name="apellidoMaterno" placeholder="Apellido Materno" required>
           </mat-form-field>
         </td>
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Teléfono</mat-label>
-            <input matInput placeholder="Teléfono">
+            <input matInput [(ngModel)]="telefono" name="telefono" placeholder="Teléfono" required>
           </mat-form-field>
         </td>
       </tr>
@@ -33,13 +34,13 @@
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Empresa</mat-label>
-            <input matInput placeholder="Empresa">
+            <input matInput [(ngModel)]="empresa" name="empresa" placeholder="Empresa" required>
           </mat-form-field>
         </td>
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Correo</mat-label>
-            <input matInput type="email" placeholder="Correo">
+            <input matInput type="email" [(ngModel)]="email" name="email" placeholder="Correo" required>
           </mat-form-field>
         </td>
       </tr>
@@ -47,13 +48,13 @@
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Dirección</mat-label>
-            <input matInput placeholder="Dirección">
+            <input matInput [(ngModel)]="direccion" name="direccion" placeholder="Dirección" required>
           </mat-form-field>
         </td>
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Nivel de Permiso</mat-label>
-            <mat-select>
+            <mat-select [(ngModel)]="nivelPermiso" name="nivelPermiso" required>
               <mat-option value="superusuario">Superusuario</mat-option>
               <mat-option value="administrador">Administrador</mat-option>
               <mat-option value="vendedor">Vendedor</mat-option>
@@ -62,18 +63,11 @@
         </td>
       </tr>
       <tr>
-        <td style="padding: 5px; width: 50%;">
-          <mat-form-field style="width: 95%;">
-            <mat-label>Fecha de Nacimiento</mat-label>
-            <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento">
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
-          </mat-form-field>
-        </td>
+        
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Carnet de Identidad</mat-label>
-            <input matInput placeholder="Carnet de Identidad">
+            <input matInput [(ngModel)]="carnetIdentidad" name="carnetIdentidad" placeholder="Carnet de Identidad" required>
           </mat-form-field>
         </td>
       </tr>
@@ -81,22 +75,28 @@
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Contraseña</mat-label>
-            <input matInput type="password" placeholder="Contraseña">
+            <input matInput type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
           </mat-form-field>
         </td>
         <td style="padding: 5px; width: 50%;">
           <mat-form-field style="width: 95%;">
             <mat-label>Repetir Contraseña</mat-label>
-            <input matInput type="password" placeholder="Repetir Contraseña">
+            <input matInput type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Repetir Contraseña" required>
           </mat-form-field>
         </td>
       </tr>
       <tr>
         <td colspan="2" style="padding: 8px; text-align: left;">
-          <button mat-raised-button color="primary">Registrar</button>
-          <button mat-raised-button color="warn" style="margin-left: 10px;">Limpiar</button>
+          <!--<button mat-raised-button color="primary" (click)="registerUser()">Registrar</button>-->
+          <button mat-raised-button color="primary" type="submit">Registrar</button>
+
+          
+          <!--<button mat-raised-button color="warn" style="margin-left: 10px;" (click)="clearForm()">Limpiar</button>-->
+          <button mat-raised-button color="warn" style="margin-left: 10px;" type="button" (click)="clearForm()">Limpiar</button>
+
+
         </td>
       </tr>
     </table>
+  </form>
 </div>
-
