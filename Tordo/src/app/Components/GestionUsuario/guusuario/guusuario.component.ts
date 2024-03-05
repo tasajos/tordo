@@ -38,7 +38,19 @@ registerUser() {
     return;
   }
 
-    // Convierte la fecha de nacimiento a una cadena ISO antes de guardarla
+  // Verifica que las contraseñas coincidan
+  if (this.password !== this.confirmPassword) {
+    this.snackBar.open('Las contraseñas no coinciden', 'Cerrar', { duration: 3000 });
+    return;
+  }
+
+  // Verifica que la contraseña tenga al menos 6 caracteres
+  if (this.password.length < 6) {
+    this.snackBar.open('La contraseña debe tener al menos 6 caracteres', 'Cerrar', { duration: 3000 });
+    return;
+  }
+ 
+  
   
 
 // Registrar usuario en Firebase Authentication
@@ -69,9 +81,14 @@ this.afAuth.createUserWithEmailAndPassword(this.email, this.password)
   this.clearForm();
 })
 .catch(error => {
+  if (error.code === 'auth/email-already-in-use') {
+    this.snackBar.open('El correo electrónico ya está en uso por otra cuenta', 'Cerrar', { duration: 3000 });
+  } else {
+    this.snackBar.open(error.message, 'Cerrar', { duration: 3000 });
+  }
   console.error('Error al registrar el usuario:', error);
-  this.snackBar.open('Error al registrar el usuario', 'Cerrar', { duration: 3000 });
 });
+
 }
 
 
