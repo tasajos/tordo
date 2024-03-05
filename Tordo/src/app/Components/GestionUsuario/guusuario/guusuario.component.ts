@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FfservService } from '../../../Services/sfireserv/ffserv.service'; // Ajusta la ruta según la ubicación de tu servicio
+
 
 @Component({
   selector: 'app-guusuario',
@@ -20,7 +20,7 @@ export class GuusuarioComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private ffservService: FfservService) {}
+ 
 
   // Función para registrar un usuario
   registerUser() {
@@ -43,14 +43,6 @@ export class GuusuarioComponent {
       password: this.password
     };
 
-    this.ffservService.registerUser(userData)
-      .then(() => {
-        console.log('Usuario registrado con éxito');
-        // Realizar acciones adicionales después del registro exitoso
-      })
-      .catch((error) => {
-        console.error('Error al registrar usuario:', error);
-        // Manejar errores de registro
-      });
+    
   }
 }
