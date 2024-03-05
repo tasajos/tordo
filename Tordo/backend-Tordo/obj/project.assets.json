@@ -3149,23 +3149,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tasaj\\.nuget\\packages\\": {},
+    "C:\\Users\\cazcarraga\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\ChakuySoft\\tordo\\tordo\\Tordo\\backend-Tordo\\backend-Tordo.csproj",
+      "projectUniqueName": "C:\\QA\\IV-TQA\\Tordo\\tordo\\Tordo\\backend-Tordo\\backend-Tordo.csproj",
       "projectName": "backend-Tordo",
-      "projectPath": "C:\\ChakuySoft\\tordo\\tordo\\Tordo\\backend-Tordo\\backend-Tordo.csproj",
-      "packagesPath": "C:\\Users\\tasaj\\.nuget\\packages\\",
-      "outputPath": "C:\\ChakuySoft\\tordo\\tordo\\Tordo\\backend-Tordo\\obj\\",
+      "projectPath": "C:\\QA\\IV-TQA\\Tordo\\tordo\\Tordo\\backend-Tordo\\backend-Tordo.csproj",
+      "packagesPath": "C:\\Users\\cazcarraga\\.nuget\\packages\\",
+      "outputPath": "C:\\QA\\IV-TQA\\Tordo\\tordo\\Tordo\\backend-Tordo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tasaj\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\cazcarraga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3173,8 +3173,9 @@
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "net6.0": {
@@ -3234,7 +3235,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

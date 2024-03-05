@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 
@@ -18,7 +19,9 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private afauth: AngularFireAuth,
     private db: AngularFireDatabase,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
+
   ) {
     this.loginUsuario = this.fb.group({
       email: ['', Validators.required],
@@ -54,6 +57,13 @@ export class LoginComponent implements OnInit {
             this.router.navigate(['/uvendedor']);
           }
 
+          console.log()
+         // Muestra un mensaje de bienvenida
+            this.snackBar.open('¡Bienvenido a TORDO!', 'Cerrar', {
+                duration: 5000, // Duración en milisegundos
+                verticalPosition: 'top', // Posición vertical
+                horizontalPosition: 'center', // Posición horizontal
+              });
         });
       } else {
         console.error('No se pudo obtener el usuario de Firebase');
@@ -61,6 +71,7 @@ export class LoginComponent implements OnInit {
     })
     .catch((error) => {
       console.log(error);
+      alert('Usuario o contraseña incorrectos');
     });
 }
 }

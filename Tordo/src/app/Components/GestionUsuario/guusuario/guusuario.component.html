@@ -1,1 +1,102 @@
-<p>guusuario works!</p>
+<div style="width: 70%; margin-left: 15%; padding: 20px;">
+    <h1 style="text-align: center;">Registro de Usuarios</h1>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Nombre</mat-label>
+            <input matInput placeholder="Nombre">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Apellido Paterno</mat-label>
+            <input matInput placeholder="Apellido Paterno">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Apellido Materno</mat-label>
+            <input matInput placeholder="Apellido Materno">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Teléfono</mat-label>
+            <input matInput placeholder="Teléfono">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Empresa</mat-label>
+            <input matInput placeholder="Empresa">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Correo</mat-label>
+            <input matInput type="email" placeholder="Correo">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Dirección</mat-label>
+            <input matInput placeholder="Dirección">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Nivel de Permiso</mat-label>
+            <mat-select>
+              <mat-option value="superusuario">Superusuario</mat-option>
+              <mat-option value="administrador">Administrador</mat-option>
+              <mat-option value="vendedor">Vendedor</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Carnet de Identidad</mat-label>
+            <input matInput placeholder="Carnet de Identidad">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" placeholder="Contraseña">
+          </mat-form-field>
+        </td>
+        <td style="padding: 5px; width: 50%;">
+          <mat-form-field style="width: 95%;">
+            <mat-label>Repetir Contraseña</mat-label>
+            <input matInput type="password" placeholder="Repetir Contraseña">
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" style="padding: 8px; text-align: left;">
+          <button mat-raised-button color="primary">Registrar</button>
+          <button mat-raised-button color="warn" style="margin-left: 10px;">Limpiar</button>
+        </td>
+      </tr>
+    </table>
+</div>
+

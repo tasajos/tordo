@@ -72,6 +72,8 @@ import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { saveAs } from 'file-saver';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 import { MatMomentDateModule, MomentDateAdapter } from '@angular/material-moment-adapter';
@@ -219,6 +221,7 @@ export const MY_FORMATS = {
     MatMomentDateModule,
     MatSnackBarModule,
     MatCheckboxModule,
+    MatDialogModule,
     
     ToastrModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebaseConfig)
